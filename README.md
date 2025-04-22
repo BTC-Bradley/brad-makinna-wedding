@@ -55,10 +55,30 @@ A beautiful, responsive wedding website built with Next.js, TypeScript, and Tail
 
 ### Content
 
-1. Update the wedding details in `src/pages/index.tsx`
-2. Modify the timeline in `src/pages/story.tsx`
-3. Update hotel information in `src/pages/accommodations.tsx`
-4. Add your registry links in `src/pages/registry.tsx`
+1. Update the wedding details in `src/app/page.tsx`:
+   - Wedding date and time
+   - Venue information
+   - Countdown timer target date
+
+2. Modify the timeline in `src/app/story/page.tsx`:
+   - Add or remove timeline events
+   - Update story text and images
+   - Customize the timeline layout
+
+3. Update hotel information in `src/app/accommodations/page.tsx`:
+   - Add or remove hotel options
+   - Update room rates and availability
+   - Add booking links and special codes
+
+4. Add your registry links in `src/app/registry/page.tsx`:
+   - Add registry store names and links
+   - Customize registry descriptions
+   - Add registry store logos
+
+5. Update the RSVP form in `src/app/rsvp/page.tsx`:
+   - Modify meal options
+   - Add or remove guest information fields
+   - Update RSVP deadline
 
 ### Images
 
@@ -66,6 +86,12 @@ A beautiful, responsive wedding website built with Next.js, TypeScript, and Tail
    - `hero-bg.jpg` - Hero section background
    - `story-1.jpg` through `story-4.jpg` - Timeline photos
    - `gallery-1.jpg` through `gallery-6.jpg` - Gallery photos
+   - `avatar.jpg` - Profile picture in header
+
+2. Update image metadata in `src/app/gallery/page.tsx`:
+   - Add image captions
+   - Modify image descriptions
+   - Update image credits
 
 ### Colors and Typography
 
@@ -90,13 +116,54 @@ theme: {
 }
 ```
 
-### Forms
+### Forms and Data Management
 
-The RSVP and contact forms currently store data in JSON files. For production, you should:
+1. RSVP Form (`src/app/rsvp/page.tsx`):
+   - Currently stores responses in JSON files
+   - For production:
+     - Set up a database (PostgreSQL, MongoDB, etc.)
+     - Implement email notifications (SendGrid, AWS SES)
+     - Add form validation and spam protection
+     - Consider using a form service like Formspree or Netlify Forms
 
-1. Set up a proper database (e.g., PostgreSQL, MongoDB)
-2. Implement email notifications using a service like SendGrid
-3. Add form validation and spam protection
+2. Contact Form (`src/app/contact/page.tsx`):
+   - Similar setup to RSVP form
+   - Add reCAPTCHA or similar spam protection
+   - Configure email notifications for form submissions
+
+### Deployment
+
+1. Choose a hosting platform:
+   - Vercel (recommended for Next.js)
+   - Netlify
+   - AWS Amplify
+
+2. Set up environment variables:
+   ```
+   NEXT_PUBLIC_SITE_URL=your-production-url
+   ```
+
+3. Configure custom domain:
+   - Update DNS settings
+   - Set up SSL certificate
+   - Configure redirects if needed
+
+### Additional Customization
+
+1. Navigation (`src/components/Header.tsx`):
+   - Modify navigation items
+   - Update mobile menu behavior
+   - Customize header styling
+
+2. Layout (`src/app/layout.tsx`):
+   - Update metadata
+   - Modify global styles
+   - Add analytics or tracking scripts
+
+3. Components:
+   - Customize reusable components in `src/components/`
+   - Add new components as needed
+   - Modify existing component styles
 
 ## Deployment
 

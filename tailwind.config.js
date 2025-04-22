@@ -10,11 +10,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        sage: '#9CAF88',
-        ivory: '#FFFFF0',
-        taupe: '#B5A99C',
-        rose: '#E8B4BC',
-        earth: '#8B7355',
+        // Warm summer sand
+        sand: '#F4D03F',
+        // Fresh ocean blue
+        ocean: '#48C9B0',
+        // Tropical coral
+        coral: '#FF7F50',
+        // Summer sky blue
+        sky: '#87CEEB',
+        // Fresh mint green
+        mint: '#98FF98',
+        // Soft peach
+        peach: '#FFDAB9',
+        // Light lavender
+        lavender: '#E6E6FA',
+        // Warm golden
+        golden: '#FFD700',
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
