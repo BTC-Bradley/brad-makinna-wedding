@@ -44,7 +44,7 @@ export default function CountdownTimer() {
   }, [])
 
   return timeLeft ? (
-    <div className="flex justify-center space-x-4">
+    <div className="flex justify-center space-x-4 pb-20">
       <div className="text-center">
         <div className="text-3xl font-bold">{timeLeft.days}</div>
         <div className="text-sm">Days</div>

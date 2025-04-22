@@ -42,7 +42,7 @@ export default function DetailsPage() {
         <div className="overflow-hidden rounded-lg bg-white shadow-sm">
           <div className="aspect-w-16 aspect-h-9">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373631531973!3d-37.817327679751734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnviroserve!5e0!3m2!1sen!2sus!4v1635167261304!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3227.113861991345!2d-121.76851272310043!3d47.5300597711829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490799b7df0a81b%3A0x61b89d084bf7adcb!2sNorth%20Fork%20Farm%20Events!5e1!3m2!1sen!2sus!4v1745288261214!5m2!1sen!2sus"
               width="100%"
               height="450"
               style={{ border: 0 }}
