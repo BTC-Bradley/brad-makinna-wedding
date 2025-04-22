@@ -7,12 +7,25 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Spencer Sharp',
-    default:
-      'Spencer Sharp - Software designer, founder, and amateur astronaut',
+    template: '%s - Bradley & MaKinna Wedding',
+    default: 'Bradley & MaKinna Wedding',
   },
   description:
-    'I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
+    'Join us in celebrating our special day. We are excited to share our wedding journey with you.',
+  icons: {
+    icon: [
+      {
+        url: '/images/avatar.jpg',
+        type: 'image/jpeg',
+      },
+    ],
+    apple: [
+      {
+        url: '/images/avatar.jpg',
+        type: 'image/jpeg',
+      },
+    ],
+  },
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

@@ -1,20 +1,20 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Wedding Details | Bradley & MaKinna',
-  description: 'Details about Bradley and MaKinna\'s wedding celebration',
-};
+  description: "Details about Bradley and MaKinna's wedding celebration",
+}
 
 export default function DetailsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-serif text-sage mb-4">Wedding Details</h1>
+    <div className="mx-auto max-w-4xl px-4 py-16">
+      <div className="mb-12 text-center">
+        <h1 className="text-sage mb-4 font-serif text-4xl">Wedding Details</h1>
         <p className="text-gray-600">Join us for our special day</p>
       </div>
 
       {/* Schedule Section */}
-      <section className="mb-16">
+      {/* <section className="mb-16">
         <h2 className="text-2xl font-serif text-sage mb-6 text-center">Schedule</h2>
         <div className="bg-white rounded-lg shadow-sm p-6">
           <div className="space-y-4">
@@ -32,12 +32,14 @@ export default function DetailsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Venue Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-serif text-sage mb-6 text-center">Venue</h2>
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
+          Venue
+        </h2>
+        <div className="overflow-hidden rounded-lg bg-white shadow-sm">
           <div className="aspect-w-16 aspect-h-9">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373631531973!3d-37.817327679751734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnviroserve!5e0!3m2!1sen!2sus!4v1635167261304!5m2!1sen!2sus"
@@ -50,8 +52,10 @@ export default function DetailsPage() {
             />
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-serif text-sage mb-2">North Fork Farm</h3>
-            <p className="text-gray-600 mb-4">
+            <h3 className="text-sage mb-2 font-serif text-xl">
+              North Fork Farm
+            </h3>
+            <p className="mb-4 text-gray-600">
               [Venue Address TBD]
               <br />
               [City, State ZIP]
@@ -70,26 +74,29 @@ export default function DetailsPage() {
 
       {/* Additional Information */}
       <section>
-        <h2 className="text-2xl font-serif text-sage mb-6 text-center">Additional Information</h2>
-        <div className="bg-white rounded-lg shadow-sm p-6">
+        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
+          Additional Information
+        </h2>
+        <div className="rounded-lg bg-white p-6 shadow-sm">
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium text-sage mb-2">Weather</h3>
+              <h3 className="text-sage mb-2 font-medium">Weather</h3>
               <p className="text-gray-600">
-                The ceremony and reception will be held outdoors. Please check the weather forecast
-                and dress accordingly. In case of inclement weather, the event will be moved indoors.
+                The ceremony and reception will be held outdoors. Please check
+                the weather forecast and dress accordingly. In case of inclement
+                weather, the event will be moved indoors.
               </p>
             </div>
             <div>
-              <h3 className="font-medium text-sage mb-2">Photography</h3>
+              <h3 className="text-sage mb-2 font-medium">Photography</h3>
               <p className="text-gray-600">
-                We encourage guests to take photos during the reception, but we ask that phones
-                be put away during the ceremony.
+                We encourage guests to take photos during the reception, but we
+                ask that phones be put away during the ceremony.
               </p>
             </div>
           </div>
         </div>
       </section>
     </div>
-  );
-} 
+  )
+}

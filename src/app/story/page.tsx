@@ -1,51 +1,54 @@
-import Image from 'next/image';
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Our Story | Bradley & MaKinna',
-  description: 'The story of Bradley and MaKinna\'s journey together',
-};
+  description: "The story of Bradley and MaKinna's journey together",
+}
 
 const timeline = [
   {
-    date: '2018',
+    date: '2021',
     title: 'The Beginning',
-    description: 'Our paths crossed in a serendipitous moment that would change our lives forever.',
+    description:
+      'Among thousands at a festival at the Gorge Amphitheater, destiny brought us together not once, but twice. Some call it coincidence, we call it fate.',
     image: '/images/story-1.jpg',
   },
   {
-    date: '2020',
-    title: 'Moving In Together',
-    description: 'We took the next step in our journey by creating a home together.',
+    date: '2022',
+    title: 'Building Our Home',
+    description:
+      'We created our sanctuary together and welcomed our beloved kitties, Ember and Blaze, who became the heart of our home.',
     image: '/images/story-2.jpg',
   },
   {
-    date: '2024',
+    date: '2025',
     title: 'The Proposal',
-    description: 'On a beautiful beach in Cabo, Bradley got down on one knee and asked the question that would begin our forever.',
+    description:
+      'As waves crashed on the pristine beaches of Cabo, Bradley knelt down and asked the question that would change our lives forever.',
     image: '/images/story-3.jpg',
   },
   {
     date: '2026',
-    title: 'The Wedding',
-    description: 'Join us as we celebrate our love and begin our new chapter together at North Fork Farm.',
+    title: 'Our Wedding Day',
+    description:
+      'Join us as we celebrate our love and begin our forever at the beautiful North Fork Farm, surrounded by family and friends.',
     image: '/images/story-4.jpg',
   },
-];
+]
 
 export default function StoryPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-serif text-sage mb-4">Our Story</h1>
+    <div className="mx-auto max-w-4xl px-4 py-16">
+      <div className="mb-16 text-center">
+        <h1 className="text-sage mb-4 font-serif text-4xl">Our Story</h1>
         <p className="text-gray-600">
           From chance encounter to forever, here&apos;s our journey together.
         </p>
       </div>
 
-      <div className="relative">
-        {/* Timeline line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-sage/20" />
+      <div className="relative min-h-[800px]">
+        {/* Timeline line - using a different approach */}
+        <div className="border-ocean absolute left-1/2 z-0 h-full -translate-x-1/2 transform border-l-2"></div>
 
         {/* Timeline items */}
         <div className="space-y-16">
@@ -58,27 +61,30 @@ export default function StoryPage() {
             >
               {/* Content */}
               <div className="w-1/2 px-4">
-                <div className="bg-white rounded-lg shadow-sm p-6">
-                  <span className="text-sage font-serif text-lg">{item.date}</span>
-                  <h3 className="text-xl font-serif text-sage mt-2 mb-3">{item.title}</h3>
+                <div className="rounded-lg bg-white p-6 shadow-sm">
+                  <span className="text-sage font-serif text-lg">
+                    {item.date}
+                  </span>
+                  <h3 className="text-sage mt-2 mb-3 font-serif text-xl">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-600">{item.description}</p>
                 </div>
               </div>
 
               {/* Image */}
               <div className="w-1/2 px-4">
-                <div className="relative aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
-                  <Image
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
 
               {/* Timeline dot */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sage rounded-full" />
+              <div className="bg-sage absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full" />
             </div>
           ))}
         </div>
@@ -90,5 +96,5 @@ export default function StoryPage() {
         </p>
       </div>
     </div>
-  );
-} 
+  )
+}
