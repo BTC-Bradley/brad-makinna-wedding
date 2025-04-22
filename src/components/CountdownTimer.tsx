@@ -63,11 +63,6 @@ export default function CountdownTimer() {
       </div>
     </div>
   ) : (
-    <div className="text-center text-2xl font-bold">
-      <div className="text-center">
-        <div className="text-3xl font-bold"></div>
-        <div className="text-sm"></div>
-      </div>
-    </div>
+    <div className="h-[60px]"></div>
   )
 }
