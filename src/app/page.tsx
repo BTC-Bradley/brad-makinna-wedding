@@ -4,7 +4,7 @@ import CountdownTimer from '@/components/CountdownTimer'
 import heroBgImage from '@/images/hero-bg.jpg'
 
 export const metadata: Metadata = {
-  title: 'Bradley & MaKinna | Wedding',
+  title: 'MaKinna & Bradley | Wedding',
   description:
     'Join us for our wedding celebration on July 11, 2026 at North Fork Farm',
 }
@@ -27,7 +27,7 @@ export default function HomePage() {
 
         <div className="relative z-10 px-4 text-center text-white">
           <h1 className="font-script mb-4 text-5xl sm:text-7xl">
-            Bradley & MaKinna
+            MaKinna & Bradley
           </h1>
           <p className="mb-8 font-serif text-xl sm:text-2xl">
             July 11, 2026 • North Fork Farm

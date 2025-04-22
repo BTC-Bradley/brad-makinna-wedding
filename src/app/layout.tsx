@@ -7,8 +7,8 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Bradley & MaKinna Wedding',
-    default: 'Bradley & MaKinna Wedding',
+    template: '%s - MaKinna & Bradley Wedding',
+    default: 'MaKinna & Bradley Wedding',
   },
   description:
     'Join us in celebrating our special day. We are excited to share our wedding journey with you.',

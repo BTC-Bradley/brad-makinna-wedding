@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import RSVPForm from '@/components/RSVPForm';
 
 export const metadata: Metadata = {
-  title: 'RSVP | Bradley & MaKinna',
+  title: 'RSVP | MaKinna & Bradley',
   description: 'Please let us know if you will be joining us on our special day.',
 };
 

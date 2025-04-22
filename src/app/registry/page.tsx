@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Registry | Bradley & MaKinna',
+  title: 'Registry | MaKinna & Bradley',
   description: 'Registry information for Bradley and MaKinna\'s wedding',
 };
 

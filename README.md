@@ -1,4 +1,4 @@
-# Bradley & MaKinna Wedding Website
+# MaKinna & Bradley Wedding Website
 
 A beautiful, responsive wedding website built with Next.js, TypeScript, and Tailwind CSS.
 
