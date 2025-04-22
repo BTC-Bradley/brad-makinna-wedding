@@ -27,13 +27,17 @@ export function Footer() {
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/speaking">Speaking</NavLink>
-                <NavLink href="/uses">Uses</NavLink>
+                <NavLink href="/">Home</NavLink>
+                <NavLink href="/story">Our Story</NavLink>
+                <NavLink href="/details">Details</NavLink>
+                <NavLink href="/rsvp">RSVP</NavLink>
+                <NavLink href="/gallery">Gallery</NavLink>
+                <NavLink href="/accommodations">Accommodations</NavLink>
+                <NavLink href="/registry">Registry</NavLink>
+                <NavLink href="/contact">Contact</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
+                &copy; {new Date().getFullYear()} Bradley & MaKinna. All rights
                 reserved.
               </p>
             </div>

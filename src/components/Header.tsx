@@ -121,11 +121,14 @@ function MobileNavigation(
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/about">About</MobileNavItem>
-            <MobileNavItem href="/articles">Articles</MobileNavItem>
-            <MobileNavItem href="/projects">Projects</MobileNavItem>
-            <MobileNavItem href="/speaking">Speaking</MobileNavItem>
-            <MobileNavItem href="/uses">Uses</MobileNavItem>
+            <MobileNavItem href="/">Home</MobileNavItem>
+            <MobileNavItem href="/story">Our Story</MobileNavItem>
+            <MobileNavItem href="/details">Details</MobileNavItem>
+            <MobileNavItem href="/rsvp">RSVP</MobileNavItem>
+            <MobileNavItem href="/gallery">Gallery</MobileNavItem>
+            <MobileNavItem href="/accommodations">Accommodations</MobileNavItem>
+            <MobileNavItem href="/registry">Registry</MobileNavItem>
+            <MobileNavItem href="/contact">Contact</MobileNavItem>
           </ul>
         </nav>
       </PopoverPanel>
@@ -166,11 +169,14 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="/story">Our Story</NavItem>
+        <NavItem href="/details">Details</NavItem>
+        <NavItem href="/rsvp">RSVP</NavItem>
+        <NavItem href="/gallery">Gallery</NavItem>
+        <NavItem href="/accommodations">Accommodations</NavItem>
+        <NavItem href="/registry">Registry</NavItem>
+        <NavItem href="/contact">Contact</NavItem>
       </ul>
     </nav>
   )
