@@ -118,7 +118,10 @@ export default function AccommodationsPage() {
             <div>
               <h3 className="font-medium text-gray-900 mb-2">Parking</h3>
               <p className="text-gray-600">
-                Free parking is available at the venue for those who prefer to drive.
+                Parking at North Fork Farm is limited. We encourage guests to use our shuttle service from the Snoqualmie Inn Hotel for convenience. Please see the Travel page for shuttle service details.
+              </p>
+              <p className="mt-2 text-gray-600">
+                When arriving at the venue, continue straight past the venue on SE 79th St. A parking attendant will be there to help direct you to available parking spaces.
               </p>
             </div>
           </div>
