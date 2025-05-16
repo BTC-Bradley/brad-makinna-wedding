@@ -5,14 +5,14 @@ export default function TravelPage() {
         <h1 className="text-sage mb-4 font-serif text-4xl">
           Travel Information
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-300">
           Everything you need to know about getting to and around Snoqualmie.
         </p>
       </div>
 
       {/* Hotel Section */}
       <section className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm">
+        <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -33,23 +33,23 @@ export default function TravelPage() {
             <h3 className="text-sage mb-3 font-serif text-xl">
               Snoqualmie Inn by Hotel America
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               We have reserved a block of rooms at the Snoqualmie Inn by Hotel
               America for your convenience.
             </p>
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-lg bg-gray-50 p-6">
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Contact Information
               </h4>
               <div className="space-y-2">
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-200">
                   <span className="font-medium">Address:</span> 35228 Snoqualmie
                   Pkwy, Snoqualmie, WA 98065
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-200">
                   <span className="font-medium">Phone:</span>{' '}
                   <a
                     href="tel:+14253633888"
@@ -58,7 +58,7 @@ export default function TravelPage() {
                     (425) 363-3888
                   </a>
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-200">
                   <span className="font-medium">Website:</span>{' '}
                   <a
                     href="https://www.thehotelamerica.com/"
@@ -72,26 +72,26 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6">
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Booking Information
               </h4>
               <div className="space-y-2">
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-200">
                   <span className="font-medium">Booking Code:</span> VHWD12
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-200">
                   <span className="font-medium">Booking Deadline:</span> June
                   10, 2026
                 </p>
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6">
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Hotel Amenities
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                 <li className="flex items-start">
                   <svg
                     className="text-sage mr-2 h-5 w-5 flex-shrink-0"
@@ -132,7 +132,7 @@ export default function TravelPage() {
                 href="https://book.rguest.com/onecart/wbe/room/1566/HotelAmerica/2026-07-10/2026-07-12/VHWD12/1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors"
+                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white dark:bg-gray-800 px-6 py-3 text-center text-base font-medium transition-colors"
               >
                 Book Your Room
               </a>
@@ -143,7 +143,7 @@ export default function TravelPage() {
 
       {/* Shuttle Section */}
       <section className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm">
+        <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -164,17 +164,17 @@ export default function TravelPage() {
             <h3 className="text-sage mb-3 font-serif text-xl">
               Complimentary Hotel Shuttle Service
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               We&apos;re pleased to offer a free shuttle service between the
               Snoqualmie Inn Hotel and the venue.
             </p>
           </div>
 
-          <div className="mb-6 rounded-lg bg-gray-50 p-6">
+          <div className="mb-6 rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Why Take the Shuttle?
             </h4>
-            <ul className="space-y-3 text-gray-700">
+            <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
                   className="text-sage mr-2 h-6 w-6 flex-shrink-0"
@@ -228,16 +228,16 @@ export default function TravelPage() {
             </ul>
           </div>
 
-          <div className="mb-6 rounded-lg bg-gray-50 p-6">
+          <div className="mb-6 rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Shuttle Schedule
             </h4>
             <div className="space-y-6">
               <div>
-                <h5 className="mb-3 font-medium text-gray-900">
+                <h5 className="mb-3 font-medium text-gray-900 dark:text-gray-100">
                   Departure Trip (Hotel → North Fork Farm)
                 </h5>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex items-start">
                     <svg
                       className="text-sage mr-2 h-6 w-6 flex-shrink-0"
@@ -274,10 +274,10 @@ export default function TravelPage() {
               </div>
 
               <div>
-                <h5 className="mb-3 font-medium text-gray-900">
+                <h5 className="mb-3 font-medium text-gray-900 dark:text-gray-100">
                   Return Trip (North Fork Farm → Hotel)
                 </h5>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex items-start">
                     <svg
                       className="text-sage mr-2 h-6 w-6 flex-shrink-0"
@@ -315,11 +315,11 @@ export default function TravelPage() {
             </div>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-6">
+          <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Important Information
             </h4>
-            <ul className="space-y-3 text-gray-700">
+            <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
                   className="text-sage mr-2 h-6 w-6 flex-shrink-0"
@@ -377,7 +377,7 @@ export default function TravelPage() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-600 italic">
+            <p className="text-gray-600 dark:text-gray-300 italic">
               We strongly encourage all guests to utilize our shuttle service
               for a stress-free celebration experience.
             </p>
@@ -387,7 +387,7 @@ export default function TravelPage() {
 
       {/* Parking Section */}
       <section className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm">
+        <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -408,7 +408,7 @@ export default function TravelPage() {
             <h3 className="text-sage mb-3 font-serif text-xl">
               Parking at North Fork Farm
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Limited parking is available at the venue. We encourage guests to
               use our shuttle service for convenience.
             </p>
@@ -420,11 +420,11 @@ export default function TravelPage() {
               className="w-full rounded-lg object-cover"
             />
           </div>
-          <div className="mb-6 rounded-lg bg-gray-50 p-6">
+          <div className="mb-6 rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Important Information
             </h4>
-            <ul className="space-y-3 text-gray-700">
+            <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
                   className="text-sage mr-2 h-6 w-6 flex-shrink-0"
@@ -460,7 +460,7 @@ export default function TravelPage() {
             </ul>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-6">
+          <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Parking Directions
             </h4>
@@ -479,7 +479,7 @@ export default function TravelPage() {
                     d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                   />
                 </svg>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-200">
                   When arriving at the venue, continue straight past the venue
                   on SE 79th St. A parking attendant will be there to help
                   direct you to available parking spaces.
@@ -489,7 +489,7 @@ export default function TravelPage() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-600 italic">
+            <p className="text-gray-600 dark:text-gray-300 italic">
               For the most convenient experience, we recommend using our shuttle
               service from the Snoqualmie Inn Hotel.
             </p>
@@ -499,7 +499,7 @@ export default function TravelPage() {
 
       {/* Airport Section */}
       <section className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm">
+        <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -520,27 +520,27 @@ export default function TravelPage() {
             <h3 className="text-sage mb-3 font-serif text-xl">
               SeaTac International Airport
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               The closest major airport to the venue, located approximately 45
               minutes away.
             </p>
           </div>
 
-          <div className="mb-6 rounded-lg bg-gray-50 p-6">
+          <div className="mb-6 rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Transportation Options
             </h4>
             <div className="space-y-4">
               <div>
-                <h5 className="mb-2 font-medium text-gray-900">Rental Cars</h5>
-                <p className="text-gray-700">
+                <h5 className="mb-2 font-medium text-gray-900 dark:text-gray-100">Rental Cars</h5>
+                <p className="text-gray-700 dark:text-gray-200">
                   All major rental car companies are available at SeaTac
                   Airport.
                 </p>
               </div>
               <div>
-                <h5 className="mb-2 font-medium text-gray-900">Rideshare</h5>
-                <p className="text-gray-700">
+                <h5 className="mb-2 font-medium text-gray-900 dark:text-gray-100">Rideshare</h5>
+                <p className="text-gray-700 dark:text-gray-200">
                   Uber and Lyft are readily available at the airport.
                 </p>
               </div>
@@ -551,7 +551,7 @@ export default function TravelPage() {
 
       {/* Nearby Attractions Section */}
       <section className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm">
+        <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -578,23 +578,23 @@ export default function TravelPage() {
             <h3 className="text-sage mb-3 font-serif text-xl">
               Nearby Attractions
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Discover the beauty and excitement of the Snoqualmie Valley and
               greater Seattle area.
             </p>
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-lg bg-gray-50 p-6">
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
               <h3 className="text-sage mb-4 font-serif text-xl">
                 Near the Venue
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <h4 className="mb-2 font-medium text-gray-900">
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
                     Natural Attractions
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
                         className="text-sage mr-2 h-5 w-5 flex-shrink-0"
@@ -646,10 +646,10 @@ export default function TravelPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="mb-2 font-medium text-gray-900">
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
                     Local Attractions
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
                         className="text-sage mr-2 h-5 w-5 flex-shrink-0"
@@ -703,16 +703,16 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6">
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
               <h3 className="text-sage mb-4 font-serif text-xl">
                 Within 1 Hour
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <h4 className="mb-2 font-medium text-gray-900">
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
                     Seattle Attractions
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
                         className="text-sage mr-2 h-5 w-5 flex-shrink-0"
@@ -764,10 +764,10 @@ export default function TravelPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="mb-2 font-medium text-gray-900">
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
                     Wine Country
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
                         className="text-sage mr-2 h-5 w-5 flex-shrink-0"
@@ -789,16 +789,16 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6">
+            <div className="rounded-lg bg-gray-50 dark:bg-gray-700 p-6">
               <h3 className="text-sage mb-4 font-serif text-xl">
                 Nightlife Options
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <h4 className="mb-2 font-medium text-gray-900">
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
                     Bars & Lounges
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
                         className="text-sage mr-2 h-5 w-5 flex-shrink-0"
@@ -850,10 +850,10 @@ export default function TravelPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="mb-2 font-medium text-gray-900">
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
                     More Options
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
                         className="text-sage mr-2 h-5 w-5 flex-shrink-0"
