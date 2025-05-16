@@ -26,7 +26,7 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { href: '/', label: 'Home' },
   { href: '/story', label: 'Our Story' },
-  { href: '/address-collection', label: 'Address Collection' },
+  { href: '/schedule', label: 'Schedule' },
   // { href: '/details', label: 'Details' },
   // { href: '/rsvp', label: 'RSVP' },
   { href: '/gallery', label: 'Gallery' },

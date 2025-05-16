@@ -10,7 +10,7 @@ export default function Navigation() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/address-collection', label: 'Address Collection' },
+    { href: '/schedule', label: 'Schedule' },
     { href: '/rsvp', label: 'RSVP' },
     { href: '/registry', label: 'Registry' },
   ]
