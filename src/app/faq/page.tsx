@@ -15,7 +15,7 @@ export default function FAQ() {
       answer: "TBD."
     },
     {
-      question: "Is there a Dress Code?",
+      question: "What is the Dress Code?",
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
@@ -71,7 +71,7 @@ export default function FAQ() {
       )
     },
     {
-      question: "Are plus ones allowed?",
+      question: "Are Plus Ones Allowed?",
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
@@ -178,7 +178,7 @@ export default function FAQ() {
       )
     },
     {
-      question: "Gifts?",
+      question: "What About Gifts?",
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
@@ -225,7 +225,7 @@ export default function FAQ() {
       )
     },
     {
-      question: "Parking",
+      question: "Where Can I Park?",
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
@@ -269,11 +269,11 @@ export default function FAQ() {
       )
     },
     {
-      question: "Photo Policy",
+      question: "Can I Take Photos During the Wedding?",
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            We kindly ask that no photos be taken during the ceremony to allow everyone to fully experience the moment. However, feel free to take as many photos as you&apos;d like during the reception—we encourage you to capture and share the fun!
+            We kindly ask that no photos be taken during the ceremony to allow everyone to fully experience the moment.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -290,7 +290,7 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Please refrain from taking photos during the ceremony</span>
+              <span>Photos are welcome during the reception</span>
             </li>
             <li className="flex items-start">
               <svg
@@ -306,59 +306,275 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Feel free to take photos during the reception</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>We&apos;ll have a photo booth available for fun memories with friends and family</span>
+              <span>A photo booth will be available for fun memories</span>
             </li>
           </ul>
         </>
       )
     },
     {
-      question: "What is the Weather like in July?",
+      question: "What is the Weather Like in July?",
+      answer: (
+        <>
+          <div className="flex items-center gap-4 mb-4">
+            <svg
+              className="text-sage h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <div>
+              <p className="text-gray-700 dark:text-gray-200">
+                Sunny and warm: 73°F-77°F during the day, cooling to 46°F-54°F at night.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 mb-4">
+            <svg
+              className="text-sage h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+              />
+            </svg>
+            <div>
+              <p className="text-gray-700 dark:text-gray-200">
+                Rain unlikely (1-2 days possible), typically brief if it occurs.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <svg
+              className="text-sage h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <div>
+              <p className="text-gray-700 dark:text-gray-200">
+                Dress in lightweight fabrics and bring a light jacket for the evening.
+              </p>
+            </div>
+          </div>
+        </>
+      )
+    },
+    {
+      question: "Will There Be Alcohol?",
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            July in Snoqualmie is typically warm and dry, with daytime highs
-            averaging between 73°F and 77°F and nighttime lows around 46°F to
-            54°F. While it&apos;s a dry heat, there&apos;s always a small
-            chance of rain—July sees an average of 1–2 days of rain during the
-            July month, but it&apos;s usually light and short-lived.
+            Yes! We&apos;ll have two bars available - one indoor and one outdoor - offering a variety of drink options:
           </p>
+          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Red and white wine selections</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Local craft cider</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Beer options</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Two signature cocktails</span>
+            </li>
+          </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            We recommend dressing in lightweight, breathable fabrics to stay
-            comfortable during the day. As temperatures can cool in the
-            evening, consider bringing a light jacket or sweater to stay cozy
-            after sunset.
+            Please enjoy responsibly and pace yourself. We want everyone to have fun while staying safe.
+          </p>
+          <p className="mt-2 text-gray-700 dark:text-gray-200">
+            Note: Due to venue restrictions, only one round of shots will be served during the reception.
           </p>
         </>
       )
     },
     {
-      question: "Will there be alcohol?",
-      answer: "Yes! We'll be serving drinks, so please enjoy responsibly and pace yourself. We want everyone to have fun while staying safe."
+      question: "What Food Options Will Be Available?",
+      answer: (
+        <>
+          <p className="text-gray-700 dark:text-gray-200">
+            We&apos;re excited to offer a delicious buffet-style meal featuring a variety of options to satisfy all tastes:
+          </p>
+          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Fresh seafood selection</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Perfectly prepared steak</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>An array of seasonal sides and accompaniments</span>
+            </li>
+          </ul>
+          <p className="mt-4 text-gray-700 dark:text-gray-200">
+            Please indicate any dietary restrictions or allergies on your RSVP form.
+          </p>
+        </>
+      )
     },
     {
-      question: "What Food options will be available?",
-      answer: "We'll be offering a buffet-style meal featuring a seafood option, steak, and a variety of delicious sides. If you have any dietary restrictions, please reach out to us as soon as possible so we can accommodate your needs."
-    },
-    {
-      question: "Who do I contact with questions?",
-      answer: "If you have any questions, feel free to reach out to us directly! We're here to help and can't wait to celebrate with you."
+      question: "Who Should I Contact With Questions?",
+      answer: (
+        <>
+          <p className="text-gray-700 dark:text-gray-200">
+            We&apos;re here to help with any questions you may have! Here are the best ways to reach us:
+          </p>
+          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Reach out to us directly via phone or email</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Use our{' '}
+                <a href="/contact" className="text-sage hover:text-sage/80 underline">
+                  contact form
+                </a>
+                {' '}for a quick response
+              </span>
+            </li>
+          </ul>
+          <p className="mt-4 text-gray-700 dark:text-gray-200">
+            We can&apos;t wait to celebrate with you and are happy to help with any questions!
+          </p>
+        </>
+      )
     }
   ]
 
