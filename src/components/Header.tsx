@@ -27,13 +27,11 @@ export const navigationItems: NavigationItem[] = [
   { href: '/', label: 'Home' },
   { href: '/story', label: 'Our Story' },
   { href: '/schedule', label: 'Schedule' },
-  { href: '/details', label: 'Details' },
   { href: '/travel', label: 'Travel' },
+  { href: '/wedding-party', label: 'Wedding Party' },
   { href: '/faq', label: 'FAQ' },
-  // { href: '/rsvp', label: 'RSVP' },
+  { href: '/rsvp', label: 'RSVP' },
   { href: '/gallery', label: 'Gallery' },
-  // { href: '/accommodations', label: 'Accommodations' },
-  // { href: '/registry', label: 'Registry' },
   { href: '/contact', label: 'Contact' },
 ]
 

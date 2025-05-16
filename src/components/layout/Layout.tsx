@@ -9,7 +9,7 @@ interface LayoutProps {
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Our Story', href: '/story' },
-  { name: 'Details', href: '/details' },
+  { name: 'Schedule', href: '/schedule' },
   { name: 'RSVP', href: '/rsvp' },
   { name: 'Gallery', href: '/gallery' },
   { name: 'Accommodations', href: '/accommodations' },
