@@ -28,6 +28,7 @@ export const navigationItems: NavigationItem[] = [
   { href: '/story', label: 'Our Story' },
   { href: '/schedule', label: 'Schedule' },
   { href: '/details', label: 'Details' },
+  { href: '/travel', label: 'Travel' },
   // { href: '/rsvp', label: 'RSVP' },
   { href: '/gallery', label: 'Gallery' },
   // { href: '/accommodations', label: 'Accommodations' },

@@ -18,21 +18,63 @@ export default function SchedulePage() {
             Please check back later for updates.
           </p>
           <div className="space-y-6">
-            <div className="border-l-2 border-sage pl-4">
-              <h3 className="text-lg font-serif text-sage">Ceremony</h3>
-              <p className="text-gray-600">Time and details to be announced</p>
+            <div className="flex items-start gap-4">
+              <div className="w-24 shrink-0 text-right">
+                <p className="text-sage font-medium">TBD</p>
+              </div>
+              <div className="border-sage border-l-2 pl-4">
+                <h3 className="text-sage font-serif text-lg">Guest Arrival</h3>
+                <p className="text-gray-600">Details to be announced</p>
+              </div>
             </div>
-            <div className="border-l-2 border-sage pl-4">
-              <h3 className="text-lg font-serif text-sage">Reception</h3>
-              <p className="text-gray-600">Time and details to be announced</p>
+            <div className="flex items-start gap-4">
+              <div className="w-24 shrink-0 text-right">
+                <p className="text-sage font-medium">TBD</p>
+              </div>
+              <div className="border-sage border-l-2 pl-4">
+                <h3 className="text-sage font-serif text-lg">Ceremony</h3>
+                <p className="text-gray-600">Details to be announced</p>
+              </div>
             </div>
-            <div className="border-l-2 border-sage pl-4">
-              <h3 className="text-lg font-serif text-sage">Dinner</h3>
-              <p className="text-gray-600">Time and details to be announced</p>
+            <div className="flex items-start gap-4">
+              <div className="w-24 shrink-0 text-right">
+                <p className="text-sage font-medium">TBD</p>
+              </div>
+              <div className="border-sage border-l-2 pl-4">
+                <h3 className="text-sage font-serif text-lg">Cocktail Hour</h3>
+                <p className="text-gray-600">Details to be announced</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-24 shrink-0 text-right">
+                <p className="text-sage font-medium">TBD</p>
+              </div>
+              <div className="border-sage border-l-2 pl-4">
+                <h3 className="text-sage font-serif text-lg">Reception Dinner</h3>
+                <p className="text-gray-600">Details to be announced</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-24 shrink-0 text-right">
+                <p className="text-sage font-medium">9:00 PM</p>
+              </div>
+              <div className="border-sage border-l-2 pl-4">
+                <h3 className="text-sage font-serif text-lg">Guest Departure</h3>
+                <p className="text-gray-600">Strictly enforced per venue contract</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-24 shrink-0 text-right">
+                <p className="text-sage font-medium">9:00 PM</p>
+              </div>
+              <div className="border-sage border-l-2 pl-4">
+                <h3 className="text-sage font-serif text-lg">After Party</h3>
+                <p className="text-gray-600">End time TBD</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   )
-} 
+}
