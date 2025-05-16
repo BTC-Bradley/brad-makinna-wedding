@@ -12,9 +12,6 @@ export default function TravelPage() {
 
       {/* Hotel Section */}
       <section className="mb-16">
-        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
-          Hotel Information
-        </h2>
         <div className="rounded-lg bg-white p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -146,9 +143,6 @@ export default function TravelPage() {
 
       {/* Shuttle Section */}
       <section className="mb-16">
-        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
-          Hotel Shuttle Service
-        </h2>
         <div className="rounded-lg bg-white p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -168,7 +162,7 @@ export default function TravelPage() {
               </svg>
             </div>
             <h3 className="text-sage mb-3 font-serif text-xl">
-              Complimentary Shuttle Service
+              Complimentary Hotel Shuttle Service
             </h3>
             <p className="text-gray-600">
               We&apos;re pleased to offer a free shuttle service between the
@@ -393,9 +387,6 @@ export default function TravelPage() {
 
       {/* Parking Section */}
       <section className="mb-16">
-        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
-          Venue Parking Information
-        </h2>
         <div className="rounded-lg bg-white p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -508,9 +499,6 @@ export default function TravelPage() {
 
       {/* Airport Section */}
       <section className="mb-16">
-        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
-          Airport Information
-        </h2>
         <div className="rounded-lg bg-white p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -563,9 +551,6 @@ export default function TravelPage() {
 
       {/* Nearby Attractions Section */}
       <section className="mb-16">
-        <h2 className="text-sage mb-6 text-center font-serif text-2xl">
-          Nearby Attractions
-        </h2>
         <div className="rounded-lg bg-white p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -590,6 +575,9 @@ export default function TravelPage() {
                 />
               </svg>
             </div>
+            <h3 className="text-sage mb-3 font-serif text-xl">
+              Nearby Attractions
+            </h3>
             <p className="text-gray-600">
               Discover the beauty and excitement of the Snoqualmie Valley and
               greater Seattle area.
