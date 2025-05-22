@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import RSVPForm from '@/components/RSVPForm'
 import ErrorState from '@/components/ErrorState'
+import RSVPCodeInput from '@/components/RSVPCodeInput'
 import type { GuestListDocument } from '@/interfaces/guest'
 import { headers } from 'next/headers'
 
@@ -14,7 +15,7 @@ async function getGuestList(id: string): Promise<GuestListDocument> {
   const headersList = headers()
   const host = headersList.get('host')
   const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
-  
+
   const res = await fetch(`${protocol}://${host}/api/guest/${id}`, {
     cache: 'no-store',
   })
@@ -41,64 +42,43 @@ export default async function RSVPPage({
     try {
       guestList = await getGuestList(searchParams.id)
     } catch (error) {
-      errorMessage = error instanceof Error ? error.message : 'Unable to load guest information. Please try again later.'
+      errorMessage =
+        error instanceof Error
+          ? error.message
+          : 'Unable to load guest information. Please try again later.'
     }
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-16">
-      <div className="mb-12 text-center">
-        <h1 className="text-sage mb-4 font-serif text-4xl">RSVP</h1>
-        <p className="text-gray-600">
-          We hope you can join us for our special day. Please respond by June
-          1st, 2026.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-sage/5">
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h1 className="text-sage mb-6 font-serif text-5xl font-light tracking-wide">
+            RSVP
+          </h1>
+          <div className="mx-auto mb-8 h-1 w-24 bg-sage/30"></div>
+          <p className="text-gray-600 text-lg">
+            We joyfully invite you to share in our celebration of love.
+            <br />
+            Please respond by June 1st, 2026.
+          </p>
+        </div>
 
-      <div className="rounded-lg bg-white p-8 shadow-sm">
-        {errorMessage ? (
-          <ErrorState message={errorMessage} />
-        ) : guestList ? (
-          <RSVPForm guestList={guestList} />
-        ) : (
-          <form action="/rsvp" method="get" className="space-y-4">
-            <div>
-              <label
-                htmlFor="id"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Enter your RSVP ID
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="id"
-                  id="id"
-                  required
-                  className="focus:border-sage focus:ring-sage block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                  placeholder="Enter the RSVP ID from your invitation"
-                />
-              </div>
-              <p className="mt-2 text-sm text-gray-500">
-                You can find your RSVP ID on your invitation.
-              </p>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="bg-sage hover:bg-sage/90 focus:ring-sage w-full rounded-md px-4 py-2 text-sm font-medium text-white focus:ring-2 focus:ring-offset-2 focus:outline-none"
-              >
-                Find My Invitation
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
+        <div className="rounded-xl bg-white p-8 shadow-lg ring-1 ring-sage/10">
+          {errorMessage ? (
+            <ErrorState message={errorMessage} />
+          ) : guestList ? (
+            <RSVPForm guestList={guestList} />
+          ) : (
+            <RSVPCodeInput />
+          )}
+        </div>
 
-      <div className="mt-8 text-center text-sm text-gray-500">
-        <p>
-          If you have any questions, please don&apos;t hesitate to contact us.
-        </p>
+        <div className="mt-12 text-center">
+          <p className="text-gray-600">
+            If you have any questions, please don&apos;t hesitate to contact us.
+          </p>
+        </div>
       </div>
     </div>
   )

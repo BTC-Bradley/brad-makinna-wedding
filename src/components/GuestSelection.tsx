@@ -4,11 +4,13 @@ import type { GuestListDocument, Guest } from '@/interfaces/guest'
 interface GuestSelectionProps {
   guestList: GuestListDocument
   onGuestSelectionChange: (selectedGuests: Guest[]) => void
+  isAttending: boolean | null
 }
 
 export default function GuestSelection({
   guestList,
   onGuestSelectionChange,
+  isAttending,
 }: GuestSelectionProps) {
   const [selectedGuests, setSelectedGuests] = useState<Guest[]>([])
 
@@ -16,7 +18,7 @@ export default function GuestSelection({
     // Initialize with guest1 selected by default
     setSelectedGuests([guestList.guest1])
     onGuestSelectionChange([guestList.guest1])
-  }, [guestList])
+  }, [guestList, isAttending])
 
   const handleGuestToggle = (guest: Guest) => {
     setSelectedGuests((prev) => {
@@ -52,11 +54,11 @@ export default function GuestSelection({
             g.firstName === guest.firstName && g.lastName === guest.lastName,
         )}
         onChange={() => handleGuestToggle(guest)}
-        className="text-sage focus:ring-sage h-4 w-4 rounded border-gray-300"
+        className="h-5 w-5 rounded border-gray-300 text-sage focus:ring-sage"
       />
       <label
         htmlFor={`guest-${guest.firstName}-${guest.lastName}`}
-        className="text-sm font-medium text-gray-700"
+        className="text-base font-medium text-gray-900"
       >
         {label}
       </label>
@@ -64,34 +66,38 @@ export default function GuestSelection({
   )
 
   return (
-    <div className="space-y-4">
-      <h3 className="text-lg font-medium text-gray-900">Select Guests</h3>
-      <div className="space-y-2">
-        {renderGuestCheckbox(
-          guestList.guest1,
-          `${guestList.guest1.title} ${guestList.guest1.firstName} ${guestList.guest1.lastName}`,
-        )}
-
-        {guestList.guest2 &&
-          renderGuestCheckbox(
-            guestList.guest2,
-            `${guestList.guest2.title} ${guestList.guest2.firstName} ${guestList.guest2.lastName}`,
+    <div className="rounded-lg border border-gray-200 bg-white p-6">
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium text-gray-900">
+          {isAttending ? "Select Attending Guests" : "Select Non-Attending Guests"}
+        </h3>
+        <div className="space-y-2">
+          {renderGuestCheckbox(
+            guestList.guest1,
+            `${guestList.guest1.title} ${guestList.guest1.firstName} ${guestList.guest1.lastName}`,
           )}
 
-        {guestList.additionalGuests &&
-          guestList.additionalGuests.length > 0 && (
-            <div className="mt-4">
-              <h4 className="mb-2 text-sm font-medium text-gray-700">
-                Additional Guests
-              </h4>
-              {guestList.additionalGuests.map((guest) =>
-                renderGuestCheckbox(
-                  guest,
-                  `${guest.title} ${guest.firstName} ${guest.lastName}`,
-                ),
-              )}
-            </div>
-          )}
+          {guestList.guest2 &&
+            renderGuestCheckbox(
+              guestList.guest2,
+              `${guestList.guest2.title} ${guestList.guest2.firstName} ${guestList.guest2.lastName}`,
+            )}
+
+          {guestList.additionalGuests &&
+            guestList.additionalGuests.length > 0 && (
+              <div className="mt-4 border-t border-gray-200 pt-4">
+                <h4 className="text-base font-medium text-gray-900 mb-2">
+                  Additional Guests
+                </h4>
+                {guestList.additionalGuests.map((guest) =>
+                  renderGuestCheckbox(
+                    guest,
+                    `${guest.title} ${guest.firstName} ${guest.lastName}`,
+                  ),
+                )}
+              </div>
+            )}
+        </div>
       </div>
     </div>
   )
