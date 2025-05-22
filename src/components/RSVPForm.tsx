@@ -1,222 +1,117 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
+import type { GuestListDocument, Guest } from '@/interfaces/guest'
+import GuestSelection from './GuestSelection'
 
-interface RSVPFormData {
-  guestName: string;
-  email: string;
-  attending: boolean;
-  numberOfGuests: number;
-  dietaryRestrictions: string;
-  message: string;
+interface RSVPFormProps {
+  guestList: GuestListDocument
 }
 
-export default function RSVPForm() {
-  const [formData, setFormData] = useState<RSVPFormData>({
-    guestName: '',
-    email: '',
-    attending: true,
-    numberOfGuests: 1,
-    dietaryRestrictions: '',
-    message: '',
-  });
+export default function RSVPForm({ guestList }: RSVPFormProps) {
+  const [selectedGuests, setSelectedGuests] = useState<Guest[]>([])
+  const [isAttending, setIsAttending] = useState<boolean | null>(null)
+  const [dietaryRestrictions, setDietaryRestrictions] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-    
-    if (type === 'checkbox') {
-      const checkbox = e.target as HTMLInputElement;
-      setFormData({ ...formData, [name]: checkbox.checked });
-    } else if (type === 'number') {
-      setFormData({ ...formData, [name]: parseInt(value) || 0 });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-  };
+  const handleGuestSelectionChange = (guests: Guest[]) => {
+    setSelectedGuests(guests)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
+    e.preventDefault()
+    setIsSubmitting(true)
 
     try {
-      // TODO: Replace with actual API endpoint
-      const response = await fetch('/api/rsvp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // TODO: Implement the actual submission logic
+      console.log({
+        guestListId: guestList.id,
+        selectedGuests,
+        isAttending,
+        dietaryRestrictions,
+      })
 
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          guestName: '',
-          email: '',
-          attending: true,
-          numberOfGuests: 1,
-          dietaryRestrictions: '',
-          message: '',
-        });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (err) {
-      console.error('Error submitting RSVP:', err);
-      setSubmitStatus('error');
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      // Show success message or redirect
+    } catch (error) {
+      console.error('Error submitting RSVP:', error)
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto">
-      <div>
-        <label htmlFor="guestName" className="block text-sm font-medium text-gray-700">
-          Full Name *
-        </label>
-        <input
-          type="text"
-          id="guestName"
-          name="guestName"
-          required
-          value={formData.guestName}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sage focus:ring-sage"
-        />
-      </div>
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <GuestSelection
+        guestList={guestList}
+        onGuestSelectionChange={handleGuestSelectionChange}
+      />
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-          Email *
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sage focus:ring-sage"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700">
-          Will you be attending? *
-        </label>
-        <div className="mt-2 space-y-2">
-          <div className="flex items-center">
-            <input
-              type="radio"
-              id="attending-yes"
-              name="attending"
-              checked={formData.attending}
-              onChange={() => setFormData({ ...formData, attending: true })}
-              className="h-4 w-4 text-sage focus:ring-sage border-gray-300"
-            />
-            <label htmlFor="attending-yes" className="ml-3 block text-sm font-medium text-gray-700">
-              Yes, I will attend
-            </label>
-          </div>
-          <div className="flex items-center">
-            <input
-              type="radio"
-              id="attending-no"
-              name="attending"
-              checked={!formData.attending}
-              onChange={() => setFormData({ ...formData, attending: false })}
-              className="h-4 w-4 text-sage focus:ring-sage border-gray-300"
-            />
-            <label htmlFor="attending-no" className="ml-3 block text-sm font-medium text-gray-700">
-              No, I cannot attend
-            </label>
-          </div>
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium text-gray-900">
+          Will you be attending?
+        </h3>
+        <div className="flex space-x-4">
+          <button
+            type="button"
+            onClick={() => setIsAttending(true)}
+            className={`flex-1 rounded-md px-4 py-2 text-sm font-medium ${
+              isAttending === true
+                ? 'bg-sage text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            Yes, I&apos;ll be there
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsAttending(false)}
+            className={`flex-1 rounded-md px-4 py-2 text-sm font-medium ${
+              isAttending === false
+                ? 'bg-sage text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            No, I can&apos;t make it
+          </button>
         </div>
       </div>
 
-      {formData.attending && (
-        <>
+      {isAttending && (
+        <div className="space-y-4">
           <div>
-            <label htmlFor="numberOfGuests" className="block text-sm font-medium text-gray-700">
-              Number of Guests *
-            </label>
-            <select
-              id="numberOfGuests"
-              name="numberOfGuests"
-              required
-              value={formData.numberOfGuests}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sage focus:ring-sage"
+            <label
+              htmlFor="dietary"
+              className="block text-sm font-medium text-gray-700"
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-gray-700">
               Dietary Restrictions
             </label>
-            <input
-              type="text"
-              id="dietaryRestrictions"
-              name="dietaryRestrictions"
-              value={formData.dietaryRestrictions}
-              onChange={handleChange}
-              placeholder="e.g., Vegetarian, Gluten-free, etc."
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sage focus:ring-sage"
+            <textarea
+              id="dietary"
+              name="dietary"
+              rows={3}
+              value={dietaryRestrictions}
+              onChange={(e) => setDietaryRestrictions(e.target.value)}
+              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
+              placeholder="Please let us know if you have any dietary restrictions or allergies"
             />
           </div>
-        </>
+        </div>
       )}
 
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-          Message (Optional)
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={3}
-          value={formData.message}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sage focus:ring-sage"
-        />
-      </div>
-
-      <div>
+      <div className="pt-4">
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sage hover:bg-earth focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage disabled:opacity-50"
+          disabled={
+            isSubmitting || isAttending === null || selectedGuests.length === 0
+          }
+          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full rounded-md px-4 py-2 text-sm font-medium text-white focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:opacity-50"
         >
           {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
         </button>
       </div>
-
-      {submitStatus === 'success' && (
-        <div className="rounded-md bg-green-50 p-4">
-          <div className="text-sm text-green-700">
-            Thank you for your RSVP! We look forward to celebrating with you.
-          </div>
-        </div>
-      )}
-
-      {submitStatus === 'error' && (
-        <div className="rounded-md bg-red-50 p-4">
-          <div className="text-sm text-red-700">
-            There was an error submitting your RSVP. Please try again or contact us directly.
-          </div>
-        </div>
-      )}
     </form>
-  );
-} 
+  )
+}
