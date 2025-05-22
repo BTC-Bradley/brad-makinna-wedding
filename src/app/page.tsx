@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        <div className="relative z-10 px-4 text-center text-white">
+        <div className="relative z-10 px-4 text-center ">
           <h1 className="font-script mb-4 text-5xl sm:text-7xl">
             MaKinna & Bradley
             <span className="block mt-4 text-3xl sm:text-4xl tracking-widest font-light">Hanson</span>

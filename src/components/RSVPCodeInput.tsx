@@ -99,7 +99,7 @@ export default function RSVPCodeInput() {
       <div>
         <button
           type="submit"
-          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full rounded-lg px-6 py-3 text-lg font-medium text-white transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full rounded-lg px-6 py-3 text-lg font-medium  transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
         >
           Find My Invitation
         </button>

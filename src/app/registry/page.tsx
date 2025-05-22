@@ -27,7 +27,7 @@ export default function RegistryPage() {
             href="https://www.zola.com/registry/bradleyandmakinna"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-sage text-white px-6 py-2 rounded-md hover:bg-earth transition-colors"
+            className="inline-block bg-sage  px-6 py-2 rounded-md hover:bg-earth transition-colors"
           >
             View Registry
           </a>
@@ -42,7 +42,7 @@ export default function RegistryPage() {
             href="https://www.amazon.com/wedding/registry/bradleyandmakinna"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-sage text-white px-6 py-2 rounded-md hover:bg-earth transition-colors"
+            className="inline-block bg-sage  px-6 py-2 rounded-md hover:bg-earth transition-colors"
           >
             View Registry
           </a>
@@ -60,7 +60,7 @@ export default function RegistryPage() {
             href="https://www.honeyfund.com/bradleyandmakinna"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-sage text-white px-6 py-2 rounded-md hover:bg-earth transition-colors"
+            className="inline-block bg-sage  px-6 py-2 rounded-md hover:bg-earth transition-colors"
           >
             Contribute to Our Honeymoon
           </a>

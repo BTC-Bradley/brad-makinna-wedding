@@ -13,7 +13,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
   const [isAttending, setIsAttending] = useState<boolean | null>(null)
   const [dietaryRestrictions, setDietaryRestrictions] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [step, setStep] = useState<'attendance' | 'select' | 'confirm'>('attendance')
+  const [step, setStep] = useState<'attendance' | 'confirm'>('attendance')
 
   const handleGuestSelectionChange = (guests: Guest[]) => {
     setSelectedGuests(guests)
@@ -45,17 +45,17 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
 
   const handleNextStep = () => {
     if (step === 'attendance' && isAttending !== null) {
-      setStep('select')
-    } else if (step === 'select' && selectedGuests.length > 0) {
+      if (!isAttending) {
+        // If not attending, select all guests and go to confirm
+        setSelectedGuests([guestList.guest1, guestList.guest2, ...(guestList.additionalGuests || [])])
+      }
       setStep('confirm')
     }
   }
 
   const handleBackStep = () => {
-    if (step === 'select') {
+    if (step === 'confirm') {
       setStep('attendance')
-    } else if (step === 'confirm') {
-      setStep('select')
     }
   }
 
@@ -63,9 +63,11 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     return (
       <div className="space-y-8">
         <div className="text-center">
-          <h2 className="text-2xl font-medium text-gray-900">Step 1: Will you be attending?</h2>
+          <h2 className="text-2xl font-medium text-gray-900">Will anyone from your party be attending?</h2>
           <p className="mt-2 text-base text-gray-700">
-            Please let us know if you will be attending the wedding.
+            Please let us know if any members of your party will be joining us.
+            <br />
+            You&apos;ll be able to specify who is attending in the next step.
           </p>
         </div>
 
@@ -76,66 +78,48 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               onClick={() => setIsAttending(true)}
               className={`flex-1 rounded-md px-4 py-3 text-base font-medium ${
                 isAttending === true
-                  ? 'bg-sage text-white'
+                  ? 'bg-sage '
                   : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
               }`}
             >
-              Yes, we&apos;ll be there
+              Yes, some of us will attend
             </button>
             <button
               type="button"
               onClick={() => setIsAttending(false)}
               className={`flex-1 rounded-md px-4 py-3 text-base font-medium ${
                 isAttending === false
-                  ? 'bg-sage text-white'
+                  ? 'bg-sage '
                   : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
               }`}
             >
-              No, we can&apos;t make it
+              No, none of us can attend
             </button>
           </div>
         </div>
 
-        <div className="mt-8">
-          <button
-            type="button"
-            onClick={handleNextStep}
-            disabled={isAttending === null}
-            className="w-full rounded-md bg-sage/90 px-6 py-4 text-lg font-semibold shadow-md hover:bg-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
-          >
-            {isAttending === null ? 'Please select an option' : 'Continue'}
-          </button>
-        </div>
-      </div>
-    )
-  }
-
-  if (step === 'select') {
-    return (
-      <div className="space-y-8">
-        <div className="text-center">
-          <h2 className="text-2xl font-medium text-gray-900">Step 2: Select Guests</h2>
-          <p className="mt-2 text-base text-gray-700">
-            {isAttending 
-              ? "Please select all guests who will be attending."
-              : "Please select all guests who will not be attending."}
-          </p>
-        </div>
-
-        <GuestSelection
-          guestList={guestList}
-          onGuestSelectionChange={handleGuestSelectionChange}
-          isAttending={isAttending}
-        />
+        {isAttending === true && (
+          <div className="mt-8">
+            <GuestSelection
+              guestList={guestList}
+              onGuestSelectionChange={handleGuestSelectionChange}
+              isAttending={isAttending}
+            />
+          </div>
+        )}
 
         <div className="mt-8">
           <button
             type="button"
             onClick={handleNextStep}
-            disabled={selectedGuests.length === 0}
-            className="w-full rounded-md bg-sage/90 px-6 py-4 text-lg font-semibold shadow-md hover:bg-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
+            disabled={isAttending === null || (isAttending && selectedGuests.length === 0)}
+            className="w-full rounded-md bg-sage/90 px-6 py-4 text-lg font-semibold  shadow-md hover:bg-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
           >
-            {selectedGuests.length === 0 ? 'Select Guests to Continue' : 'Continue to Confirm'}
+            {isAttending === null 
+              ? 'Please select an option' 
+              : isAttending && selectedGuests.length === 0
+                ? 'Please select guests to continue'
+                : 'Continue to Confirm'}
           </button>
         </div>
       </div>
@@ -145,7 +129,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-medium text-gray-900">Step 3: Confirm Details</h2>
+        <h2 className="text-2xl font-medium text-gray-900">Confirm Details</h2>
         <p className="mt-2 text-base text-gray-700">
           Please review your RSVP details.
         </p>
@@ -191,7 +175,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         </div>
       )}
 
-      <div className="flex space-x-4 pt-4">
+      <div className="flex space-x-4">
         <button
           type="button"
           onClick={handleBackStep}
@@ -202,7 +186,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex-1 rounded-md bg-sage px-4 py-3 text-base font-medium text-white hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
+          className="flex-1 rounded-md bg-sage px-4 py-3 text-base font-medium  hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
         >
           {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
         </button>

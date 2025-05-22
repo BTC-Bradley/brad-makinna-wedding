@@ -76,7 +76,7 @@ export default function GalleryComponent() {
             />
           </div>
           <button
-            className="absolute top-4 right-4 text-white hover:text-sage"
+            className="absolute top-4 right-4  hover:text-sage"
             onClick={() => setSelectedImage(null)}
             aria-label="Close image"
           >
