@@ -1,6 +1,9 @@
+import TravelIndex from '@/components/TravelIndex'
+
 export default function TravelPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
+      <TravelIndex />
       <div className="mb-12 text-center">
         <h1 className="text-sage mb-4 font-serif text-4xl">
           Travel Information
@@ -11,7 +14,7 @@ export default function TravelPage() {
       </div>
 
       {/* Hotel Section */}
-      <section className="mb-16">
+      <section id="hotel" className="mb-16">
         <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -142,7 +145,7 @@ export default function TravelPage() {
       </section>
 
       {/* Shuttle Section */}
-      <section className="mb-16">
+      <section id="shuttle" className="mb-16">
         <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -386,7 +389,7 @@ export default function TravelPage() {
       </section>
 
       {/* Parking Section */}
-      <section className="mb-16">
+      <section id="parking" className="mb-16">
         <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -498,7 +501,7 @@ export default function TravelPage() {
       </section>
 
       {/* Airport Section */}
-      <section className="mb-16">
+      <section id="airport" className="mb-16">
         <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
@@ -550,7 +553,7 @@ export default function TravelPage() {
       </section>
 
       {/* Nearby Attractions Section */}
-      <section className="mb-16">
+      <section id="attractions" className="mb-16">
         <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
