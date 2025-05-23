@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const timeline = [
   {
     date: '2021',
-    title: 'The Beginning',
+    title: 'Our First Hello',
     description:
       'Among thousands at a festival at the Gorge Amphitheater, destiny brought us together not once, but twice. Some call it coincidence, we call it fate.',
     image: '/images/gorge.jpg',
@@ -26,6 +26,13 @@ const timeline = [
     description:
       'We embarked on a journey to the Enchantments, a place of beauty and adventure, where we found our love for nature and each other.',
     image: '/images/enchantments.jpg',
+  },
+  {
+    date: '2024',
+    title: 'Photoshoot at Big Four',
+    description:
+      'We had a photoshoot at Big Four, a place of beauty and adventure, where we found our love for nature and each other.',
+    image: '/images/bigfour.jpg',
   },
   {
     date: '2025',
@@ -55,19 +62,17 @@ export default function StoryPage() {
 
       <div className="relative min-h-[800px]">
         {/* Timeline line - using a different approach */}
-        <div className="border-ocean absolute left-1/2 z-0 h-full -translate-x-1/2 transform border-l-2"></div>
+        <div className="border-ocean absolute left-4 z-0 h-full transform border-l-2 md:left-1/2 md:-translate-x-1/2"></div>
 
         {/* Timeline items */}
         <div className="space-y-16">
-          {timeline.map((item, index) => (
+          {timeline.map((item) => (
             <div
               key={item.date}
-              className={`relative flex ${
-                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-              } items-center`}
+              className="relative flex flex-col items-start md:flex-row md:items-center"
             >
               {/* Content */}
-              <div className="w-1/2 px-4">
+              <div className="w-full px-4 md:w-1/2 md:pr-4 md:pl-8">
                 <div className="rounded-lg bg-white p-6 shadow-sm">
                   <span className="text-sage font-serif text-lg">
                     {item.date}
@@ -80,8 +85,8 @@ export default function StoryPage() {
               </div>
 
               {/* Image */}
-              <div className="w-1/2 px-4">
-                <div className="relative h-64 overflow-hidden rounded-lg">
+              <div className="mt-4 w-full px-4 md:mt-0 md:w-1/2">
+                <div className="relative h-48 overflow-hidden rounded-lg md:h-64">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -91,7 +96,7 @@ export default function StoryPage() {
               </div>
 
               {/* Timeline dot */}
-              <div className="bg-sage absolute left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full" />
+              <div className="bg-sage absolute left-0 h-4 w-4 transform rounded-full md:left-1/2 md:-translate-x-1/2" />
             </div>
           ))}
         </div>
