@@ -11,28 +11,35 @@ const timeline = [
     title: 'The Beginning',
     description:
       'Among thousands at a festival at the Gorge Amphitheater, destiny brought us together not once, but twice. Some call it coincidence, we call it fate.',
-    image: '/images/story-1.jpg',
+    image: '/images/gorge.jpg',
   },
   {
     date: '2022',
     title: 'Building Our Home',
     description:
       'We created our sanctuary together and welcomed our beloved kitties, Ember and Blaze, who became the heart of our home.',
-    image: '/images/story-2.jpg',
+    image: '/images/kitties.jpg',
+  },
+  {
+    date: '2023',
+    title: 'Hiking the Enchantments',
+    description:
+      'We embarked on a journey to the Enchantments, a place of beauty and adventure, where we found our love for nature and each other.',
+    image: '/images/enchantments.jpg',
   },
   {
     date: '2025',
     title: 'The Proposal',
     description:
       'As waves crashed on the pristine beaches of Cabo, Bradley knelt down and asked the question that would change our lives forever.',
-    image: '/images/story-3.jpg',
+    image: '/images/proposal.jpg',
   },
   {
     date: '2026',
     title: 'Our Wedding Day',
     description:
       'Join us as we celebrate our love and begin our forever at the beautiful North Fork Farm, surrounded by family and friends.',
-    image: '/images/story-4.jpg',
+    image: '/images/northfork.jpg',
   },
 ]
 
@@ -74,11 +81,11 @@ export default function StoryPage() {
 
               {/* Image */}
               <div className="w-1/2 px-4">
-                <div className="relative h-64 rounded-lg overflow-hidden">
+                <div className="relative h-64 overflow-hidden rounded-lg">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
