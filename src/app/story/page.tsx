@@ -22,14 +22,14 @@ const timeline = [
   },
   {
     date: '2023',
-    title: 'Hiking the Enchantments',
+    title: 'Our Love for Hiking',
     description:
       'We embarked on a journey to the Enchantments, a place of beauty and adventure, where we found our love for nature and each other.',
     image: '/images/enchantments.jpg',
   },
   {
     date: '2024',
-    title: 'Photoshoot at Big Four',
+    title: 'Adventures in the Northern Cascades',
     description:
       'We had a photoshoot at Big Four, a place of beauty and adventure, where we found our love for nature and each other.',
     image: '/images/bigfour.jpg',
@@ -54,38 +54,38 @@ export default function StoryPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-16 text-center">
-        <h1 className="text-sage mb-4 font-serif text-4xl">Our Story</h1>
-        <p className="text-gray-600">
+        <h1 className="text-sage dark:text-sage-light mb-4 font-serif text-4xl">Our Story</h1>
+        <p className="text-gray-600 dark:text-gray-300">
           From chance encounter to forever, here&apos;s our journey together.
         </p>
       </div>
 
       <div className="relative min-h-[800px]">
         {/* Timeline line - using a different approach */}
-        <div className="border-ocean absolute left-4 z-0 h-full transform border-l-2 md:left-1/2 md:-translate-x-1/2"></div>
+        <div className="border-ocean dark:border-ocean-light absolute left-4 z-0 h-full transform border-l-2 md:left-1/2 md:-translate-x-1/2"></div>
 
         {/* Timeline items */}
         <div className="space-y-16">
-          {timeline.map((item) => (
+          {timeline.map((item, index) => (
             <div
               key={item.date}
               className="relative flex flex-col items-start md:flex-row md:items-center"
             >
               {/* Content */}
-              <div className="w-full px-4 md:w-1/2 md:pr-4 md:pl-8">
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <span className="text-sage font-serif text-lg">
+              <div className={`w-full px-4 md:w-1/2 ${index % 2 === 0 ? 'md:pr-4 md:pl-8' : 'md:pl-4 md:pr-8 md:order-2'}`}>
+                <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
+                  <span className="text-sage dark:text-sage-light font-serif text-lg">
                     {item.date}
                   </span>
-                  <h3 className="text-sage mt-2 mb-3 font-serif text-xl">
+                  <h3 className="text-sage dark:text-sage-light mt-2 mb-3 font-serif text-xl">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                 </div>
               </div>
 
               {/* Image */}
-              <div className="mt-4 w-full px-4 md:mt-0 md:w-1/2">
+              <div className={`mt-4 w-full px-4 md:mt-0 md:w-1/2 ${index % 2 === 0 ? '' : 'md:order-1'}`}>
                 <div className="relative h-48 overflow-hidden rounded-lg md:h-64">
                   <img
                     src={item.image}
@@ -96,14 +96,14 @@ export default function StoryPage() {
               </div>
 
               {/* Timeline dot */}
-              <div className="bg-sage absolute left-0 h-4 w-4 transform rounded-full md:left-1/2 md:-translate-x-1/2" />
+              <div className="bg-sage dark:bg-sage-light absolute left-0 h-4 w-4 transform rounded-full md:left-1/2 md:-translate-x-1/2" />
             </div>
           ))}
         </div>
       </div>
 
       <div className="mt-16 text-center">
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-300">
           We can&apos;t wait to write the next chapter of our story with you.
         </p>
       </div>
