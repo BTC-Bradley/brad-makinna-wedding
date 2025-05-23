@@ -29,7 +29,7 @@ export default function WeddingParty() {
       role: 'Bridesmaid',
       image: '/images/wedding-party/bridesmaid-7.jpg',
     },
-    { name: 'Bri', role: 'Bridesmaid', image: '/images/wedding-party/bri.jpg' },
+    { name: 'Bri', role: 'Bridesmaid', image: '/images/wedding-party/bri2.jpg' },
     {
       name: 'Savannah',
       role: 'Bridesmaid',
