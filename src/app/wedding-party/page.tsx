@@ -1,46 +1,120 @@
+'use client'
+
 import { FadeIn } from '@/components/FadeIn'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+
+type WeddingPartyMember = {
+  name: string
+  role: string
+  image: string
+}
 
 export default function WeddingParty() {
-  const bridesmaids = [
-    { name: 'Bridesmaid 1', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-1.jpg' },
-    { name: 'Bridesmaid 2', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-2.jpg' },
-    { name: 'Bridesmaid 3', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-3.jpg' },
-    { name: 'Bridesmaid 4', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-4.jpg' },
-    { name: 'Bridesmaid 5', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-5.jpg' },
-    { name: 'Bridesmaid 6', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-6.jpg' },
-    { name: 'Bridesmaid 7', role: 'Bridesmaid', image: '/images/wedding-party/bridesmaid-7.jpg' },
+  const [shuffledBridesmaids, setShuffledBridesmaids] = useState<
+    WeddingPartyMember[]
+  >([])
+  const [shuffledGroomsmen, setShuffledGroomsmen] = useState<
+    WeddingPartyMember[]
+  >([])
+
+  const bridesmaids: WeddingPartyMember[] = [
+    {
+      name: 'Zainab',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/zainab.jpg',
+    },
+    {
+      name: 'Summer',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/bridesmaid-7.jpg',
+    },
+    { name: 'Bri', role: 'Bridesmaid', image: '/images/wedding-party/bri.jpg' },
+    {
+      name: 'Savannah',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/bridesmaid-6.jpg',
+    },
+    {
+      name: 'Tamia',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/bridesmaid-4.jpg',
+    },
+    {
+      name: 'Samantha',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/bridesmaid-5.jpg',
+    },
+    {
+      name: 'Cheyenne',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/bridesmaid-3.jpg',
+    },
   ]
 
-  const groomsmen = [
-    { name: 'Groomsman 1', role: 'Groomsman', image: '/images/wedding-party/groomsman-1.jpg' },
-    { name: 'Groomsman 2', role: 'Groomsman', image: '/images/wedding-party/groomsman-2.jpg' },
-    { name: 'Groomsman 3', role: 'Groomsman', image: '/images/wedding-party/groomsman-3.jpg' },
-    { name: 'Groomsman 4', role: 'Groomsman', image: '/images/wedding-party/groomsman-4.jpg' },
-    { name: 'Groomsman 5', role: 'Groomsman', image: '/images/wedding-party/groomsman-5.jpg' },
-    { name: 'Groomsman 6', role: 'Groomsman', image: '/images/wedding-party/groomsman-6.jpg' },
-    { name: 'Groomsman 7', role: 'Groomsman', image: '/images/wedding-party/groomsman-7.jpg' },
+  const groomsmen: WeddingPartyMember[] = [
+    {
+      name: 'Vish',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-1.jpg',
+    },
+    {
+      name: 'Groomsman 2',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-2.jpg',
+    },
+    {
+      name: 'Groomsman 3',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-3.jpg',
+    },
+    {
+      name: 'Groomsman 4',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-4.jpg',
+    },
+    {
+      name: 'Groomsman 5',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-5.jpg',
+    },
+    {
+      name: 'Groomsman 6',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-6.jpg',
+    },
+    {
+      name: 'Groomsman 7',
+      role: 'Groomsman',
+      image: '/images/wedding-party/groomsman-7.jpg',
+    },
   ]
+
+  useEffect(() => {
+    const shuffledB = [...bridesmaids].sort(() => Math.random() - 0.5)
+    const shuffledG = [...groomsmen].sort(() => Math.random() - 0.5)
+    setShuffledBridesmaids(shuffledB)
+    setShuffledGroomsmen(shuffledG)
+  }, [])
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-12 text-center">
-        <h1 className="text-sage mb-4 font-serif text-4xl">
-          Wedding Party
-        </h1>
+        <h1 className="text-sage mb-4 font-serif text-4xl">Wedding Party</h1>
         <p className="text-gray-600 dark:text-gray-300">
-          Meet the wonderful people who will be standing by our side on our special day.
+          Meet the wonderful people who will be standing by our side on our
+          special day.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+      <div className="space-y-24">
         <FadeIn>
           <div>
-            <h2 className="text-sage mb-8 text-center font-serif text-2xl">
+            <h2 className="text-sage mb-12 text-center font-serif text-3xl">
               Bridesmaids
             </h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {bridesmaids.map((bridesmaid, index) => (
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {shuffledBridesmaids.map((bridesmaid, index) => (
                 <div
                   key={index}
                   className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40"
@@ -54,8 +128,12 @@ export default function WeddingParty() {
                       sizes="(min-width: 640px) 50vw, 100vw"
                     />
                   </div>
-                  <h3 className="text-sage font-serif text-lg">{bridesmaid.name}</h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{bridesmaid.role}</p>
+                  <h3 className="text-sage font-serif text-xl">
+                    {bridesmaid.name}
+                  </h3>
+                  <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
+                    {bridesmaid.role}
+                  </p>
                 </div>
               ))}
             </div>
@@ -64,11 +142,11 @@ export default function WeddingParty() {
 
         <FadeIn>
           <div>
-            <h2 className="text-sage mb-8 text-center font-serif text-2xl">
+            <h2 className="text-sage mb-12 text-center font-serif text-3xl">
               Groomsmen
             </h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {groomsmen.map((groomsman, index) => (
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {shuffledGroomsmen.map((groomsman, index) => (
                 <div
                   key={index}
                   className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40"
@@ -82,8 +160,12 @@ export default function WeddingParty() {
                       sizes="(min-width: 640px) 50vw, 100vw"
                     />
                   </div>
-                  <h3 className="text-sage font-serif text-lg">{groomsman.name}</h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{groomsman.role}</p>
+                  <h3 className="text-sage font-serif text-xl">
+                    {groomsman.name}
+                  </h3>
+                  <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
+                    {groomsman.role}
+                  </p>
                 </div>
               ))}
             </div>
@@ -92,4 +174,4 @@ export default function WeddingParty() {
       </div>
     </div>
   )
-} 
+}
