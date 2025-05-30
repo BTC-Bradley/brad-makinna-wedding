@@ -54,7 +54,9 @@ export default function StoryPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-16 text-center">
-        <h1 className="text-sage dark:text-sage-light mb-4 font-serif text-4xl">Our Story</h1>
+        <h1 className="text-sage dark:text-sage-light mb-4 font-serif text-4xl">
+          Our Story
+        </h1>
         <p className="text-gray-600 dark:text-gray-300">
           From chance encounter to forever, here&apos;s our journey together.
         </p>
@@ -72,20 +74,26 @@ export default function StoryPage() {
               className="relative flex flex-col items-start md:flex-row md:items-center"
             >
               {/* Content */}
-              <div className={`w-full px-4 md:w-1/2 ${index % 2 === 0 ? 'md:pr-4 md:pl-8' : 'md:pl-4 md:pr-8 md:order-2'}`}>
-                <div className="rounded-lg bg-white dark:bg-gray-800 p-6 shadow-sm">
+              <div
+                className={`w-full px-4 md:w-1/2 ${index % 2 === 0 ? 'md:pr-4 md:pl-8' : 'md:order-2 md:pr-8 md:pl-4'}`}
+              >
+                <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
                   <span className="text-sage dark:text-sage-light font-serif text-lg">
                     {item.date}
                   </span>
                   <h3 className="text-sage dark:text-sage-light mt-2 mb-3 font-serif text-xl">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {item.description}
+                  </p>
                 </div>
               </div>
 
               {/* Image */}
-              <div className={`mt-4 w-full px-4 md:mt-0 md:w-1/2 ${index % 2 === 0 ? '' : 'md:order-1'}`}>
+              <div
+                className={`mt-4 w-full px-4 md:mt-0 md:w-1/2 ${index % 2 === 0 ? '' : 'md:order-1'}`}
+              >
                 <div className="relative h-48 overflow-hidden rounded-lg md:h-64">
                   <img
                     src={item.image}

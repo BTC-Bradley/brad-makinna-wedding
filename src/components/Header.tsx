@@ -32,6 +32,7 @@ export const navigationItems: NavigationItem[] = [
   { href: '/faq', label: 'FAQ' },
   { href: '/rsvp', label: 'RSVP' },
   { href: '/gallery', label: 'Gallery' },
+  { href: '/gifts', label: 'Gifts' },
   { href: '/contact', label: 'Contact' },
 ]
 
