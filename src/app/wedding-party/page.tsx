@@ -46,7 +46,7 @@ export default function WeddingParty() {
       image: '/images/wedding-party/bridesmaid-5.jpg',
     },
     {
-      name: 'Cheyenne',
+      name: 'Cheyanne',
       role: 'Bridesmaid',
       image: '/images/wedding-party/bridesmaid-3.jpg',
     },
