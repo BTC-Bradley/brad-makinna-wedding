@@ -39,6 +39,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     },
   )
   const [dietaryRestrictions, setDietaryRestrictions] = useState('')
+  const [songRequests, setSongRequests] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [plusOneInfo, setPlusOneInfo] = useState<PlusOneInfo>({
     title: '',
@@ -50,19 +51,25 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     setGuestAttendance((prev) => {
       // If this is a plus-one guest and the main guest is not attending, prevent marking as attending
       if (guest.firstName === 'Guest' && isAttending) {
-        const mainGuest = prev.find(ga => !ga.isPlusOne)
+        const mainGuest = prev.find((ga) => !ga.isPlusOne)
         if (mainGuest && mainGuest.isAttending === false) {
           return prev // Don't allow the change
         }
       }
 
       // If this is the main guest and they're marking as not attending, also mark plus-one as not attending
-      if (!prev.find(ga => ga.guest.firstName === guest.firstName)?.isPlusOne && !isAttending) {
-        return prev.map(ga => {
+      if (
+        !prev.find((ga) => ga.guest.firstName === guest.firstName)?.isPlusOne &&
+        !isAttending
+      ) {
+        return prev.map((ga) => {
           if (ga.isPlusOne) {
             return { ...ga, isAttending: false }
           }
-          if (ga.guest.firstName === guest.firstName && ga.guest.lastName === guest.lastName) {
+          if (
+            ga.guest.firstName === guest.firstName &&
+            ga.guest.lastName === guest.lastName
+          ) {
             return { ...ga, isAttending }
           }
           return ga
@@ -71,7 +78,8 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
 
       // Normal case - just update the specific guest
       return prev.map((ga) =>
-        ga.guest.firstName === guest.firstName && ga.guest.lastName === guest.lastName
+        ga.guest.firstName === guest.firstName &&
+        ga.guest.lastName === guest.lastName
           ? { ...ga, isAttending }
           : ga,
       )
@@ -81,7 +89,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
   const handlePlusOneInfoChange = (field: keyof PlusOneInfo, value: string) => {
     setPlusOneInfo((prev) => {
       const newInfo = { ...prev, [field]: value }
-      
+
       // Update the guest's name in guestAttendance
       setGuestAttendance((prevAttendance) =>
         prevAttendance.map((ga) =>
@@ -137,12 +145,12 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         .filter((ga) => ga.isAttending === false)
         .map((ga) => ga.guest)
 
-      // TODO: Implement the actual submission logic
-      console.log({
+      console.log('RSVP Submission Data:', {
         guestListId: guestList.id,
         attendingGuests,
         notAttendingGuests,
         dietaryRestrictions,
+        songRequests,
       })
 
       // Simulate API call
@@ -199,7 +207,8 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             Please provide your guest&apos;s information
           </h3>
           <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
-            We need this information to properly prepare for your guest&apos;s attendance.
+            We need this information to properly prepare for your guest&apos;s
+            attendance.
           </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             <div>
@@ -212,7 +221,9 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               <select
                 id="title"
                 value={plusOneInfo.title}
-                onChange={(e) => handlePlusOneInfoChange('title', e.target.value)}
+                onChange={(e) =>
+                  handlePlusOneInfoChange('title', e.target.value)
+                }
                 required
                 className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2.5 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                 aria-describedby="title-required"
@@ -224,7 +235,10 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 <option value="Dr.">Dr.</option>
               </select>
               {!plusOneInfo.title && (
-                <p id="title-required" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                <p
+                  id="title-required"
+                  className="mt-1 text-sm text-red-600 dark:text-red-400"
+                >
                   Please select a title
                 </p>
               )}
@@ -240,14 +254,19 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 type="text"
                 id="firstName"
                 value={plusOneInfo.firstName}
-                onChange={(e) => handlePlusOneInfoChange('firstName', e.target.value)}
+                onChange={(e) =>
+                  handlePlusOneInfoChange('firstName', e.target.value)
+                }
                 required
                 placeholder="Enter first name"
                 className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2.5 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                 aria-describedby="firstName-required"
               />
               {!plusOneInfo.firstName && (
-                <p id="firstName-required" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                <p
+                  id="firstName-required"
+                  className="mt-1 text-sm text-red-600 dark:text-red-400"
+                >
                   Please enter a first name
                 </p>
               )}
@@ -263,14 +282,19 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 type="text"
                 id="lastName"
                 value={plusOneInfo.lastName}
-                onChange={(e) => handlePlusOneInfoChange('lastName', e.target.value)}
+                onChange={(e) =>
+                  handlePlusOneInfoChange('lastName', e.target.value)
+                }
                 required
                 placeholder="Enter last name"
                 className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2.5 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                 aria-describedby="lastName-required"
               />
               {!plusOneInfo.lastName && (
-                <p id="lastName-required" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                <p
+                  id="lastName-required"
+                  className="mt-1 text-sm text-red-600 dark:text-red-400"
+                >
                   Please enter a last name
                 </p>
               )}
@@ -402,6 +426,26 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               onChange={(e) => setDietaryRestrictions(e.target.value)}
               className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-white"
               placeholder="Please let us know if any of the selected guests have dietary restrictions or allergies"
+            />
+          </div>
+        )}
+
+        {hasAttendingGuests && (
+          <div className="space-y-4">
+            <label
+              htmlFor="songs"
+              className="block text-base font-medium text-gray-900 dark:text-gray-100"
+            >
+              Song Requests
+            </label>
+            <textarea
+              id="songs"
+              name="songs"
+              rows={3}
+              value={songRequests}
+              onChange={(e) => setSongRequests(e.target.value)}
+              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              placeholder="Share your favorite songs to help us create the perfect playlist for the celebration"
             />
           </div>
         )}
