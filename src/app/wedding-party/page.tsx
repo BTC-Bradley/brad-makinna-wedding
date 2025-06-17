@@ -27,7 +27,7 @@ export default function WeddingParty() {
     {
       name: 'Summer',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/bridesmaid-7.jpg',
+      image: '/images/wedding-party/summer.jpg',
     },
     {
       name: 'Bri',
@@ -47,7 +47,7 @@ export default function WeddingParty() {
     {
       name: 'Samantha',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/bridesmaid-5.jpg',
+      image: '/images/wedding-party/samantha.jpg',
     },
     {
       name: 'Cheyanne',
@@ -126,7 +126,7 @@ export default function WeddingParty() {
                   key={index}
                   className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40"
                 >
-                  <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-lg">
+                  <div className="relative mb-4 aspect-[3/4] w-full overflow-hidden rounded-lg">
                     <Image
                       src={bridesmaid.image}
                       alt={bridesmaid.name}
@@ -158,7 +158,7 @@ export default function WeddingParty() {
                   key={index}
                   className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40"
                 >
-                  <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-lg">
+                  <div className="relative mb-4 aspect-[3/4] w-full overflow-hidden rounded-lg">
                     <Image
                       src={groomsman.image}
                       alt={groomsman.name}
