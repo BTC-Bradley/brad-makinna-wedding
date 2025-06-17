@@ -71,7 +71,7 @@ export default function RSVPCodeInput() {
       <div>
         <label
           htmlFor="id"
-          className="mb-4 block text-lg font-medium text-gray-700"
+          className="mb-4 block text-lg font-medium text-gray-700 dark:text-gray-300"
         >
           Enter your RSVP ID
         </label>
@@ -84,7 +84,7 @@ export default function RSVPCodeInput() {
               pattern={`[${VALID_CHARS.join('')}]`}
               required
               aria-label={`RSVP code character ${i + 1}`}
-              className="focus:border-sage focus:ring-sage h-12 w-12 rounded-lg border-2 border-gray-300 text-center text-xl font-medium uppercase focus:ring-2 focus:ring-offset-0"
+              className="focus:border-sage focus:ring-sage h-12 w-12 rounded-lg border-2 border-gray-300 text-center text-xl font-medium uppercase focus:ring-2 focus:ring-offset-0 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
               style={{ textTransform: 'uppercase' }}
               onKeyUp={(e) => {
                 const input = e.target as HTMLInputElement
@@ -139,14 +139,14 @@ export default function RSVPCodeInput() {
           ))}
         </div>
         <input type="hidden" name="id" id="id" />
-        <p className="mt-3 text-center text-sm text-gray-500">
+        <p className="mt-3 text-center text-sm text-gray-500 dark:text-gray-400">
           Enter the 6-character code from your invitation
         </p>
       </div>
       <div>
         <button
           type="submit"
-          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full rounded-lg px-6 py-3 text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-lg px-6 py-3 text-lg font-medium text-white transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
         >
           Find My Invitation
         </button>

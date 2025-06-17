@@ -29,7 +29,11 @@ export default function WeddingParty() {
       role: 'Bridesmaid',
       image: '/images/wedding-party/bridesmaid-7.jpg',
     },
-    { name: 'Bri', role: 'Bridesmaid', image: '/images/wedding-party/bri2.jpg' },
+    {
+      name: 'Bri',
+      role: 'Bridesmaid',
+      image: '/images/wedding-party/bri2.jpg',
+    },
     {
       name: 'Savannah',
       role: 'Bridesmaid',
@@ -100,7 +104,10 @@ export default function WeddingParty() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-12 text-center">
-        <h1 className="text-sage mb-4 font-serif text-4xl">Wedding Party</h1>
+        <h1 className="text-sage mb-6 font-serif text-5xl font-light tracking-wide dark:text-amber-400">
+          Wedding Party
+        </h1>
+        <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
           Meet the wonderful people who will be standing by our side on our
           special day.

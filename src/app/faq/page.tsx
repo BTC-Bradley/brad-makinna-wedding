@@ -11,17 +11,17 @@ export default function FAQ() {
 
   const faqItems = [
     {
-      question: "When Should I RSVP By?",
-      answer: "TBD."
+      question: 'When Should I RSVP By?',
+      answer: 'TBD.',
     },
     {
-      question: "What is the Dress Code?",
+      question: 'What is the Dress Code?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
             We&apos;re asking guests to dress in formal summer attire. Think
-            elevated and elegant, but with comfort in mind—after all,
-            it&apos;s July! Please note that white is reserved for the bride.
+            elevated and elegant, but with comfort in mind—after all, it&apos;s
+            July! Please note that white is reserved for the bride.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -39,9 +39,11 @@ export default function FAQ() {
                 />
               </svg>
               <span>
-                <strong>For Men:</strong> Suits or tuxedos are encouraged but not required. A dress
-                shirt with formal slacks and dress shoes is also perfectly
-                appropriate. Ties are optional but recommended. Choose lightweight fabrics to stay cool in the summer heat.
+                <strong>For Men:</strong> Suits or tuxedos are encouraged but
+                not required. A dress shirt with formal slacks and dress shoes
+                is also perfectly appropriate. Ties are optional but
+                recommended. Choose lightweight fabrics to stay cool in the
+                summer heat.
               </span>
             </li>
             <li className="flex items-start">
@@ -59,8 +61,10 @@ export default function FAQ() {
                 />
               </svg>
               <span>
-                <strong>For Women:</strong> Long or cocktail dresses, elegant jumpsuits, or formal summer
-                wear are perfect choices. Please avoid white, off-white, or cream colors. Opt for breathable fabrics to stay comfortable throughout the celebration.
+                <strong>For Women:</strong> Long or cocktail dresses, elegant
+                jumpsuits, or formal summer wear are perfect choices. Please
+                avoid white, off-white, or cream colors. Opt for breathable
+                fabrics to stay comfortable throughout the celebration.
               </span>
             </li>
           </ul>
@@ -68,14 +72,16 @@ export default function FAQ() {
             Please avoid casual clothing like jeans, shorts, or flip-flops.
           </p>
         </>
-      )
+      ),
     },
     {
-      question: "Are Plus Ones Allowed?",
+      question: 'Are Plus Ones Allowed?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            To ensure an intimate celebration, we are strictly limiting attendance to invited guests only. Here&apos;s what you need to know:
+            To ensure an intimate celebration, we are strictly limiting
+            attendance to invited guests only. Here&apos;s what you need to
+            know:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -92,7 +98,9 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Only guests listed on your invitation are welcome to attend</span>
+              <span>
+                Only guests listed on your invitation are welcome to attend
+              </span>
             </li>
             <li className="flex items-start">
               <svg
@@ -108,7 +116,10 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Please RSVP only for the names specifically listed on your invitation</span>
+              <span>
+                Please RSVP only for the names specifically listed on your
+                invitation
+              </span>
             </li>
             <li className="flex items-start">
               <svg
@@ -124,21 +135,28 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Due to venue capacity restrictions, we cannot accommodate additional guests</span>
+              <span>
+                Due to venue capacity restrictions, we cannot accommodate
+                additional guests
+              </span>
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            If you have any questions about your invitation, please don&apos;t hesitate to reach out to us directly.
+            If you have any questions about your invitation, please don&apos;t
+            hesitate to reach out to us directly.
           </p>
         </>
-      )
+      ),
     },
     {
-      question: "Are Kids Allowed?",
+      question: 'Are Kids Allowed?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            We&apos;d love to have children join us for our special day! Please include all children in your RSVP so we can plan accordingly. To ensure everyone&apos;s enjoyment and safety, we have some gentle guidelines:
+            We&apos;d love to have children join us for our special day! Please
+            include all children in your RSVP so we can plan accordingly. To
+            ensure everyone&apos;s enjoyment and safety, we have some gentle
+            guidelines:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -155,7 +173,10 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>We kindly ask that parents keep an eye on their children throughout the celebration</span>
+              <span>
+                We kindly ask that parents keep an eye on their children
+                throughout the celebration
+              </span>
             </li>
             <li className="flex items-start">
               <svg
@@ -171,18 +192,22 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>We&apos;ll have some fun activities available for children to enjoy with their families</span>
+              <span>
+                We&apos;ll have some fun activities available for children to
+                enjoy with their families
+              </span>
             </li>
           </ul>
         </>
-      )
+      ),
     },
     {
-      question: "What About Gifts?",
+      question: 'What About Gifts?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Your presence at our celebration is the greatest gift we could ask for! For those who wish to give a gift, we have a few preferences:
+            Your presence at our celebration is the greatest gift we could ask
+            for! For those who wish to give a gift, we have a few preferences:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -199,7 +224,10 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>We have set up a honeymoon fund and house fund for those who would like to contribute</span>
+              <span>
+                We have set up a honeymoon fund and house fund for those who
+                would like to contribute
+              </span>
             </li>
             <li className="flex items-start">
               <svg
@@ -215,21 +243,27 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>While not expected, thoughtful physical gifts brought to the celebration are also welcome</span>
+              <span>
+                While not expected, thoughtful physical gifts brought to the
+                celebration are also welcome
+              </span>
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            Please know that your presence and well wishes are truly what matter most to us.
+            Please know that your presence and well wishes are truly what matter
+            most to us.
           </p>
         </>
-      )
+      ),
     },
     {
-      question: "Where Can I Park?",
+      question: 'Where Can I Park?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Parking at North Fork Farm is limited. We strongly recommend using the shuttle service from the Snoqualmie Inn Hotel for the most convenient experience.
+            Parking at North Fork Farm is limited. We strongly recommend using
+            the shuttle service from the Snoqualmie Inn Hotel for the most
+            convenient experience.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -262,18 +296,22 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Upon arrival, continue past the venue on SE 79th St where a parking attendant will guide you to available spots</span>
+              <span>
+                Upon arrival, continue past the venue on SE 79th St where a
+                parking attendant will guide you to available spots
+              </span>
             </li>
           </ul>
         </>
-      )
+      ),
     },
     {
-      question: "Can I Take Photos During the Wedding?",
+      question: 'Can I Take Photos During the Wedding?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            We kindly ask that no photos be taken during the ceremony to allow everyone to fully experience the moment.
+            We kindly ask that no photos be taken during the ceremony to allow
+            everyone to fully experience the moment.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -310,13 +348,13 @@ export default function FAQ() {
             </li>
           </ul>
         </>
-      )
+      ),
     },
     {
-      question: "What is the Weather Like in July?",
+      question: 'What is the Weather Like in July?',
       answer: (
         <>
-          <div className="flex items-center gap-4 mb-4">
+          <div className="mb-4 flex items-center gap-4">
             <svg
               className="text-sage h-8 w-8"
               fill="none"
@@ -332,11 +370,12 @@ export default function FAQ() {
             </svg>
             <div>
               <p className="text-gray-700 dark:text-gray-200">
-                Sunny and warm: 73°F-77°F during the day, cooling to 46°F-54°F at night.
+                Sunny and warm: 73°F-77°F during the day, cooling to 46°F-54°F
+                at night.
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-4 mb-4">
+          <div className="mb-4 flex items-center gap-4">
             <svg
               className="text-sage h-8 w-8"
               fill="none"
@@ -372,19 +411,21 @@ export default function FAQ() {
             </svg>
             <div>
               <p className="text-gray-700 dark:text-gray-200">
-                Dress in lightweight fabrics and bring a light jacket for the evening.
+                Dress in lightweight fabrics and bring a light jacket for the
+                evening.
               </p>
             </div>
           </div>
         </>
-      )
+      ),
     },
     {
-      question: "Will There Be Alcohol?",
+      question: 'Will There Be Alcohol?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Yes! We&apos;ll have two bars available - one indoor and one outdoor - offering a variety of drink options:
+            Yes! We&apos;ll have two bars available - one indoor and one outdoor
+            - offering a variety of drink options:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -453,20 +494,23 @@ export default function FAQ() {
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            Please enjoy responsibly and pace yourself. We want everyone to have fun while staying safe.
+            Please enjoy responsibly and pace yourself. We want everyone to have
+            fun while staying safe.
           </p>
           <p className="mt-2 text-gray-700 dark:text-gray-200">
-            Note: Due to venue restrictions, only one round of shots will be served during the reception.
+            Note: Due to venue restrictions, only one round of shots will be
+            served during the reception.
           </p>
         </>
-      )
+      ),
     },
     {
-      question: "What Food Options Will Be Available?",
+      question: 'What Food Options Will Be Available?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            We&apos;re excited to offer a delicious buffet-style meal featuring a variety of options to satisfy all tastes:
+            We&apos;re excited to offer a delicious buffet-style meal featuring
+            a variety of options to satisfy all tastes:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -519,17 +563,19 @@ export default function FAQ() {
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            Please indicate any dietary restrictions or allergies on your RSVP form.
+            Please indicate any dietary restrictions or allergies on your RSVP
+            form.
           </p>
         </>
-      )
+      ),
     },
     {
-      question: "Who Should I Contact With Questions?",
+      question: 'Who Should I Contact With Questions?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            We&apos;re here to help with any questions you may have! Here are the best ways to reach us:
+            We&apos;re here to help with any questions you may have! Here are
+            the best ways to reach us:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -562,28 +608,34 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Use our{' '}
-                <a href="/contact" className="text-sage hover:text-sage/80 underline">
+              <span>
+                Use our{' '}
+                <a
+                  href="/contact"
+                  className="text-sage hover:text-sage/80 underline"
+                >
                   contact form
-                </a>
-                {' '}for a quick response
+                </a>{' '}
+                for a quick response
               </span>
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            We can&apos;t wait to celebrate with you and are happy to help with any questions!
+            We can&apos;t wait to celebrate with you and are happy to help with
+            any questions!
           </p>
         </>
-      )
-    }
+      ),
+    },
   ]
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-12 text-center">
-        <h1 className="text-sage mb-4 font-serif text-4xl">
+        <h1 className="text-sage mb-6 font-serif text-5xl font-light tracking-wide dark:text-amber-400">
           Frequently Asked Questions
         </h1>
+        <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
           Everything you need to know about our wedding day.
         </p>
@@ -593,17 +645,15 @@ export default function FAQ() {
         {faqItems.map((item, index) => (
           <div
             key={index}
-            className="rounded-lg bg-white shadow-sm dark:bg-gray-800 overflow-hidden"
+            className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800"
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
             >
-              <h2 className="text-sage font-serif text-xl">
-                {item.question}
-              </h2>
+              <h2 className="text-sage font-serif text-xl">{item.question}</h2>
               <svg
-                className={`w-6 h-6 text-sage transform transition-transform ${
+                className={`text-sage h-6 w-6 transform transition-transform ${
                   openIndex === index ? 'rotate-180' : ''
                 }`}
                 fill="none"
@@ -623,9 +673,7 @@ export default function FAQ() {
                 openIndex === index ? 'max-h-[1000px]' : 'max-h-0'
               }`}
             >
-              <div className="p-6 pt-0">
-                {item.answer}
-              </div>
+              <div className="p-6 pt-0">{item.answer}</div>
             </div>
           </div>
         ))}

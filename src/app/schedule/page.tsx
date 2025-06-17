@@ -9,14 +9,14 @@ export default function SchedulePage() {
   return (
     <section className="bg-ivory min-h-screen py-16">
       <div className="mx-auto max-w-2xl px-4">
-        <h1 className="text-sage mb-8 text-center font-serif text-3xl">
+        <h1 className="text-sage mb-6 text-center font-serif text-5xl font-light tracking-wide dark:text-amber-400">
           Wedding Day Schedule
         </h1>
-        <div className="rounded-lg bg-white p-8 shadow-md">
-          <p className="mb-8 text-center text-gray-700">
-            The detailed schedule for our wedding day will be posted here soon.
-            Please check back later for updates.
-          </p>
+        <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
+        <p className="text-center text-gray-600 dark:text-gray-300">
+          The detailed schedule for our wedding day will be posted here soon.
+        </p>
+        <div className="rounded-lg bg-white p-8 shadow-md mt-12">
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-24 shrink-0 text-right">
@@ -50,7 +50,9 @@ export default function SchedulePage() {
                 <p className="text-sage font-medium">TBD</p>
               </div>
               <div className="border-sage border-l-2 pl-4">
-                <h3 className="text-sage font-serif text-lg">Reception Dinner</h3>
+                <h3 className="text-sage font-serif text-lg">
+                  Reception Dinner
+                </h3>
                 <p className="text-gray-600">Details to be announced</p>
               </div>
             </div>
@@ -59,8 +61,12 @@ export default function SchedulePage() {
                 <p className="text-sage font-medium">9:00 PM</p>
               </div>
               <div className="border-sage border-l-2 pl-4">
-                <h3 className="text-sage font-serif text-lg">Guest Departure</h3>
-                <p className="text-gray-600">Strictly enforced per venue contract</p>
+                <h3 className="text-sage font-serif text-lg">
+                  Guest Departure
+                </h3>
+                <p className="text-gray-600">
+                  Strictly enforced per venue contract
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">

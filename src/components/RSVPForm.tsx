@@ -63,8 +63,8 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     return (
       <div className="space-y-8">
         <div className="text-center">
-          <h2 className="text-2xl font-medium text-gray-900">Will anyone from your party be attending?</h2>
-          <p className="mt-2 text-base text-gray-700">
+          <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100">Will anyone from your party be attending?</h2>
+          <p className="mt-2 text-base text-gray-700 dark:text-gray-300">
             Please let us know if any members of your party will be joining us.
             <br />
             You&apos;ll be able to specify who is attending in the next step.
@@ -78,8 +78,8 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               onClick={() => setIsAttending(true)}
               className={`flex-1 rounded-md px-4 py-3 text-base font-medium ${
                 isAttending === true
-                  ? 'bg-sage '
-                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                  ? 'bg-sage text-white'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
               Yes, some of us will attend
@@ -89,8 +89,8 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               onClick={() => setIsAttending(false)}
               className={`flex-1 rounded-md px-4 py-3 text-base font-medium ${
                 isAttending === false
-                  ? 'bg-sage '
-                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                  ? 'bg-sage text-white'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600'
               }`}
             >
               No, none of us can attend
@@ -108,20 +108,18 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           </div>
         )}
 
-        <div className="mt-8">
-          <button
-            type="button"
-            onClick={handleNextStep}
-            disabled={isAttending === null || (isAttending && selectedGuests.length === 0)}
-            className="w-full rounded-md bg-sage/90 px-6 py-4 text-lg font-semibold  shadow-md hover:bg-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
-          >
-            {isAttending === null 
-              ? 'Please select an option' 
-              : isAttending && selectedGuests.length === 0
-                ? 'Please select guests to continue'
-                : 'Continue to Confirm'}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={handleNextStep}
+          disabled={isAttending === null || (isAttending && selectedGuests.length === 0)}
+          className="w-full rounded-md bg-sage/90 px-6 py-4 text-lg font-semibold text-white shadow-md hover:bg-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 disabled:hover:bg-gray-300 dark:disabled:hover:bg-gray-700"
+        >
+          {isAttending === null 
+            ? 'Please select an option' 
+            : isAttending && selectedGuests.length === 0
+              ? 'Please select guests to continue'
+              : 'Continue to Confirm'}
+        </button>
       </div>
     )
   }
@@ -129,64 +127,62 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-medium text-gray-900">Confirm Details</h2>
-        <p className="mt-2 text-base text-gray-700">
+        <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100">Confirm Details</h2>
+        <p className="mt-2 text-base text-gray-700 dark:text-gray-300">
           Please review your RSVP details.
         </p>
       </div>
 
-      <div className="rounded-md bg-gray-50 p-4">
-        <h3 className="text-base font-medium text-gray-900">Selected Guests:</h3>
+      <div className="rounded-md bg-gray-50 dark:bg-gray-700 p-4">
+        <h3 className="text-base font-medium text-gray-900 dark:text-gray-100">Selected Guests:</h3>
         <ul className="mt-2 space-y-1">
           {selectedGuests.map((guest) => (
-            <li key={`${guest.firstName}-${guest.lastName}`} className="text-base text-gray-700">
+            <li key={`${guest.firstName}-${guest.lastName}`} className="text-base text-gray-700 dark:text-gray-300">
               {guest.title} {guest.firstName} {guest.lastName}
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="rounded-md bg-gray-50 p-4">
-        <h3 className="text-base font-medium text-gray-900">Attendance Status:</h3>
-        <p className="mt-2 text-base text-gray-700">
+      <div className="rounded-md bg-gray-50 dark:bg-gray-700 p-4">
+        <h3 className="text-base font-medium text-gray-900 dark:text-gray-100">Attendance Status:</h3>
+        <p className="mt-2 text-base text-gray-700 dark:text-gray-300">
           {isAttending ? "Will be attending" : "Will not be attending"}
         </p>
       </div>
 
-      {isAttending && (
-        <div className="space-y-4">
-          <div>
-            <label
-              htmlFor="dietary"
-              className="block text-base font-medium text-gray-900"
-            >
-              Dietary Restrictions
-            </label>
-            <textarea
-              id="dietary"
-              name="dietary"
-              rows={3}
-              value={dietaryRestrictions}
-              onChange={(e) => setDietaryRestrictions(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sage focus:ring-sage sm:text-base"
-              placeholder="Please let us know if any of the selected guests have dietary restrictions or allergies"
-            />
-          </div>
+      <div className="space-y-4">
+        <div>
+          <label
+            htmlFor="dietary"
+            className="block text-base font-medium text-gray-900 dark:text-gray-100"
+          >
+            Dietary Restrictions
+          </label>
+          <textarea
+            id="dietary"
+            name="dietary"
+            rows={3}
+            value={dietaryRestrictions}
+            onChange={(e) => setDietaryRestrictions(e.target.value)}
+            className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-sage focus:ring-sage sm:text-base"
+            placeholder="Please let us know if any of the selected guests have dietary restrictions or allergies"
+          />
         </div>
-      )}
+      </div>
 
       <div className="flex space-x-4">
         <button
           type="button"
           onClick={handleBackStep}
-          className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
+          className="flex-1 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-base font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
         >
           Back
         </button>
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex-1 rounded-md bg-sage px-4 py-3 text-base font-medium  hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300"
+          className="flex-1 rounded-md bg-sage px-4 py-3 text-base font-medium text-white hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2 disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 disabled:hover:bg-gray-300 dark:disabled:hover:bg-gray-700"
         >
           {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
         </button>

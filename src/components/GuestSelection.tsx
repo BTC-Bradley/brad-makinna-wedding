@@ -54,11 +54,11 @@ export default function GuestSelection({
             g.firstName === guest.firstName && g.lastName === guest.lastName,
         )}
         onChange={() => handleGuestToggle(guest)}
-        className="h-5 w-5 rounded border-gray-300 text-sage focus:ring-sage"
+        className="h-5 w-5 rounded border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-sage focus:ring-sage"
       />
       <label
         htmlFor={`guest-${guest.firstName}-${guest.lastName}`}
-        className="text-base font-medium text-gray-900"
+        className="text-base font-medium text-gray-900 dark:text-gray-100"
       >
         {label}
       </label>
@@ -66,9 +66,9 @@ export default function GuestSelection({
   )
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6">
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
       <div className="space-y-4">
-        <h3 className="text-lg font-medium text-gray-900">
+        <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
           {isAttending ? "Select Attending Guests" : "Select Non-Attending Guests"}
         </h3>
         <div className="space-y-2">
@@ -85,8 +85,8 @@ export default function GuestSelection({
 
           {guestList.additionalGuests &&
             guestList.additionalGuests.length > 0 && (
-              <div className="mt-4 border-t border-gray-200 pt-4">
-                <h4 className="text-base font-medium text-gray-900 mb-2">
+              <div className="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h4 className="text-base font-medium text-gray-900 dark:text-gray-100 mb-2">
                   Additional Guests
                 </h4>
                 {guestList.additionalGuests.map((guest) =>

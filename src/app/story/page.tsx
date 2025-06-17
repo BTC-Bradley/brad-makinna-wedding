@@ -54,9 +54,10 @@ export default function StoryPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-16 text-center">
-        <h1 className="text-sage dark:text-sage-light mb-4 font-serif text-4xl">
+        <h1 className="text-sage mb-6 font-serif text-5xl font-light tracking-wide dark:text-amber-400">
           Our Story
         </h1>
+        <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
           From chance encounter to forever, here&apos;s our journey together.
         </p>

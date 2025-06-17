@@ -2,7 +2,10 @@ export default function GiftsPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-6 text-center">
-        <h1 className="text-sage mb-4 font-serif text-4xl">Wedding Gifts</h1>
+        <h1 className="text-sage mb-4 font-serif text-5xl font-light tracking-wide dark:text-amber-400">
+          Wedding Gifts
+        </h1>
+        <div className="mx-auto mb-8 h-1 w-24 bg-sage/30 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
           Your presence at our wedding is the greatest gift of all. However, if
           you wish to give a gift, we would be grateful for contributions to our
