@@ -71,7 +71,7 @@ export default function RSVPCodeInput() {
       <div>
         <label
           htmlFor="id"
-          className="mb-4 block text-lg font-medium text-gray-700 dark:text-gray-300"
+          className="mb-4 block text-center text-lg font-medium text-gray-700 dark:text-gray-300"
         >
           Enter your RSVP ID
         </label>
@@ -84,7 +84,7 @@ export default function RSVPCodeInput() {
               pattern={`[${VALID_CHARS.join('')}]`}
               required
               aria-label={`RSVP code character ${i + 1}`}
-              className="focus:border-sage focus:ring-sage h-12 w-12 rounded-lg border-2 border-gray-300 text-center text-xl font-medium uppercase focus:ring-2 focus:ring-offset-0 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              className="focus:border-amber-300 focus:ring-amber-300 h-12 w-12 rounded-lg border-2 border-gray-300 text-center text-xl font-medium uppercase focus:ring-2 focus:ring-offset-0 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-amber-300 dark:focus:border-amber-300"
               style={{ textTransform: 'uppercase' }}
               onKeyUp={(e) => {
                 const input = e.target as HTMLInputElement
@@ -146,7 +146,7 @@ export default function RSVPCodeInput() {
       <div>
         <button
           type="submit"
-          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-lg px-6 py-3 text-lg font-medium text-white transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+          className="border-2 border-amber-300/80 hover:border-amber-300/90 hover:bg-amber-300/10 focus:ring-amber-300 mx-auto block w-64 cursor-pointer rounded-lg px-6 py-3 text-lg font-medium text-gray-900 transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none dark:text-white"
         >
           Find My Invitation
         </button>
