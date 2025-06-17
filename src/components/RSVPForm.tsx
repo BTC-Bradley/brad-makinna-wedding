@@ -47,14 +47,35 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
   })
 
   const handleAttendanceChange = (guest: Guest, isAttending: boolean) => {
-    setGuestAttendance((prev) =>
-      prev.map((ga) =>
-        ga.guest.firstName === guest.firstName &&
-        ga.guest.lastName === guest.lastName
+    setGuestAttendance((prev) => {
+      // If this is a plus-one guest and the main guest is not attending, prevent marking as attending
+      if (guest.firstName === 'Guest' && isAttending) {
+        const mainGuest = prev.find(ga => !ga.isPlusOne)
+        if (mainGuest && mainGuest.isAttending === false) {
+          return prev // Don't allow the change
+        }
+      }
+
+      // If this is the main guest and they're marking as not attending, also mark plus-one as not attending
+      if (!prev.find(ga => ga.guest.firstName === guest.firstName)?.isPlusOne && !isAttending) {
+        return prev.map(ga => {
+          if (ga.isPlusOne) {
+            return { ...ga, isAttending: false }
+          }
+          if (ga.guest.firstName === guest.firstName && ga.guest.lastName === guest.lastName) {
+            return { ...ga, isAttending }
+          }
+          return ga
+        })
+      }
+
+      // Normal case - just update the specific guest
+      return prev.map((ga) =>
+        ga.guest.firstName === guest.firstName && ga.guest.lastName === guest.lastName
           ? { ...ga, isAttending }
           : ga,
-      ),
-    )
+      )
+    })
   }
 
   const handlePlusOneInfoChange = (field: keyof PlusOneInfo, value: string) => {
