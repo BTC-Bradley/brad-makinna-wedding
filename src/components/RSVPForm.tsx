@@ -18,7 +18,10 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     () => {
       const allGuests = [
         guestList.guest1,
-        guestList.guest2,
+        ...(guestList.guestCount > 1 ||
+        (guestList.guest2.firstName && guestList.guest2.lastName)
+          ? [guestList.guest2]
+          : []),
         ...(guestList.additionalGuests || []),
       ]
       return allGuests.map((guest) => ({ guest, isAttending: null }))
@@ -120,26 +123,35 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
   )
 
   const renderConfirmationStep = () => {
-    const hasAttendingGuests = guestAttendance.some((ga) => ga.isAttending === true)
-    const hasNotAttendingGuests = guestAttendance.some((ga) => ga.isAttending === false)
+    const hasAttendingGuests = guestAttendance.some(
+      (ga) => ga.isAttending === true,
+    )
+    const hasNotAttendingGuests = guestAttendance.some(
+      (ga) => ga.isAttending === false,
+    )
 
     if (!hasAttendingGuests) {
       return (
         <div className="space-y-8">
           <div className="rounded-lg border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-gray-100 mb-4">
+            <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-gray-100">
               We&apos;re Sorry to Miss You
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="mb-4 text-gray-700 dark:text-gray-300">
               {guestAttendance
                 .filter((ga) => ga.isAttending === false)
                 .map(({ guest }, index, array) => (
                   <span key={`${guest.firstName}-${guest.lastName}`}>
-                    {index === 0 ? '' : index === array.length - 1 ? ' and ' : ', '}
+                    {index === 0
+                      ? ''
+                      : index === array.length - 1
+                        ? ' and '
+                        : ', '}
                     {guest.title} {guest.firstName} {guest.lastName}
                   </span>
                 ))}
-              , thank you for letting us know. We hope you&apos;re doing well and look forward to celebrating with you another time.
+              , thank you for letting us know. We hope you&apos;re doing well
+              and look forward to celebrating with you another time.
             </p>
           </div>
           <div className="flex space-x-4">
@@ -253,7 +265,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         <p className="mt-2 text-base text-gray-700 dark:text-gray-300">
           {step === 'attendance'
             ? 'Please indicate whether each member of your party will be attending.'
-            : guestAttendance.some(ga => ga.isAttending === true)
+            : guestAttendance.some((ga) => ga.isAttending === true)
               ? 'Please review your selections and add any dietary restrictions before submitting.'
               : 'Please review your selections before submitting.'}
         </p>
