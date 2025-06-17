@@ -10,6 +10,13 @@ interface RSVPFormProps {
 interface GuestAttendance {
   guest: Guest
   isAttending: boolean | null
+  isPlusOne?: boolean
+}
+
+interface PlusOneInfo {
+  title: string
+  firstName: string
+  lastName: string
 }
 
 export default function RSVPForm({ guestList }: RSVPFormProps) {
@@ -24,11 +31,20 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           : []),
         ...(guestList.additionalGuests || []),
       ]
-      return allGuests.map((guest) => ({ guest, isAttending: null }))
+      return allGuests.map((guest) => ({
+        guest,
+        isAttending: null,
+        isPlusOne: guest.firstName === 'Guest',
+      }))
     },
   )
   const [dietaryRestrictions, setDietaryRestrictions] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [plusOneInfo, setPlusOneInfo] = useState<PlusOneInfo>({
+    title: '',
+    firstName: '',
+    lastName: '',
+  })
 
   const handleAttendanceChange = (guest: Guest, isAttending: boolean) => {
     setGuestAttendance((prev) =>
@@ -41,6 +57,42 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     )
   }
 
+  const handlePlusOneInfoChange = (field: keyof PlusOneInfo, value: string) => {
+    setPlusOneInfo((prev) => {
+      const newInfo = { ...prev, [field]: value }
+      
+      // Update the guest's name in guestAttendance
+      setGuestAttendance((prevAttendance) =>
+        prevAttendance.map((ga) =>
+          ga.isPlusOne
+            ? {
+                ...ga,
+                guest: {
+                  ...ga.guest,
+                  title: newInfo.title,
+                  firstName: newInfo.firstName,
+                  lastName: newInfo.lastName,
+                },
+              }
+            : ga,
+        ),
+      )
+
+      return newInfo
+    })
+  }
+
+  const hasUnnamedPlusOne = guestAttendance.some(
+    (ga) => ga.isPlusOne && ga.isAttending === true,
+  )
+
+  const isPlusOneInfoValid = hasUnnamedPlusOne
+    ? plusOneInfo.title && plusOneInfo.firstName && plusOneInfo.lastName
+    : true
+
+  const isFormValid =
+    guestAttendance.every((ga) => ga.isAttending !== null) && isPlusOneInfoValid
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -48,7 +100,17 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     try {
       const attendingGuests = guestAttendance
         .filter((ga) => ga.isAttending === true)
-        .map((ga) => ga.guest)
+        .map((ga) => {
+          if (ga.guest.firstName === 'Guest') {
+            return {
+              ...ga.guest,
+              title: plusOneInfo.title,
+              firstName: plusOneInfo.firstName,
+              lastName: plusOneInfo.lastName,
+            }
+          }
+          return ga.guest
+        })
 
       const notAttendingGuests = guestAttendance
         .filter((ga) => ga.isAttending === false)
@@ -72,8 +134,6 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
       setIsSubmitting(false)
     }
   }
-
-  const isFormValid = guestAttendance.every((ga) => ga.isAttending !== null)
 
   const renderAttendanceStep = () => (
     <div className="space-y-6">
@@ -111,6 +171,93 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           </div>
         </div>
       ))}
+
+      {hasUnnamedPlusOne && (
+        <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+          <h3 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
+            Please provide your guest&apos;s information
+          </h3>
+          <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
+            We need this information to properly prepare for your guest&apos;s attendance.
+          </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div>
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Title <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="title"
+                value={plusOneInfo.title}
+                onChange={(e) => handlePlusOneInfoChange('title', e.target.value)}
+                required
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2.5 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                aria-describedby="title-required"
+              >
+                <option value="">Select a title</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Dr.">Dr.</option>
+              </select>
+              {!plusOneInfo.title && (
+                <p id="title-required" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                  Please select a title
+                </p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="firstName"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                First Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                value={plusOneInfo.firstName}
+                onChange={(e) => handlePlusOneInfoChange('firstName', e.target.value)}
+                required
+                placeholder="Enter first name"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2.5 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                aria-describedby="firstName-required"
+              />
+              {!plusOneInfo.firstName && (
+                <p id="firstName-required" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                  Please enter a first name
+                </p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="lastName"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Last Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                value={plusOneInfo.lastName}
+                onChange={(e) => handlePlusOneInfoChange('lastName', e.target.value)}
+                required
+                placeholder="Enter last name"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2.5 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                aria-describedby="lastName-required"
+              />
+              {!plusOneInfo.lastName && (
+                <p id="lastName-required" className="mt-1 text-sm text-red-600 dark:text-red-400">
+                  Please enter a last name
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       <button
         type="button"
         onClick={() => setStep('confirmation')}
@@ -127,7 +274,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
       (ga) => ga.isAttending === true,
     )
     const hasNotAttendingGuests = guestAttendance.some(
-      (ga) => ga.isAttending === false,
+      (ga) => ga.isAttending === false && !ga.isPlusOne,
     )
 
     if (!hasAttendingGuests) {
@@ -139,7 +286,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             </h3>
             <p className="mb-4 text-gray-700 dark:text-gray-300">
               {guestAttendance
-                .filter((ga) => ga.isAttending === false)
+                .filter((ga) => ga.isAttending === false && !ga.isPlusOne)
                 .map(({ guest }, index, array) => (
                   <span key={`${guest.firstName}-${guest.lastName}`}>
                     {index === 0
@@ -189,7 +336,9 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                     key={`${guest.firstName}-${guest.lastName}`}
                     className="rounded-lg border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800"
                   >
-                    {guest.title} {guest.firstName} {guest.lastName}
+                    {guest.firstName === 'Guest'
+                      ? `${plusOneInfo.title} ${plusOneInfo.firstName} ${plusOneInfo.lastName}`
+                      : `${guest.title} ${guest.firstName} ${guest.lastName}`}
                   </div>
                 ))}
             </div>
@@ -203,7 +352,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             </h3>
             <div className="space-y-2">
               {guestAttendance
-                .filter((ga) => ga.isAttending === false)
+                .filter((ga) => ga.isAttending === false && !ga.isPlusOne)
                 .map(({ guest }) => (
                   <div
                     key={`${guest.firstName}-${guest.lastName}`}
