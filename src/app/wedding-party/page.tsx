@@ -33,12 +33,12 @@ export default function WeddingParty() {
     {
       name: 'Savannah',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/bridesmaid-6.jpg',
+      image: '/images/wedding-party/lol.jpg',
     },
     {
       name: 'Tamia',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/bridesmaid-4.jpg',
+      image: '/images/wedding-party/lol.jpg',
     },
     {
       name: 'Samantha',
