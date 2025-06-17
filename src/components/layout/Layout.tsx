@@ -62,7 +62,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <p className="text-sm">
-              MaKinna & Bradley Hanson
+              Bradley & MaKinna Hanson
               <br />
               July 11, 2026 • North Fork Farm
             </p>

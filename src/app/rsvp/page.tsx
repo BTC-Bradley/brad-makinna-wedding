@@ -6,7 +6,7 @@ import type { GuestListDocument } from '@/interfaces/guest'
 import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
-  title: 'RSVP | MaKinna & Bradley',
+  title: 'RSVP | Bradley & MaKinna',
   description:
     'Please let us know if you will be joining us on our special day.',
 }

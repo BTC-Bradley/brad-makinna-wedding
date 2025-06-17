@@ -4,7 +4,7 @@ import CountdownTimer from '@/components/CountdownTimer'
 import heroBgImage from '@/images/hero-bg.jpg'
 
 export const metadata: Metadata = {
-  title: 'MaKinna & Bradley Hanson | Wedding',
+  title: 'Bradley & MaKinna Hanson | Wedding',
   description:
     'Join us for our wedding celebration on July 11, 2026 at Snoqualmie, WA',
 }
@@ -27,7 +27,7 @@ export default function HomePage() {
 
         <div className="relative z-10 px-4 text-center ">
           <h1 className="font-script mb-4 text-5xl sm:text-7xl">
-            MaKinna & Bradley
+            Bradley & MaKinna
             <span className="block mt-4 text-3xl sm:text-4xl tracking-widest font-light">Hanson</span>
           </h1>
           <p className="mb-8 font-serif text-xl sm:text-2xl tracking-wide">

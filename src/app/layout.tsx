@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
@@ -7,8 +8,8 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - MaKinna & Bradley Wedding',
-    default: 'MaKinna & Bradley Wedding',
+    template: '%s - Bradley & MaKinna Wedding',
+    default: 'Bradley & MaKinna Wedding',
   },
   description:
     'Join us in celebrating our special day. We are excited to share our wedding journey with you.',
@@ -45,6 +46,7 @@ export default function RootLayout({
           <div className="flex w-full">
             <Layout>{children}</Layout>
           </div>
+          <Analytics />
         </Providers>
       </body>
     </html>
