@@ -63,6 +63,29 @@ export default function RSVPCodeInput() {
     }
 
     input.value = value
+
+    // If we have a value, check for submission and move to next input
+    if (value.length === 1) {
+      const inputs = document.querySelectorAll('input[type="text"]')
+      checkAndSubmit(inputs)
+
+      const nextInput = input.nextElementSibling as HTMLInputElement
+      if (nextInput) {
+        nextInput.focus()
+      }
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = e.target as HTMLInputElement
+
+    if (e.key === 'Backspace' && !input.value) {
+      const prevInput = input.previousElementSibling as HTMLInputElement
+      if (prevInput) {
+        prevInput.focus()
+        prevInput.value = '' // Clear the previous input
+      }
+    }
   }
 
   return (
@@ -93,29 +116,8 @@ export default function RSVPCodeInput() {
               }`}
               disabled={isSubmitting}
               style={{ textTransform: 'uppercase' }}
-              onKeyUp={(e) => {
-                const input = e.target as HTMLInputElement
-                if (input.value.length === 1) {
-                  const inputs = document.querySelectorAll('input[type="text"]')
-                  checkAndSubmit(inputs)
-
-                  const nextInput = input.nextElementSibling as HTMLInputElement
-                  if (nextInput) {
-                    nextInput.focus()
-                  }
-                }
-              }}
-              onKeyDown={(e) => {
-                const input = e.target as HTMLInputElement
-                if (e.key === 'Backspace' && !input.value) {
-                  const prevInput =
-                    input.previousElementSibling as HTMLInputElement
-                  if (prevInput) {
-                    prevInput.focus()
-                  }
-                }
-              }}
               onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
               onPaste={(e) => {
                 e.preventDefault()
                 if (isSubmitting) return
