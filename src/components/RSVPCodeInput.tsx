@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
 
 const VALID_CHARS = [
   '2',
@@ -20,8 +20,11 @@ const VALID_CHARS = [
 ]
 
 export default function RSVPCodeInput() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsSubmitting(true)
     const inputs = document.querySelectorAll('input[type="text"]')
     const code = Array.from(inputs)
       .map((input) => (input as HTMLInputElement).value)
@@ -38,6 +41,7 @@ export default function RSVPCodeInput() {
     if (allFilled) {
       const form = inputs[0].closest('form')
       if (form) {
+        setIsSubmitting(true)
         const code = Array.from(inputs)
           .map((input) => (input as HTMLInputElement).value)
           .join('')
@@ -84,7 +88,10 @@ export default function RSVPCodeInput() {
               pattern={`[${VALID_CHARS.join('')}]`}
               required
               aria-label={`RSVP code character ${i + 1}`}
-              className="focus:border-amber-300 focus:ring-amber-300 h-12 w-12 rounded-lg border-2 border-gray-300 text-center text-xl font-medium uppercase focus:ring-2 focus:ring-offset-0 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:border-amber-300 dark:focus:border-amber-300"
+              className={`h-12 w-12 rounded-lg border-2 border-gray-300 text-center text-xl font-medium uppercase focus:border-amber-300 focus:ring-2 focus:ring-amber-300 focus:ring-offset-0 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-amber-300 ${
+                isSubmitting ? 'cursor-not-allowed opacity-50' : ''
+              }`}
+              disabled={isSubmitting}
               style={{ textTransform: 'uppercase' }}
               onKeyUp={(e) => {
                 const input = e.target as HTMLInputElement
@@ -111,6 +118,7 @@ export default function RSVPCodeInput() {
               onChange={handleInputChange}
               onPaste={(e) => {
                 e.preventDefault()
+                if (isSubmitting) return
                 const pastedData = e.clipboardData.getData('text').toUpperCase()
                 const validChars = pastedData
                   .split('')
@@ -126,6 +134,7 @@ export default function RSVPCodeInput() {
                   // Submit the form if all characters are valid
                   const form = inputs[0].closest('form')
                   if (form) {
+                    setIsSubmitting(true)
                     const code = validChars.join('')
                     const hiddenInput = document.getElementById(
                       'id',
@@ -146,9 +155,38 @@ export default function RSVPCodeInput() {
       <div>
         <button
           type="submit"
-          className="border-2 border-amber-300/80 hover:border-amber-300/90 hover:bg-amber-300/10 focus:ring-amber-300 mx-auto block w-64 cursor-pointer rounded-lg px-6 py-3 text-lg font-medium text-gray-900 transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none dark:text-white"
+          disabled={isSubmitting}
+          className={`mx-auto block w-64 cursor-pointer rounded-lg border-2 border-amber-300/80 px-6 py-3 text-lg font-medium text-gray-900 transition-colors duration-200 hover:border-amber-300/90 hover:bg-amber-300/10 focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:outline-none dark:text-white ${
+            isSubmitting ? 'cursor-not-allowed opacity-50' : ''
+          }`}
         >
-          Find My Invitation
+          {isSubmitting ? (
+            <div className="flex items-center justify-center gap-2">
+              <svg
+                className="h-5 w-5 animate-spin"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              <span>Finding...</span>
+            </div>
+          ) : (
+            'Find My Invitation'
+          )}
         </button>
       </div>
     </form>
