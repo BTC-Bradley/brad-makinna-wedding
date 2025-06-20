@@ -37,12 +37,12 @@ export default function WeddingParty() {
     {
       name: 'Savannah',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/lol.jpg',
+      image: '/images/wedding-party/savannah.jpg',
     },
     {
       name: 'Tamia',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/lol.jpg',
+      image: '/images/wedding-party/tamia.jpg',
     },
     {
       name: 'Samantha',
@@ -70,27 +70,27 @@ export default function WeddingParty() {
     {
       name: 'Kevin',
       role: 'Groomsman',
-      image: '/images/wedding-party/groomsman-3.jpg',
+      image: '/images/wedding-party/kevin1.jpg',
     },
     {
       name: 'Jonny',
       role: 'Groomsman',
-      image: '/images/wedding-party/groomsman-4.jpg',
+      image: '/images/wedding-party/jonny.jpg',
     },
     {
-      name: 'Groomsman 5',
+      name: 'Kevin',
       role: 'Groomsman',
-      image: '/images/wedding-party/groomsman-5.jpg',
+      image: '/images/wedding-party/kevin2.jpg',
     },
     {
-      name: 'Groomsman 6',
+      name: 'Aaron',
       role: 'Groomsman',
-      image: '/images/wedding-party/groomsman-6.jpg',
+      image: '/images/wedding-party/aaron.jpg',
     },
     {
-      name: 'Groomsman 7',
+      name: 'Bryan',
       role: 'Groomsman',
-      image: '/images/wedding-party/groomsman-7.jpg',
+      image: '/images/wedding-party/bryan.jpg',
     },
   ]
 
