@@ -21,7 +21,7 @@ export default function SchedulePage() {
               </div>
               <div className="border-sage border-l-2 pl-4 dark:border-amber-400">
                 <h3 className="text-sage font-serif text-lg dark:text-amber-400">Guest Arrival</h3>
-                <p className="text-gray-600 dark:text-gray-300">Please arrive early to find your seat</p>
+                <p className="text-gray-600 dark:text-gray-300">Please arrive on time to find your seat</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -39,7 +39,7 @@ export default function SchedulePage() {
               </div>
               <div className="border-sage border-l-2 pl-4 dark:border-amber-400">
                 <h3 className="text-sage font-serif text-lg dark:text-amber-400">Cocktail Hour</h3>
-                <p className="text-gray-600 dark:text-gray-300">Light refreshments and mingling</p>
+                <p className="text-gray-600 dark:text-gray-300">Charcuterie board, oysters, and refreshments</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
