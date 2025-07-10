@@ -47,7 +47,7 @@ export default function WeddingParty() {
     {
       name: 'Samantha',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/samantha.jpg',
+      image: '/images/wedding-party/samantha2.jpg',
     },
     {
       name: 'Cheyanne',
@@ -101,6 +101,24 @@ export default function WeddingParty() {
     setShuffledGroomsmen(shuffledG)
   }, [])
 
+  const WeddingPartyCard = ({ member }: { member: WeddingPartyMember }) => (
+    <div className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40">
+      <div className="relative mb-4 aspect-[3/4] w-full overflow-hidden rounded-lg">
+        <Image
+          src={member.image}
+          alt={member.name}
+          fill
+          className="object-cover"
+          sizes="(min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+      <h3 className="text-sage font-serif text-xl">{member.name}</h3>
+      <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
+        {member.role}
+      </p>
+    </div>
+  )
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="mb-12 text-center">
@@ -120,28 +138,22 @@ export default function WeddingParty() {
             <h2 className="text-sage mb-12 text-center font-serif text-3xl">
               Bridesmaids
             </h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {shuffledBridesmaids.map((bridesmaid, index) => (
-                <div
-                  key={index}
-                  className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40"
-                >
-                  <div className="relative mb-4 aspect-[3/4] w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={bridesmaid.image}
-                      alt={bridesmaid.name}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 640px) 50vw, 100vw"
-                    />
-                  </div>
-                  <h3 className="text-sage font-serif text-xl">
-                    {bridesmaid.name}
-                  </h3>
-                  <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
-                    {bridesmaid.role}
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3">
+              {/* First row: Items 0, 1, 2 */}
+              {shuffledBridesmaids.slice(0, 3).map((bridesmaid, index) => (
+                <WeddingPartyCard key={`top-${index}`} member={bridesmaid} />
+              ))}
+
+              {/* Second row: Item 3 (centered) */}
+              <div className="hidden sm:block"></div>
+              {shuffledBridesmaids[3] && (
+                <WeddingPartyCard member={shuffledBridesmaids[3]} />
+              )}
+              <div className="hidden sm:block"></div>
+
+              {/* Third row: Items 4, 5, 6 */}
+              {shuffledBridesmaids.slice(4, 7).map((bridesmaid, index) => (
+                <WeddingPartyCard key={`bottom-${index}`} member={bridesmaid} />
               ))}
             </div>
           </div>
@@ -152,28 +164,22 @@ export default function WeddingParty() {
             <h2 className="text-sage mb-12 text-center font-serif text-3xl">
               Groomsmen
             </h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {shuffledGroomsmen.map((groomsman, index) => (
-                <div
-                  key={index}
-                  className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-700/40"
-                >
-                  <div className="relative mb-4 aspect-[3/4] w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={groomsman.image}
-                      alt={groomsman.name}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 640px) 50vw, 100vw"
-                    />
-                  </div>
-                  <h3 className="text-sage font-serif text-xl">
-                    {groomsman.name}
-                  </h3>
-                  <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
-                    {groomsman.role}
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3">
+              {/* First row: Items 0, 1, 2 */}
+              {shuffledGroomsmen.slice(0, 3).map((groomsman, index) => (
+                <WeddingPartyCard key={`top-${index}`} member={groomsman} />
+              ))}
+
+              {/* Second row: Item 3 (centered) */}
+              <div className="hidden sm:block"></div>
+              {shuffledGroomsmen[3] && (
+                <WeddingPartyCard member={shuffledGroomsmen[3]} />
+              )}
+              <div className="hidden sm:block"></div>
+
+              {/* Third row: Items 4, 5, 6 */}
+              {shuffledGroomsmen.slice(4, 7).map((groomsman, index) => (
+                <WeddingPartyCard key={`bottom-${index}`} member={groomsman} />
               ))}
             </div>
           </div>
