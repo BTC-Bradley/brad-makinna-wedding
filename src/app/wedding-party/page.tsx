@@ -47,7 +47,7 @@ export default function WeddingParty() {
     {
       name: 'Samantha',
       role: 'Bridesmaid',
-      image: '/images/wedding-party/samantha2.jpg',
+      image: '/images/wedding-party/samantha.jpg',
     },
     {
       name: 'Cheyanne',
@@ -144,17 +144,17 @@ export default function WeddingParty() {
                 <WeddingPartyCard key={`top-${index}`} member={bridesmaid} />
               ))}
 
-              {/* Second row: Item 3 (centered) */}
-              <div className="hidden sm:block"></div>
-              {shuffledBridesmaids[3] && (
-                <WeddingPartyCard member={shuffledBridesmaids[3]} />
-              )}
-              <div className="hidden sm:block"></div>
-
-              {/* Third row: Items 4, 5, 6 */}
-              {shuffledBridesmaids.slice(4, 7).map((bridesmaid, index) => (
+              {/* Second row: Items 3, 4, 5 */}
+              {shuffledBridesmaids.slice(3, 6).map((bridesmaid, index) => (
                 <WeddingPartyCard key={`bottom-${index}`} member={bridesmaid} />
               ))}
+
+              {/* Third row: Item 6 (last item, centered) */}
+              <div className="hidden sm:block"></div>
+              {shuffledBridesmaids[6] && (
+                <WeddingPartyCard member={shuffledBridesmaids[6]} />
+              )}
+              <div className="hidden sm:block"></div>
             </div>
           </div>
         </FadeIn>
@@ -170,17 +170,17 @@ export default function WeddingParty() {
                 <WeddingPartyCard key={`top-${index}`} member={groomsman} />
               ))}
 
-              {/* Second row: Item 3 (centered) */}
-              <div className="hidden sm:block"></div>
-              {shuffledGroomsmen[3] && (
-                <WeddingPartyCard member={shuffledGroomsmen[3]} />
-              )}
-              <div className="hidden sm:block"></div>
-
-              {/* Third row: Items 4, 5, 6 */}
-              {shuffledGroomsmen.slice(4, 7).map((groomsman, index) => (
+              {/* Second row: Items 3, 4, 5 */}
+              {shuffledGroomsmen.slice(3, 6).map((groomsman, index) => (
                 <WeddingPartyCard key={`bottom-${index}`} member={groomsman} />
               ))}
+
+              {/* Third row: Item 6 (last item, centered) */}
+              <div className="hidden sm:block"></div>
+              {shuffledGroomsmen[6] && (
+                <WeddingPartyCard member={shuffledGroomsmen[6]} />
+              )}
+              <div className="hidden sm:block"></div>
             </div>
           </div>
         </FadeIn>
