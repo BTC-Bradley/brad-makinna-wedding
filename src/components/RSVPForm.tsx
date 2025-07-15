@@ -131,34 +131,51 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         .filter((ga) => ga.isAttending === true)
         .map((ga) => {
           if (ga.guest.firstName === 'Guest') {
-            return {
-              ...ga.guest,
-              title: plusOneInfo.title,
-              firstName: plusOneInfo.firstName,
-              lastName: plusOneInfo.lastName,
-            }
+            return `${plusOneInfo.title} ${plusOneInfo.firstName} ${plusOneInfo.lastName}`
           }
-          return ga.guest
+          return `${ga.guest.title} ${ga.guest.firstName} ${ga.guest.lastName}`
         })
 
-      const notAttendingGuests = guestAttendance
-        .filter((ga) => ga.isAttending === false)
-        .map((ga) => ga.guest)
+      const hasAttendingGuests = guestAttendance.some(
+        (ga) => ga.isAttending === true,
+      )
 
-      console.log('RSVP Submission Data:', {
-        guestListId: guestList.id,
+      const rsvpData = {
+        guestId: guestList.id,
+        rsvpId: guestList.rsvpId,
+        attending: hasAttendingGuests,
         attendingGuests,
-        notAttendingGuests,
-        dietaryRestrictions,
-        songRequests,
+        dietaryRestrictions: dietaryRestrictions || undefined,
+        additionalNotes: songRequests || undefined,
+        submittedBy: guestAttendance
+          .filter((ga) => ga.isAttending === true && !ga.isPlusOne)
+          .map((ga) => `${ga.guest.title} ${ga.guest.firstName} ${ga.guest.lastName}`)
+          .join(', '),
+      }
+
+      console.log('RSVP Submission Data:', rsvpData)
+
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(rsvpData),
       })
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to submit RSVP')
+      }
+
+      const result = await response.json()
+      console.log('RSVP submitted successfully:', result)
 
       // Show success message or redirect
+      // You can add success state handling here
     } catch (error) {
       console.error('Error submitting RSVP:', error)
+      // You can add error state handling here
     } finally {
       setIsSubmitting(false)
     }

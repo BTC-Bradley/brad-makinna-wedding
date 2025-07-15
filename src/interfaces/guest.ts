@@ -31,6 +31,7 @@ export interface SafeGuestData {
   additionalGuests: Guest[]
   guestCount: number
   outOfTown: string
+  // Address removed
   email: string
   phone: string
   group: string
@@ -57,4 +58,15 @@ export interface GuestListDocument {
   list: string
   giftReceived: string
   thankYouSent: string
+}
+
+export interface RSVPSubmission {
+  guestId: string
+  rsvpId: string
+  attending: boolean
+  attendingGuests: string[]
+  dietaryRestrictions?: string
+  additionalNotes?: string
+  submittedAt: string
+  submittedBy?: string
 }

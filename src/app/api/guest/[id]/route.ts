@@ -10,8 +10,6 @@ export async function GET(
     const id = params.id
     const guestList = await getGuestById(id)
 
-    console.log(guestList)
-
     if (!guestList) {
       return NextResponse.json(
         { error: 'Guest list not found' },
