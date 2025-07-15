@@ -20,6 +20,25 @@ export interface Address {
   }
 }
 
+export interface SafeGuestData {
+  id: string
+  rsvpId: string
+  names: string
+  formalAddressing: string
+  sortName: string
+  guest1: Guest
+  guest2: Guest
+  additionalGuests: Guest[]
+  guestCount: number
+  outOfTown: string
+  email: string
+  phone: string
+  group: string
+  list: string
+  giftReceived: string
+  thankYouSent: string
+}
+
 export interface GuestListDocument {
   id: string
   rsvpId: string
