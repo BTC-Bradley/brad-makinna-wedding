@@ -31,9 +31,7 @@ export const navigationItems: NavigationItem[] = [
   { href: '/wedding-party', label: 'Wedding Party' },
   { href: '/faq', label: 'FAQ' },
   { href: '/rsvp', label: 'RSVP' },
-  { href: '/gallery', label: 'Gallery' },
   { href: '/gifts', label: 'Gifts' },
-  { href: '/contact', label: 'Contact' },
 ]
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {

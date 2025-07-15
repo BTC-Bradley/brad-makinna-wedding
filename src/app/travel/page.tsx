@@ -193,7 +193,7 @@ export default function TravelPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>Completely free for all wedding guests</span>
+                <span>Completely free for all wedding guests staying at the Snoqualmie Inn</span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -459,7 +459,7 @@ export default function TravelPage() {
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>Please let us know in advance if you plan to drive</span>
+                <span>When parking at the venue, please see the attendant for directions.</span>
               </li>
             </ul>
           </div>

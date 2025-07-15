@@ -1,34 +1,34 @@
-import { ReactNode } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { ReactNode } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 interface LayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Our Story', href: '/story' },
-  { name: 'Schedule', href: '/schedule' },
-  { name: 'RSVP', href: '/rsvp' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Accommodations', href: '/accommodations' },
-  { name: 'Registry', href: '/registry' },
-  { name: 'Contact', href: '/contact' },
-];
+  { href: '/', name: 'Home' },
+  { href: '/story', name: 'Our Story' },
+  { href: '/schedule', name: 'Schedule' },
+  { href: '/travel', name: 'Travel' },
+  { href: '/wedding-party', name: 'Wedding Party' },
+  { href: '/faq', name: 'FAQ' },
+  { href: '/rsvp', name: 'RSVP' },
+  { href: '/gifts', name: 'Gifts' },
+]
 
 export default function Layout({ children }: LayoutProps) {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
-    <div className="min-h-screen bg-ivory">
+    <div className="bg-ivory min-h-screen">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+      <nav className="sticky top-0 z-50 bg-white/80 shadow-sm backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 justify-between">
             <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <Link href="/" className="text-2xl font-serif text-sage">
+              <div className="flex flex-shrink-0 items-center">
+                <Link href="/" className="text-sage font-serif text-2xl">
                   B & M
                 </Link>
               </div>
@@ -40,8 +40,8 @@ export default function Layout({ children }: LayoutProps) {
                     className={`${
                       router.pathname === item.href
                         ? 'border-sage text-sage'
-                        : 'border-transparent text-gray-500 hover:border-sage hover:text-sage'
-                    } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                        : 'hover:border-sage hover:text-sage border-transparent text-gray-500'
+                    } inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium`}
                   >
                     {item.name}
                   </Link>
@@ -53,13 +53,13 @@ export default function Layout({ children }: LayoutProps) {
       </nav>
 
       {/* Main content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="bg-sage  mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <footer className="bg-sage mt-16">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm">
               Bradley & MaKinna Hanson
@@ -70,5 +70,5 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
     </div>
-  );
-} 
+  )
+}

@@ -12,7 +12,7 @@ export default function FAQ() {
   const faqItems = [
     {
       question: 'When Should I RSVP By?',
-      answer: 'TBD.',
+      answer: 'April 11, 2026',
     },
     {
       question: 'What is the Dress Code?',
@@ -280,7 +280,10 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>If you plan to drive, please let us know in advance</span>
+              <span>
+                When parking at the venue, please see the attendant for
+                directions.
+              </span>
             </li>
             <li className="flex items-start">
               <svg
@@ -512,56 +515,96 @@ export default function FAQ() {
             We&apos;re excited to offer a delicious buffet-style meal featuring
             a variety of options to satisfy all tastes:
           </p>
-          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Fresh seafood selection</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Perfectly prepared steak</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>An array of seasonal sides and accompaniments</span>
-            </li>
-          </ul>
+          <div className="mt-4">
+            <h4 className="text-sage mb-2 font-serif text-lg">Cocktail Hour</h4>
+            <ul className="mb-4 space-y-2 text-gray-700 dark:text-gray-200">
+              <li className="flex items-start">
+                <svg
+                  className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Fresh oysters</span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Charcuterie board</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sage mb-2 font-serif text-lg">Dinner</h4>
+            <ul className="space-y-2 text-gray-700 dark:text-gray-200">
+              <li className="flex items-start">
+                <svg
+                  className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Fresh seafood selection</span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Perfectly prepared steak</span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>An array of seasonal sides and accompaniments</span>
+              </li>
+            </ul>
+          </div>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
             Please indicate any dietary restrictions or allergies on your RSVP
             form.
@@ -592,32 +635,7 @@ export default function FAQ() {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              <span>Reach out to us directly via phone or email</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>
-                Use our{' '}
-                <a
-                  href="/contact"
-                  className="text-sage hover:text-sage/80 underline"
-                >
-                  contact form
-                </a>{' '}
-                for a quick response
-              </span>
+              <span>Reach out to us directly via phone or social media</span>
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
