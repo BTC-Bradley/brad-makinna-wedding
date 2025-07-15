@@ -24,14 +24,14 @@ const timeline = [
     date: '2023',
     title: 'Our Love for Hiking',
     description:
-      'We embarked on a journey to the Enchantments, a place of beauty and adventure, where we found our love for nature and each other.',
+      'We embarked on a journey to the Enchantments, a pristine alpine wonderland, where we discovered our shared passion for exploring the great outdoors.',
     image: '/images/enchantments.jpg',
   },
   {
     date: '2024',
-    title: 'Adventures in the Northern Cascades',
+    title: 'Adventures in the North Cascades',
     description:
-      'We had a photoshoot at Big Four, a place of beauty and adventure, where we found our love for nature and each other.',
+      "Much of our time has been spent traveling the North Cascades, where we've ventured as far north as Mount Baker National Park and the crystal blue alpine lakes. We decided to showcase our deep love for the North Cascades by doing our first photoshoot at Big Four.",
     image: '/images/bigfour.jpg',
   },
   {
