@@ -46,20 +46,20 @@ export default function CountdownTimer() {
   return timeLeft ? (
     <div className="flex justify-center space-x-4 pb-20">
       <div className="text-center">
-        <div className="text-3xl font-bold">{timeLeft.days}</div>
-        <div className="text-sm">Days</div>
+        <div className="text-3xl font-bold text-white">{timeLeft.days}</div>
+        <div className="text-sm text-white">Days</div>
       </div>
       <div className="text-center">
-        <div className="text-3xl font-bold">{timeLeft.hours}</div>
-        <div className="text-sm">Hours</div>
+        <div className="text-3xl font-bold text-white">{timeLeft.hours}</div>
+        <div className="text-sm text-white">Hours</div>
       </div>
       <div className="text-center">
-        <div className="text-3xl font-bold">{timeLeft.minutes}</div>
-        <div className="text-sm">Minutes</div>
+        <div className="text-3xl font-bold text-white">{timeLeft.minutes}</div>
+        <div className="text-sm text-white">Minutes</div>
       </div>
       <div className="text-center">
-        <div className="text-3xl font-bold">{timeLeft.seconds}</div>
-        <div className="text-sm">Seconds</div>
+        <div className="text-3xl font-bold text-white">{timeLeft.seconds}</div>
+        <div className="text-sm text-white">Seconds</div>
       </div>
     </div>
   ) : (
