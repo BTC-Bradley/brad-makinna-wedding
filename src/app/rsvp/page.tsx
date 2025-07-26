@@ -60,7 +60,7 @@ export default async function RSVPPage({
           <p className="text-gray-600 dark:text-gray-300 text-lg">
             We joyfully invite you to share in our celebration of love.
             <br />
-            Please respond by June 1st, 2026.
+            Please respond by April 11th, 2026.
           </p>
         </div>
 
