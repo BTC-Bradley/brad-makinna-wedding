@@ -60,7 +60,7 @@ export default function WeddingParty() {
     {
       name: 'Vish',
       role: 'Groomsman',
-      image: '/images/wedding-party/vish.jpg',
+      image: '/images/wedding-party/vish2.jpg',
     },
     {
       name: 'Chris',
