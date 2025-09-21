@@ -10,6 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Primary brand color
+        sage: '#9CAF88',
         // Warm summer sand
         sand: '#F4D03F',
         // Fresh ocean blue

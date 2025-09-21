@@ -212,7 +212,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               onClick={() => handleAttendanceChange(guest, true)}
               className={`cursor-pointer rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 sm:px-4 ${
                 isAttending === true
-                  ? 'bg-sage ring-sage text-gray-900 shadow-md ring-2 ring-offset-2 dark:text-white'
+                  ? 'bg-sage ring-sage text-gray-900 shadow-md ring-2 ring-offset-2 dark:bg-amber-400 dark:text-gray-900 dark:ring-amber-400'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600'
               }`}
             >
@@ -223,7 +223,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               onClick={() => handleAttendanceChange(guest, false)}
               className={`cursor-pointer rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 sm:px-4 ${
                 isAttending === false
-                  ? 'bg-sage ring-sage text-gray-900 shadow-md ring-2 ring-offset-2 dark:text-white'
+                  ? 'bg-sage ring-sage text-gray-900 shadow-md ring-2 ring-offset-2 dark:bg-amber-400 dark:text-gray-900 dark:ring-amber-400'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600'
               }`}
             >
@@ -235,7 +235,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
 
       {hasUnnamedPlusOne && (
         <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-800">
-          <h3 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
+          <h3 className="text-sage mb-2 text-lg font-medium dark:text-amber-400">
             Please provide your guest&apos;s information
           </h3>
           <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
@@ -257,7 +257,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                   handlePlusOneInfoChange('title', e.target.value)
                 }
                 required
-                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-amber-400 dark:focus:ring-amber-400"
                 aria-describedby="title-required"
               >
                 <option value="">Select a title</option>
@@ -291,7 +291,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 }
                 required
                 placeholder="Enter first name"
-                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-amber-400 dark:focus:ring-amber-400"
                 aria-describedby="firstName-required"
               />
               {!plusOneInfo.firstName && (
@@ -319,7 +319,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 }
                 required
                 placeholder="Enter last name"
-                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-amber-400 dark:focus:ring-amber-400"
                 aria-describedby="lastName-required"
               />
               {!plusOneInfo.lastName && (
@@ -340,7 +340,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           type="button"
           onClick={() => setStep('confirmation')}
           disabled={!isFormValid}
-          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
+          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:focus:ring-amber-400 dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
         >
           Continue to Confirmation
         </button>
@@ -360,7 +360,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
       return (
         <div className="space-y-8">
           <div className="rounded-lg border border-gray-200 bg-white p-6 text-center dark:border-zinc-700 dark:bg-zinc-800">
-            <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-gray-100">
+            <h3 className="text-sage mb-4 text-xl font-medium dark:text-amber-400">
               We&apos;re Sorry to Miss You
             </h3>
             <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -384,14 +384,14 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             <button
               type="button"
               onClick={() => setStep('attendance')}
-              className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600"
+              className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600 dark:focus:ring-amber-400"
             >
               Back
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
+              className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:focus:ring-amber-400 dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
             >
               {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
             </button>
@@ -404,7 +404,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
       <div className="space-y-8">
         {hasAttendingGuests && (
           <div className="space-y-4">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-gray-100">
+            <h3 className="text-sage text-xl font-medium dark:text-amber-400">
               Attending Guests
             </h3>
             <div className="space-y-2">
@@ -426,7 +426,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
 
         {hasNotAttendingGuests && (
           <div className="space-y-4">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-gray-100">
+            <h3 className="text-sage text-xl font-medium dark:text-amber-400">
               Not Attending Guests
             </h3>
             <div className="space-y-2">
@@ -448,7 +448,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           <div className="space-y-4">
             <label
               htmlFor="dietary"
-              className="block text-base font-medium text-gray-900 dark:text-gray-100"
+              className="text-sage block text-base font-medium dark:text-amber-400"
             >
               Dietary Restrictions
             </label>
@@ -458,8 +458,8 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               rows={3}
               value={dietaryRestrictions}
               onChange={(e) => setDietaryRestrictions(e.target.value)}
-              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
-              placeholder="Please let us know if any of the selected guests have dietary restrictions or allergies"
+              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-amber-400 dark:focus:ring-amber-400"
+              placeholder="Please list each guest’s name along with their dietary restriction or allergy (e.g., 'John Smith – peanut allergy')."
             />
           </div>
         )}
@@ -468,7 +468,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           <div className="space-y-4">
             <label
               htmlFor="songs"
-              className="block text-base font-medium text-gray-900 dark:text-gray-100"
+              className="text-sage block text-base font-medium dark:text-amber-400"
             >
               Song Requests
             </label>
@@ -478,7 +478,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               rows={3}
               value={songRequests}
               onChange={(e) => setSongRequests(e.target.value)}
-              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
+              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-amber-400 dark:focus:ring-amber-400"
               placeholder="Share your favorite songs to help us create the perfect playlist for the celebration"
             />
           </div>
@@ -488,14 +488,14 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
           <button
             type="button"
             onClick={() => setStep('attendance')}
-            className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600"
+            className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600 dark:focus:ring-amber-400"
           >
             Back
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
+            className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:focus:ring-amber-400 dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
           >
             {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
           </button>
@@ -517,11 +517,11 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     if (isAttendingWedding) {
       return (
         <div className="space-y-8 text-center">
-          <div className="border-sage/20 bg-sage/5 dark:border-sage/30 dark:bg-sage/10 rounded-lg border p-8">
+          <div className="border-sage/20 bg-sage/5 rounded-lg border p-8 dark:border-amber-400/30 dark:bg-amber-400/10">
             <div className="mb-6">
-              <div className="bg-sage/20 dark:bg-sage/30 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+              <div className="bg-sage/20 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full dark:bg-amber-400/30">
                 <svg
-                  className="text-sage dark:text-sage h-8 w-8"
+                  className="text-sage h-8 w-8 dark:text-amber-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -534,7 +534,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 dark:text-gray-100">
+              <h3 className="text-sage text-2xl font-medium dark:text-amber-400">
                 We Can&apos;t Wait to See You!
               </h3>
             </div>
@@ -545,7 +545,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
 
             {attendingGuestsList.length > 0 && (
               <div className="mb-6">
-                <h4 className="mb-3 text-base font-medium text-gray-900 dark:text-gray-100">
+                <h4 className="text-sage mb-3 text-base font-medium dark:text-amber-400">
                   Confirmed Guests:
                 </h4>
                 <div className="space-y-2">
@@ -562,7 +562,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             )}
 
             <div className="rounded-md bg-white p-4 text-left dark:bg-zinc-700">
-              <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
+              <h4 className="text-sage mb-2 font-medium dark:text-amber-400">
                 What&apos;s Next?
               </h4>
               <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
@@ -581,14 +581,14 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             <button
               type="button"
               onClick={() => (window.location.href = '/travel')}
-              className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white"
+              className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:focus:ring-amber-400"
             >
               View Travel Info
             </button>
             <button
               type="button"
               onClick={() => (window.location.href = '/schedule')}
-              className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600"
+              className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600 dark:focus:ring-amber-400"
             >
               View Schedule
             </button>
@@ -615,7 +615,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 dark:text-gray-100">
+              <h3 className="text-sage text-2xl font-medium dark:text-amber-400">
                 We&apos;ll Miss You
               </h3>
             </div>
@@ -634,7 +634,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             <button
               type="button"
               onClick={() => (window.location.href = '/')}
-              className="bg-sage hover:bg-sage/90 focus:ring-sage cursor-pointer rounded-md px-6 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-8 sm:py-4 sm:text-lg dark:text-white"
+              className="bg-sage hover:bg-sage/90 focus:ring-sage cursor-pointer rounded-md px-6 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-8 sm:py-4 sm:text-lg dark:text-white dark:focus:ring-amber-400"
             >
               Return to Home
             </button>
@@ -648,7 +648,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     <form onSubmit={handleSubmit} className="space-y-8">
       {step !== 'success' && (
         <div className="text-center">
-          <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100">
+          <h2 className="text-sage text-2xl font-medium dark:text-amber-400">
             RSVP for Your Party
           </h2>
           <p className="mt-2 text-base text-gray-700 dark:text-gray-300">
