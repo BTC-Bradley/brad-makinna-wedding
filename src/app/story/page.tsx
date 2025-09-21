@@ -65,7 +65,7 @@ export default function StoryPage() {
 
       <div className="relative min-h-[800px]">
         {/* Timeline line - using a different approach */}
-        <div className="border-ocean dark:border-ocean-light absolute left-4 z-0 h-full transform border-l-2 md:left-1/2 md:-translate-x-1/2"></div>
+        <div className="border-ocean dark:border-ocean-light absolute left-4 z-0 h-full transform border-l-2 md:left-1/2 md:-translate-x-1/2 hidden md:block"></div>
 
         {/* Timeline items */}
         <div className="space-y-16">
