@@ -82,7 +82,7 @@ export default function SchedulePage() {
             </div>
             <div className="border-sage border-l-2 pl-4 dark:border-amber-400">
               <h3 className="text-sage font-serif text-lg dark:text-amber-400">
-                Sparkler Send-off
+                Send-off
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 Join us for a magical farewell

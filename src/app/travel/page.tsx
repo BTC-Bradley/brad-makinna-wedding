@@ -80,7 +80,7 @@ export default function TravelPage() {
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Booking Information
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <p className="text-gray-700 dark:text-gray-200">
                   <span className="font-medium">Booking Code:</span> VHWD12
                 </p>
@@ -88,47 +88,75 @@ export default function TravelPage() {
                   <span className="font-medium">Booking Deadline:</span> June
                   10, 2026
                 </p>
-              </div>
-            </div>
 
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h4 className="text-sage mb-4 font-serif text-lg">
-                Hotel Amenities
-              </h4>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-200">
-                <li className="flex items-start">
-                  <svg
-                    className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>Indoor swimming pool</span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>Complimentary breakfast</span>
-                </li>
-              </ul>
+                <div className="bg-sage/5 border-sage/20 dark:bg-sage/10 dark:border-sage/30 mt-4 rounded-lg border p-4">
+                  <div className="flex">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="text-sage/70 dark:text-sage/80 h-5 w-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h5 className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                        Please Note
+                      </h5>
+                      <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+                        <p className="mb-2">
+                          The discounted rate applies to Friday to Sunday nights
+                          only. For additional nights before or after these
+                          dates, please call the hotel directly as standard
+                          rates will apply.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-sage/5 border-sage/20 dark:bg-sage/10 dark:border-sage/30 mt-4 rounded-lg border p-4">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <svg
+                      className="text-sage/70 dark:text-sage/80 h-5 w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h5 className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                      Book Early
+                    </h5>
+                    <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+                      <p>
+                        We strongly recommend booking your hotel room as soon as
+                        possible. Seattle is hosting World Cup events in the
+                        weeks leading up to our wedding, which may impact hotel
+                        availability and pricing in the area.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="pt-2">
@@ -193,7 +221,10 @@ export default function TravelPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>Completely free for all wedding guests staying at the Snoqualmie Inn</span>
+                <span>
+                  Completely free for all wedding guests staying at the
+                  Snoqualmie Inn
+                </span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -459,7 +490,10 @@ export default function TravelPage() {
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>When parking at the venue, please see the attendant for directions.</span>
+                <span>
+                  When parking at the venue, please see the attendant for
+                  directions.
+                </span>
               </li>
             </ul>
           </div>
