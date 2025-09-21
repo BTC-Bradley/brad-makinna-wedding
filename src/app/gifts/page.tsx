@@ -18,7 +18,7 @@ export default function GiftsPage() {
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="space-y-6">
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h4 className="text-sage mb-4 font-serif text-lg">
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-400">
                 Honeymoon Fund
               </h4>
               <p className="mb-4 text-gray-700 dark:text-gray-200">
@@ -28,7 +28,7 @@ export default function GiftsPage() {
               </p>
               <a
                 href="https://donate.stripe.com/5kQ8wP7p6fYFayHf0U0co02"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:bg-zinc-800"
+                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:border-amber-400 dark:bg-zinc-800 dark:text-amber-400 dark:hover:bg-amber-400/10"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -37,8 +37,8 @@ export default function GiftsPage() {
             </div>
 
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h4 className="text-sage mb-4 font-serif text-lg">
-                Future Home Fund
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-400">
+                Home Fund
               </h4>
               <p className="mb-4 text-gray-700 dark:text-gray-200">
                 Help us build our future together. Your contribution will go
@@ -46,11 +46,11 @@ export default function GiftsPage() {
               </p>
               <a
                 href="https://donate.stripe.com/dRm14nfVC3bTdKT5qk0co03"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:bg-zinc-800"
+                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:border-amber-400 dark:bg-zinc-800 dark:text-amber-400 dark:hover:bg-amber-400/10"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Contribute to Future Home Fund
+                Contribute to Home Fund
               </a>
             </div>
           </div>

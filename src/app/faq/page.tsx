@@ -262,8 +262,8 @@ export default function FAQ() {
         <>
           <p className="text-gray-700 dark:text-gray-200">
             Parking at North Fork Farm is limited. Hotel guests can use the
-            complimentary shuttle service from the Snoqualmie Inn Hotel for the most
-            convenient experience.
+            complimentary shuttle service from the Snoqualmie Inn Hotel for the
+            most convenient experience.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -427,7 +427,8 @@ export default function FAQ() {
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Yes! We&apos;ll have bar service available offering a variety of drink options.
+            Yes! We&apos;ll have bar service available offering a variety of
+            drink options.
           </p>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
             Please enjoy responsibly and pace yourself. We want everyone to have
@@ -445,7 +446,9 @@ export default function FAQ() {
             a variety of options to satisfy all tastes:
           </p>
           <div className="mt-4">
-            <h4 className="text-sage mb-2 font-serif text-lg">Cocktail Hour</h4>
+            <h4 className="text-sage mb-2 font-serif text-lg dark:text-amber-400">
+              Cocktail Hour
+            </h4>
             <ul className="mb-4 space-y-2 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
@@ -482,7 +485,9 @@ export default function FAQ() {
             </ul>
           </div>
           <div>
-            <h4 className="text-sage mb-2 font-serif text-lg">Dinner</h4>
+            <h4 className="text-sage mb-2 font-serif text-lg dark:text-amber-400">
+              Dinner
+            </h4>
             <ul className="space-y-2 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
@@ -598,9 +603,11 @@ export default function FAQ() {
               onClick={() => toggleFAQ(index)}
               className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-zinc-700"
             >
-              <h2 className="text-sage font-serif text-xl">{item.question}</h2>
+              <h2 className="text-sage font-serif text-xl dark:text-amber-400">
+                {item.question}
+              </h2>
               <svg
-                className={`text-sage h-6 w-6 transform transition-transform ${
+                className={`text-sage h-6 w-6 transform transition-transform dark:text-amber-400 ${
                   openIndex === index ? 'rotate-180' : ''
                 }`}
                 fill="none"

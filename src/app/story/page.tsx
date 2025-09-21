@@ -39,14 +39,14 @@ const timeline = [
     title: 'The Proposal',
     description:
       "The year our dreams aligned with destiny. Against the backdrop of a breathtaking Cabo sunset, Brad dropped to one knee on the warm sand and asked for MaKinna's hand in marriage. The golden orange sky seemed to celebrate as happy tears filled her eyes and she whispered the sweetest 'yes.'",
-    image: '/images/proposal.jpg',
+    image: '/images/omg.png',
   },
   {
     date: '2026',
     title: 'Our Wedding Day',
     description:
       "The culmination of our love story becomes a celebration with those who mean the world to us. This incredible journey has led us here, and we couldn't be more thrilled to begin the beautiful adventure of marriage surrounded by our cherished friends and family.",
-    image: '/images/northfork.jpg',
+    image: '/images/kissy.png',
   },
 ]
 
@@ -79,10 +79,10 @@ export default function StoryPage() {
                 className={`w-full px-4 md:w-1/2 ${index % 2 === 0 ? 'md:pr-4 md:pl-8' : 'md:order-2 md:pr-8 md:pl-4'}`}
               >
                 <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
-                  <span className="text-sage dark:text-sage-light font-serif text-lg">
+                  <span className="text-sage font-serif text-lg font-medium dark:text-amber-400">
                     {item.date}
                   </span>
-                  <h3 className="text-sage dark:text-sage-light mt-2 mb-3 font-serif text-xl">
+                  <h3 className="text-sage mt-2 mb-3 font-serif text-xl dark:text-amber-400">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -105,7 +105,7 @@ export default function StoryPage() {
               </div>
 
               {/* Timeline dot */}
-              <div className="bg-sage dark:bg-sage-light absolute left-0 h-4 w-4 transform rounded-full md:left-1/2 md:-translate-x-1/2" />
+              <div className="bg-amber-500 absolute left-0 h-4 w-4 transform rounded-full md:left-1/2 md:-translate-x-1/2 dark:bg-amber-400" />
             </div>
           ))}
         </div>

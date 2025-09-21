@@ -112,7 +112,7 @@ export default function WeddingParty() {
           sizes="(min-width: 640px) 50vw, 100vw"
         />
       </div>
-      <h3 className="text-sage font-serif text-xl">{member.name}</h3>
+      <h3 className="text-sage dark:text-amber-400 font-serif text-xl">{member.name}</h3>
       <p className="mt-2 text-base text-gray-600 dark:text-gray-300">
         {member.role}
       </p>
@@ -135,7 +135,7 @@ export default function WeddingParty() {
       <div className="space-y-24">
         <FadeIn>
           <div>
-            <h2 className="text-sage mb-12 text-center font-serif text-3xl">
+            <h2 className="text-sage dark:text-amber-400 mb-12 text-center font-serif text-3xl">
               Bridesmaids
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3">
@@ -161,7 +161,7 @@ export default function WeddingParty() {
 
         <FadeIn>
           <div>
-            <h2 className="text-sage mb-12 text-center font-serif text-3xl">
+            <h2 className="text-sage dark:text-amber-400 mb-12 text-center font-serif text-3xl">
               Groomsmen
             </h2>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3">

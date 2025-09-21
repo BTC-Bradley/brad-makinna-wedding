@@ -222,8 +222,8 @@ export default function TravelPage() {
                   />
                 </svg>
                 <span>
-                  Completely free for hotel guests staying at the
-                  Snoqualmie Inn only
+                  Completely free for hotel guests staying at the Snoqualmie Inn
+                  only
                 </span>
               </li>
               <li className="flex items-start">
@@ -272,8 +272,9 @@ export default function TravelPage() {
                 <h5 className="mb-3 font-medium text-gray-900 dark:text-gray-100">
                   Departure Trip (Hotel → North Fork Farm)
                 </h5>
-                <p className="mb-3 text-sm text-gray-600 dark:text-gray-400 italic">
-                  *Shuttle times may be updated with additional departure times as more guests book
+                <p className="mb-3 text-sm text-gray-600 italic dark:text-gray-400">
+                  *Shuttle times may be updated with additional departure times
+                  as more guests book
                 </p>
                 <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex items-start">
@@ -495,7 +496,6 @@ export default function TravelPage() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
