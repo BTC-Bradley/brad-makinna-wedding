@@ -261,8 +261,8 @@ export default function FAQ() {
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Parking at North Fork Farm is limited. We strongly recommend using
-            the shuttle service from the Snoqualmie Inn Hotel for the most
+            Parking at North Fork Farm is limited. Hotel guests can use the
+            complimentary shuttle service from the Snoqualmie Inn Hotel for the most
             convenient experience.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
@@ -427,82 +427,11 @@ export default function FAQ() {
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Yes! We&apos;ll have two bars available - one indoor and one outdoor
-            - offering a variety of drink options:
+            Yes! We&apos;ll have bar service available offering a variety of drink options.
           </p>
-          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Red and white wine selections</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Local craft cider</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Beer options</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Two signature cocktails</span>
-            </li>
-          </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
             Please enjoy responsibly and pace yourself. We want everyone to have
             fun while staying safe.
-          </p>
-          <p className="mt-2 text-gray-700 dark:text-gray-200">
-            Note: Due to venue restrictions, only one round of shots will be
-            served during the reception.
           </p>
         </>
       ),

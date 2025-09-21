@@ -198,7 +198,7 @@ export default function TravelPage() {
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
               We&apos;re pleased to offer a free shuttle service between the
-              Snoqualmie Inn Hotel and the venue.
+              Snoqualmie Inn Hotel and the venue for hotel guests only.
             </p>
           </div>
 
@@ -222,8 +222,8 @@ export default function TravelPage() {
                   />
                 </svg>
                 <span>
-                  Completely free for all wedding guests staying at the
-                  Snoqualmie Inn
+                  Completely free for hotel guests staying at the
+                  Snoqualmie Inn only
                 </span>
               </li>
               <li className="flex items-start">
@@ -272,6 +272,9 @@ export default function TravelPage() {
                 <h5 className="mb-3 font-medium text-gray-900 dark:text-gray-100">
                   Departure Trip (Hotel → North Fork Farm)
                 </h5>
+                <p className="mb-3 text-sm text-gray-600 dark:text-gray-400 italic">
+                  *Shuttle times may be updated with additional departure times as more guests book
+                </p>
                 <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex items-start">
                     <svg
@@ -287,23 +290,7 @@ export default function TravelPage() {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    <span>2:30 PM - 2:45 PM</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>3:30 PM - 3:45 PM</span>
+                    <span>2:15 PM - 2:30 PM</span>
                   </li>
                 </ul>
               </div>
@@ -327,23 +314,7 @@ export default function TravelPage() {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    <span>8:00 PM - 8:15 PM</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>8:30 PM - 8:45 PM</span>
+                    <span>8:45 PM - 9:00 PM</span>
                   </li>
                 </ul>
               </div>
@@ -413,7 +384,7 @@ export default function TravelPage() {
 
           <div className="mt-6 text-center">
             <p className="text-gray-600 italic dark:text-gray-300">
-              We strongly encourage all guests to utilize our shuttle service
+              We strongly encourage hotel guests to utilize our shuttle service
               for a stress-free celebration experience.
             </p>
           </div>
@@ -444,8 +415,7 @@ export default function TravelPage() {
               Parking at North Fork Farm
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Limited parking is available at the venue. We encourage guests to
-              use our shuttle service for convenience.
+              Limited parking is available at the venue.
             </p>
           </div>
           <div className="mb-6">
@@ -526,12 +496,6 @@ export default function TravelPage() {
             </div>
           </div>
 
-          <div className="mt-6 text-center">
-            <p className="text-gray-600 italic dark:text-gray-300">
-              For the most convenient experience, we recommend using our shuttle
-              service from the Snoqualmie Inn Hotel.
-            </p>
-          </div>
         </div>
       </section>
 
