@@ -149,7 +149,10 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         additionalNotes: songRequests || undefined,
         submittedBy: guestAttendance
           .filter((ga) => ga.isAttending === true && !ga.isPlusOne)
-          .map((ga) => `${ga.guest.title} ${ga.guest.firstName} ${ga.guest.lastName}`)
+          .map(
+            (ga) =>
+              `${ga.guest.title} ${ga.guest.firstName} ${ga.guest.lastName}`,
+          )
           .join(', '),
       }
 
@@ -186,19 +189,19 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
       {guestAttendance.map(({ guest, isAttending }) => (
         <div
           key={`${guest.firstName}-${guest.lastName}`}
-          className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800"
+          className="flex flex-col space-y-4 rounded-lg border border-gray-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 dark:border-zinc-700 dark:bg-zinc-800"
         >
-          <div className="text-base sm:text-lg font-medium text-gray-900 dark:text-gray-100">
+          <div className="text-base font-medium text-gray-900 sm:text-lg dark:text-gray-100">
             {guest.title} {guest.firstName} {guest.lastName}
           </div>
           <div className="flex space-x-2 sm:space-x-4">
             <button
               type="button"
               onClick={() => handleAttendanceChange(guest, true)}
-              className={`cursor-pointer rounded-md px-3 sm:px-4 py-2 text-sm font-medium transition-all duration-200 ${
+              className={`cursor-pointer rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 sm:px-4 ${
                 isAttending === true
                   ? 'bg-sage ring-sage text-gray-900 shadow-md ring-2 ring-offset-2 dark:text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600'
               }`}
             >
               Attending
@@ -206,10 +209,10 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             <button
               type="button"
               onClick={() => handleAttendanceChange(guest, false)}
-              className={`cursor-pointer rounded-md px-3 sm:px-4 py-2 text-sm font-medium transition-all duration-200 ${
+              className={`cursor-pointer rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 sm:px-4 ${
                 isAttending === false
                   ? 'bg-sage ring-sage text-gray-900 shadow-md ring-2 ring-offset-2 dark:text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600'
               }`}
             >
               Not Attending
@@ -219,7 +222,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
       ))}
 
       {hasUnnamedPlusOne && (
-        <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-800">
           <h3 className="mb-2 text-lg font-medium text-gray-900 dark:text-gray-100">
             Please provide your guest&apos;s information
           </h3>
@@ -227,7 +230,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
             We need this information to properly prepare for your guest&apos;s
             attendance.
           </p>
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <label
                 htmlFor="title"
@@ -242,7 +245,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                   handlePlusOneInfoChange('title', e.target.value)
                 }
                 required
-                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
                 aria-describedby="title-required"
               >
                 <option value="">Select a title</option>
@@ -276,7 +279,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 }
                 required
                 placeholder="Enter first name"
-                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
                 aria-describedby="firstName-required"
               />
               {!plusOneInfo.firstName && (
@@ -304,7 +307,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 }
                 required
                 placeholder="Enter last name"
-                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 px-3 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
                 aria-describedby="lastName-required"
               />
               {!plusOneInfo.lastName && (
@@ -320,12 +323,12 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         </div>
       )}
 
-      <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+      <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
         <button
           type="button"
           onClick={() => setStep('confirmation')}
           disabled={!isFormValid}
-          className="w-full sm:w-1/2 cursor-pointer rounded-md bg-sage hover:bg-sage/90 focus:ring-sage px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
+          className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
         >
           Continue to Confirmation
         </button>
@@ -344,7 +347,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
     if (!hasAttendingGuests) {
       return (
         <div className="space-y-8">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+          <div className="rounded-lg border border-gray-200 bg-white p-6 text-center dark:border-zinc-700 dark:bg-zinc-800">
             <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-gray-100">
               We&apos;re Sorry to Miss You
             </h3>
@@ -365,18 +368,18 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               and look forward to celebrating with you another time.
             </p>
           </div>
-          <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <button
               type="button"
               onClick={() => setStep('attendance')}
-              className="w-full sm:w-1/2 cursor-pointer rounded-md bg-gray-100 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+              className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600"
             >
               Back
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-sage hover:bg-sage/90 focus:ring-sage w-full sm:w-1/2 cursor-pointer rounded-md px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
+              className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
             >
               {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
             </button>
@@ -398,7 +401,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 .map(({ guest }) => (
                   <div
                     key={`${guest.firstName}-${guest.lastName}`}
-                    className="rounded-lg border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800"
+                    className="rounded-lg border border-gray-200 bg-white p-3 dark:border-zinc-700 dark:bg-zinc-800"
                   >
                     {guest.firstName === 'Guest'
                       ? `${plusOneInfo.title} ${plusOneInfo.firstName} ${plusOneInfo.lastName}`
@@ -420,7 +423,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
                 .map(({ guest }) => (
                   <div
                     key={`${guest.firstName}-${guest.lastName}`}
-                    className="rounded-lg border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800"
+                    className="rounded-lg border border-gray-200 bg-white p-3 dark:border-zinc-700 dark:bg-zinc-800"
                   >
                     {guest.title} {guest.firstName} {guest.lastName}
                   </div>
@@ -443,7 +446,7 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               rows={3}
               value={dietaryRestrictions}
               onChange={(e) => setDietaryRestrictions(e.target.value)}
-              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
               placeholder="Please let us know if any of the selected guests have dietary restrictions or allergies"
             />
           </div>
@@ -463,24 +466,24 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
               rows={3}
               value={songRequests}
               onChange={(e) => setSongRequests(e.target.value)}
-              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              className="focus:border-sage focus:ring-sage mt-1 block w-full rounded-md border-gray-300 p-3 shadow-sm sm:text-base dark:border-zinc-600 dark:bg-zinc-700 dark:text-white"
               placeholder="Share your favorite songs to help us create the perfect playlist for the celebration"
             />
           </div>
         )}
 
-        <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
           <button
             type="button"
             onClick={() => setStep('attendance')}
-            className="w-full sm:w-1/2 cursor-pointer rounded-md bg-gray-100 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+            className="w-full cursor-pointer rounded-md bg-gray-100 px-4 py-3 text-base font-semibold text-gray-700 shadow-md hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:bg-zinc-700 dark:text-gray-300 dark:hover:bg-zinc-600"
           >
             Back
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-sage hover:bg-sage/90 focus:ring-sage w-full sm:w-1/2 cursor-pointer rounded-md px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
+            className="bg-sage hover:bg-sage/90 focus:ring-sage w-full cursor-pointer rounded-md px-4 py-3 text-base font-semibold text-gray-900 shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:bg-gray-300 sm:w-1/2 sm:px-6 sm:py-4 sm:text-lg dark:text-white dark:disabled:bg-gray-700 dark:disabled:text-gray-400 dark:disabled:hover:bg-gray-700"
           >
             {isSubmitting ? 'Submitting...' : 'Submit RSVP'}
           </button>

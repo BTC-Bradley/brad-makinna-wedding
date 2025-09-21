@@ -663,11 +663,11 @@ export default function FAQ() {
         {faqItems.map((item, index) => (
           <div
             key={index}
-            className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800"
+            className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-zinc-800"
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-zinc-700"
             >
               <h2 className="text-sage font-serif text-xl">{item.question}</h2>
               <svg

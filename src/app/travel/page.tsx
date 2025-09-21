@@ -16,7 +16,7 @@ export default function TravelPage() {
 
       {/* Hotel Section */}
       <section id="hotel" className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -44,7 +44,7 @@ export default function TravelPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Contact Information
               </h4>
@@ -76,7 +76,7 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Booking Information
               </h4>
@@ -91,7 +91,7 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h4 className="text-sage mb-4 font-serif text-lg">
                 Hotel Amenities
               </h4>
@@ -136,7 +136,7 @@ export default function TravelPage() {
                 href="https://book.rguest.com/onecart/wbe/room/1566/HotelAmerica/2026-07-10/2026-07-12/VHWD12/1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:bg-gray-800"
+                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:bg-zinc-800"
               >
                 Book Your Room
               </a>
@@ -147,7 +147,7 @@ export default function TravelPage() {
 
       {/* Shuttle Section */}
       <section id="shuttle" className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -174,7 +174,7 @@ export default function TravelPage() {
             </p>
           </div>
 
-          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Why Take the Shuttle?
             </h4>
@@ -232,7 +232,7 @@ export default function TravelPage() {
             </ul>
           </div>
 
-          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Shuttle Schedule
             </h4>
@@ -319,7 +319,7 @@ export default function TravelPage() {
             </div>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+          <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Important Information
             </h4>
@@ -391,7 +391,7 @@ export default function TravelPage() {
 
       {/* Parking Section */}
       <section id="parking" className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -424,7 +424,7 @@ export default function TravelPage() {
               className="w-full rounded-lg object-cover"
             />
           </div>
-          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Important Information
             </h4>
@@ -464,7 +464,7 @@ export default function TravelPage() {
             </ul>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+          <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Parking Directions
             </h4>
@@ -503,7 +503,7 @@ export default function TravelPage() {
 
       {/* Airport Section */}
       <section id="airport" className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -530,7 +530,7 @@ export default function TravelPage() {
             </p>
           </div>
 
-          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+          <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg">
               Transportation Options
             </h4>
@@ -559,7 +559,7 @@ export default function TravelPage() {
 
       {/* Nearby Attractions Section */}
       <section id="attractions" className="mb-16">
-        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
             <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
               <svg
@@ -593,7 +593,7 @@ export default function TravelPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h3 className="text-sage mb-4 font-serif text-xl">
                 Near the Venue
               </h3>
@@ -711,7 +711,7 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h3 className="text-sage mb-4 font-serif text-xl">
                 Within 1 Hour
               </h3>
@@ -797,7 +797,7 @@ export default function TravelPage() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-gray-700">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h3 className="text-sage mb-4 font-serif text-xl">
                 Nightlife Options
               </h3>

@@ -78,7 +78,7 @@ export default function StoryPage() {
               <div
                 className={`w-full px-4 md:w-1/2 ${index % 2 === 0 ? 'md:pr-4 md:pl-8' : 'md:order-2 md:pr-8 md:pl-4'}`}
               >
-                <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+                <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
                   <span className="text-sage dark:text-sage-light font-serif text-lg">
                     {item.date}
                   </span>

@@ -41,7 +41,7 @@ export default function TravelIndex() {
   }
 
   return (
-    <div className="sticky top-0 z-10 hidden w-full bg-white/80 py-4 backdrop-blur-sm dark:bg-gray-900/80 lg:block">
+    <div className="sticky top-0 z-10 hidden w-full bg-white/80 py-4 backdrop-blur-sm lg:block dark:bg-zinc-900/80">
       <div className="mx-auto max-w-4xl px-4">
         <nav className="flex justify-center space-x-2">
           {sections.map((section) => (
@@ -51,7 +51,7 @@ export default function TravelIndex() {
               className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                 activeSection === section.id
                   ? 'bg-sage/90 dark:bg-sage/80 scale-105 text-amber-500 shadow-md'
-                  : 'hover:bg-sage/10 bg-white text-gray-700 hover:scale-105 dark:bg-gray-800 dark:text-gray-200'
+                  : 'hover:bg-sage/10 bg-white text-gray-700 hover:scale-105 dark:bg-zinc-800 dark:text-gray-200'
               }`}
             >
               {section.label}
