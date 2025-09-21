@@ -5,10 +5,10 @@ export default function TravelPage() {
     <div className="mx-auto max-w-4xl px-4 py-16">
       <TravelIndex />
       <div className="mb-12 text-center">
-        <h1 className="text-sage mb-6 font-serif text-5xl font-light tracking-wide dark:text-amber-400">
+        <h1 className="text-sage mb-6 font-serif text-5xl font-light tracking-wide dark:text-amber-500">
           Travel Information
         </h1>
-        <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
+        <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-500/40"></div>
         <p className="text-gray-600 dark:text-gray-300">
           Everything you need to know about getting to and around Snoqualmie.
         </p>
@@ -18,10 +18,10 @@ export default function TravelPage() {
       <section id="hotel" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
-            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
+            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3 dark:bg-amber-500/10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-sage h-8 w-8"
+                className="text-sage h-8 w-8 dark:text-amber-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -34,7 +34,7 @@ export default function TravelPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-sage mb-3 font-serif text-xl">
+            <h3 className="text-sage mb-3 font-serif text-xl dark:text-amber-500">
               Snoqualmie Inn by Hotel America
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
@@ -45,7 +45,7 @@ export default function TravelPage() {
 
           <div className="space-y-6">
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h4 className="text-sage mb-4 font-serif text-lg">
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
                 Contact Information
               </h4>
               <div className="space-y-2">
@@ -57,7 +57,7 @@ export default function TravelPage() {
                   <span className="font-medium">Phone:</span>{' '}
                   <a
                     href="tel:+14253633888"
-                    className="text-sage hover:text-sage/80 transition-colors"
+                    className="text-sage hover:text-sage/80 transition-colors dark:text-amber-500 dark:hover:text-amber-400"
                   >
                     (425) 363-3888
                   </a>
@@ -68,7 +68,7 @@ export default function TravelPage() {
                     href="https://www.thehotelamerica.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sage hover:text-sage/80 transition-colors"
+                    className="text-sage hover:text-sage/80 transition-colors dark:text-amber-500 dark:hover:text-amber-400"
                   >
                     www.thehotelamerica.com
                   </a>
@@ -77,7 +77,7 @@ export default function TravelPage() {
             </div>
 
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h4 className="text-sage mb-4 font-serif text-lg">
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
                 Booking Information
               </h4>
               <div className="space-y-3">
@@ -93,7 +93,7 @@ export default function TravelPage() {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <svg
-                        className="text-sage/70 dark:text-sage/80 h-5 w-5"
+                        className="text-sage/70 h-5 w-5 dark:text-amber-500/80"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ export default function TravelPage() {
                 <div className="flex">
                   <div className="flex-shrink-0">
                     <svg
-                      className="text-sage/70 dark:text-sage/80 h-5 w-5"
+                      className="text-sage/70 h-5 w-5 dark:text-amber-500/80"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -164,7 +164,7 @@ export default function TravelPage() {
                 href="https://book.rguest.com/onecart/wbe/room/1566/HotelAmerica/2026-07-10/2026-07-12/VHWD12/1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:bg-zinc-800"
+                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:border-amber-500 dark:bg-zinc-800 dark:text-amber-500 hover:dark:bg-amber-500/10"
               >
                 Book Your Room
               </a>
@@ -177,10 +177,10 @@ export default function TravelPage() {
       <section id="shuttle" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
-            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
+            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3 dark:bg-amber-500/10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-sage h-8 w-8"
+                className="text-sage h-8 w-8 dark:text-amber-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -193,7 +193,7 @@ export default function TravelPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-sage mb-3 font-serif text-xl">
+            <h3 className="text-sage mb-3 font-serif text-xl dark:text-amber-500">
               Complimentary Hotel Shuttle Service
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
@@ -203,13 +203,13 @@ export default function TravelPage() {
           </div>
 
           <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-            <h4 className="text-sage mb-4 font-serif text-lg">
+            <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
               Why Take the Shuttle?
             </h4>
             <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -228,7 +228,7 @@ export default function TravelPage() {
               </li>
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -246,7 +246,7 @@ export default function TravelPage() {
               </li>
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -264,7 +264,7 @@ export default function TravelPage() {
           </div>
 
           <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-            <h4 className="text-sage mb-4 font-serif text-lg">
+            <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
               Shuttle Schedule
             </h4>
             <div className="space-y-6">
@@ -275,7 +275,7 @@ export default function TravelPage() {
                 <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex items-start">
                     <svg
-                      className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                      className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -291,7 +291,7 @@ export default function TravelPage() {
                   </li>
                   <li className="flex items-start">
                     <svg
-                      className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                      className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -315,7 +315,7 @@ export default function TravelPage() {
                 <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex items-start">
                     <svg
-                      className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                      className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -331,7 +331,7 @@ export default function TravelPage() {
                   </li>
                   <li className="flex items-start">
                     <svg
-                      className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                      className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -351,13 +351,13 @@ export default function TravelPage() {
           </div>
 
           <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-            <h4 className="text-sage mb-4 font-serif text-lg">
+            <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
               Important Information
             </h4>
             <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -375,7 +375,7 @@ export default function TravelPage() {
               </li>
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -391,7 +391,7 @@ export default function TravelPage() {
               </li>
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -424,10 +424,10 @@ export default function TravelPage() {
       <section id="parking" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
-            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
+            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3 dark:bg-amber-500/10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-sage h-8 w-8"
+                className="text-sage h-8 w-8 dark:text-amber-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -440,7 +440,7 @@ export default function TravelPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-sage mb-3 font-serif text-xl">
+            <h3 className="text-sage mb-3 font-serif text-xl dark:text-amber-500">
               Parking at North Fork Farm
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
@@ -456,13 +456,13 @@ export default function TravelPage() {
             />
           </div>
           <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-            <h4 className="text-sage mb-4 font-serif text-lg">
+            <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
               Important Information
             </h4>
             <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -478,7 +478,7 @@ export default function TravelPage() {
               </li>
               <li className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -499,13 +499,13 @@ export default function TravelPage() {
           </div>
 
           <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-            <h4 className="text-sage mb-4 font-serif text-lg">
+            <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
               Parking Directions
             </h4>
             <div className="space-y-4">
               <div className="flex items-start">
                 <svg
-                  className="text-sage mr-2 h-6 w-6 flex-shrink-0"
+                  className="text-sage mr-2 h-6 w-6 flex-shrink-0 dark:text-amber-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -539,10 +539,10 @@ export default function TravelPage() {
       <section id="airport" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
-            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
+            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3 dark:bg-amber-500/10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-sage h-8 w-8"
+                className="text-sage h-8 w-8 dark:text-amber-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -555,7 +555,7 @@ export default function TravelPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-sage mb-3 font-serif text-xl">
+            <h3 className="text-sage mb-3 font-serif text-xl dark:text-amber-500">
               SeaTac International Airport
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
@@ -565,7 +565,7 @@ export default function TravelPage() {
           </div>
 
           <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-            <h4 className="text-sage mb-4 font-serif text-lg">
+            <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
               Transportation Options
             </h4>
             <div className="space-y-4">
@@ -595,10 +595,10 @@ export default function TravelPage() {
       <section id="attractions" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
           <div className="mb-6 text-center">
-            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3">
+            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3 dark:bg-amber-500/10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-sage h-8 w-8"
+                className="text-sage h-8 w-8 dark:text-amber-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -617,7 +617,7 @@ export default function TravelPage() {
                 />
               </svg>
             </div>
-            <h3 className="text-sage mb-3 font-serif text-xl">
+            <h3 className="text-sage mb-3 font-serif text-xl dark:text-amber-500">
               Nearby Attractions
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
@@ -628,7 +628,7 @@ export default function TravelPage() {
 
           <div className="space-y-6">
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h3 className="text-sage mb-4 font-serif text-xl">
+              <h3 className="text-sage mb-4 font-serif text-xl dark:text-amber-500">
                 Near the Venue
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -639,7 +639,7 @@ export default function TravelPage() {
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -655,7 +655,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -671,7 +671,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -694,7 +694,7 @@ export default function TravelPage() {
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -710,7 +710,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -726,7 +726,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -746,7 +746,7 @@ export default function TravelPage() {
             </div>
 
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h3 className="text-sage mb-4 font-serif text-xl">
+              <h3 className="text-sage mb-4 font-serif text-xl dark:text-amber-500">
                 Within 1 Hour
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -757,7 +757,7 @@ export default function TravelPage() {
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -773,7 +773,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -789,7 +789,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -812,7 +812,7 @@ export default function TravelPage() {
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -832,7 +832,7 @@ export default function TravelPage() {
             </div>
 
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h3 className="text-sage mb-4 font-serif text-xl">
+              <h3 className="text-sage mb-4 font-serif text-xl dark:text-amber-500">
                 Nightlife Options
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -843,7 +843,7 @@ export default function TravelPage() {
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -859,7 +859,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -875,7 +875,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -898,7 +898,7 @@ export default function TravelPage() {
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -914,7 +914,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -930,7 +930,7 @@ export default function TravelPage() {
                     </li>
                     <li className="flex items-start">
                       <svg
-                        className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
