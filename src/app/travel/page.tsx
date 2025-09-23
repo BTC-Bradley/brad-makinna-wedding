@@ -14,6 +14,125 @@ export default function TravelPage() {
         </p>
       </div>
 
+      {/* Venue Section */}
+      <section id="venue" className="mb-16">
+        <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
+          <div className="mb-6 text-center">
+            <div className="bg-sage/10 mb-4 inline-flex items-center justify-center rounded-full p-3 dark:bg-amber-500/10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-sage h-8 w-8 dark:text-amber-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+              </svg>
+            </div>
+            <h3 className="text-sage mb-3 font-serif text-xl dark:text-amber-500">
+              North Fork Farm
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Our beautiful wedding venue nestled in the heart of the Snoqualmie
+              Valley.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
+                Venue Information
+              </h4>
+              <div className="space-y-2">
+                <p className="text-gray-700 dark:text-gray-200">
+                  <span className="font-medium">Address:</span> 43010 SE 79th
+                  St, Snoqualmie, WA 98065
+                </p>
+                <div className="flex flex-col gap-2 sm:flex-row">
+                  <a
+                    href="https://maps.apple.com/?q=43010+SE+79th+St,+Snoqualmie,+WA+98065"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200"
+                  >
+                    <svg
+                      className="mr-2 h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    Apple Maps
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=43010+SE+79th+St,+Snoqualmie,+WA+98065"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                  >
+                    <svg
+                      className="mr-2 h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    Google Maps
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
+                About the Venue
+              </h4>
+              <div className="space-y-3 text-gray-700 dark:text-gray-200">
+                <p>
+                  North Fork Farm offers a picturesque setting with stunning
+                  views of the surrounding mountains and countryside. The venue
+                  features both indoor and outdoor spaces, perfect for our
+                  ceremony and reception.
+                </p>
+                <p>
+                  The farm provides a rustic yet elegant atmosphere that
+                  perfectly complements our vision for the day.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
+              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
+                Getting to the Venue
+              </h4>
+              <div className="space-y-3 text-gray-700 dark:text-gray-200">
+                <p>
+                  <span className="font-medium">From Snoqualmie Inn:</span>{' '}
+                  Approximately 15 minutes by car or shuttle
+                </p>
+                <p>
+                  <span className="font-medium">From SeaTac Airport:</span>{' '}
+                  Approximately 45 minutes by car
+                </p>
+                <p>
+                  <span className="font-medium">From Seattle:</span>{' '}
+                  Approximately 35 minutes by car
+                </p>
+                <p>
+                  <span className="font-medium">Parking:</span> Limited parking
+                  available on-site (see Parking section below for details)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hotel Section */}
       <section id="hotel" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 
 const sections = [
+  { id: 'venue', label: 'Venue' },
   { id: 'hotel', label: 'Hotel' },
   { id: 'shuttle', label: 'Shuttle Service' },
   { id: 'parking', label: 'Parking' },
