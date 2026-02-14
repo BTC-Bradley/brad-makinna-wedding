@@ -52,13 +52,9 @@ export async function getExistingRSVP(guestId: string) {
   }
 }
 
-// Helper function to save RSVP submission (upsert if existing)
-export async function saveRSVPSubmission(rsvpData: RSVPSubmission, isUpdate = false) {
+// Helper function to save RSVP submission
+export async function saveRSVPSubmission(rsvpData: RSVPSubmission) {
   try {
-    if (isUpdate) {
-      const { resource } = await rsvpsContainer.items.upsert(rsvpData)
-      return resource
-    }
     const { resource } = await rsvpsContainer.items.create(rsvpData)
     return resource
   } catch (error) {

@@ -54,12 +54,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check for existing RSVP — upsert instead of duplicate
+    // Block resubmission if RSVP already exists
     const existingRSVP = await getExistingRSVP(guestId)
+    if (existingRSVP) {
+      return NextResponse.json(
+        { error: 'already_submitted' },
+        { status: 409 },
+      )
+    }
 
     // Create RSVP submission object
     const rsvpData: RSVPSubmission = {
-      ...(existingRSVP?.id ? { id: existingRSVP.id } : {}),
       guestId,
       rsvpId,
       attending,
@@ -70,8 +75,8 @@ export async function POST(request: NextRequest) {
       submittedBy: body.submittedBy,
     }
 
-    // Save to Cosmos DB (upsert)
-    const savedRSVP = await saveRSVPSubmission(rsvpData, !!existingRSVP)
+    // Save to Cosmos DB
+    const savedRSVP = await saveRSVPSubmission(rsvpData)
 
     if (!savedRSVP) {
       return NextResponse.json(
@@ -82,12 +87,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       {
-        message: existingRSVP
-          ? 'RSVP updated successfully'
-          : 'RSVP submitted successfully',
+        message: 'RSVP submitted successfully',
         rsvpId: savedRSVP.id,
       },
-      { status: existingRSVP ? 200 : 201 },
+      { status: 201 },
     )
   } catch (error) {
     console.error('Error submitting RSVP:', error)

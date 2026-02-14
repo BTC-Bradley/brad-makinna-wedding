@@ -20,7 +20,7 @@ interface PlusOneInfo {
 }
 
 export default function RSVPForm({ guestList }: RSVPFormProps) {
-  const [step, setStep] = useState<'attendance' | 'confirmation' | 'success'>(
+  const [step, setStep] = useState<'attendance' | 'confirmation' | 'success' | 'already_submitted'>(
     'attendance',
   )
   const [guestAttendance, setGuestAttendance] = useState<GuestAttendance[]>(
@@ -173,6 +173,12 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
 
       if (!response.ok) {
         const errorData = await response.json()
+        if (response.status === 409) {
+          // Already submitted — show success-like state
+          setIsAttendingWedding(false)
+          setStep('already_submitted' as typeof step)
+          return
+        }
         throw new Error(errorData.error || 'Failed to submit RSVP')
       }
 
@@ -689,7 +695,34 @@ export default function RSVPForm({ guestList }: RSVPFormProps) {
         </div>
       )}
 
-      {step === 'attendance'
+      {step === 'already_submitted' ? (
+        <div className="space-y-6 text-center">
+          <div className="bg-sage/20 mx-auto flex h-16 w-16 items-center justify-center rounded-full dark:bg-amber-400/30">
+            <svg
+              className="text-sage h-8 w-8 dark:text-amber-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <h3 className="text-sage text-2xl font-medium dark:text-amber-400">
+            Thank You!
+          </h3>
+          <p className="text-lg text-gray-700 dark:text-gray-300">
+            We&apos;ve already received your RSVP. Thank you for letting us know!
+          </p>
+          <p className="text-gray-600 dark:text-gray-400">
+            If you need to make changes, please reach out to us directly.
+          </p>
+        </div>
+      ) : step === 'attendance'
         ? renderAttendanceStep()
         : step === 'confirmation'
           ? renderConfirmationStep()
