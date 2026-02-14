@@ -1,9 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getGuestById, saveRSVPSubmission } from '@/lib/cosmos'
+import { getGuestById, saveRSVPSubmission, getExistingRSVP } from '@/lib/cosmos'
 import { RSVPSubmission } from '@/interfaces/guest'
+
+// In-memory rate limiter (per Vercel serverless instance)
+const rateLimit = new Map<string, { count: number; resetAt: number }>()
+const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
+const RATE_LIMIT_MAX = 5 // 5 requests per minute per IP
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateLimit.get(ip)
+
+  if (!entry || now > entry.resetAt) {
+    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
+    return false
+  }
+
+  entry.count++
+  return entry.count > RATE_LIMIT_MAX
+}
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again in a minute.' },
+        { status: 429 },
+      )
+    }
+
     const body = await request.json()
 
     // Validate required fields
@@ -28,8 +54,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Check for existing RSVP — upsert instead of duplicate
+    const existingRSVP = await getExistingRSVP(guestId)
+
     // Create RSVP submission object
     const rsvpData: RSVPSubmission = {
+      ...(existingRSVP?.id ? { id: existingRSVP.id } : {}),
       guestId,
       rsvpId,
       attending,
@@ -40,10 +70,8 @@ export async function POST(request: NextRequest) {
       submittedBy: body.submittedBy,
     }
 
-    console.log('RSVP Submission Data:', rsvpData)
-
-    // Save to Cosmos DB
-    const savedRSVP = await saveRSVPSubmission(rsvpData)
+    // Save to Cosmos DB (upsert)
+    const savedRSVP = await saveRSVPSubmission(rsvpData, !!existingRSVP)
 
     if (!savedRSVP) {
       return NextResponse.json(
@@ -54,10 +82,12 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       {
-        message: 'RSVP submitted successfully',
+        message: existingRSVP
+          ? 'RSVP updated successfully'
+          : 'RSVP submitted successfully',
         rsvpId: savedRSVP.id,
       },
-      { status: 201 },
+      { status: existingRSVP ? 200 : 201 },
     )
   } catch (error) {
     console.error('Error submitting RSVP:', error)

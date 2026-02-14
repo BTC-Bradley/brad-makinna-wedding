@@ -36,9 +36,29 @@ export async function getGuestById(id: string) {
   }
 }
 
-// Helper function to save RSVP submission
-export async function saveRSVPSubmission(rsvpData: RSVPSubmission) {
+// Helper function to find existing RSVP by guestId
+export async function getExistingRSVP(guestId: string) {
   try {
+    const { resources } = await rsvpsContainer.items
+      .query({
+        query: 'SELECT * FROM c WHERE c.guestId = @guestId',
+        parameters: [{ name: '@guestId', value: guestId }],
+      })
+      .fetchAll()
+    return resources[0] || null
+  } catch (error) {
+    console.error('Error checking existing RSVP:', error)
+    return null
+  }
+}
+
+// Helper function to save RSVP submission (upsert if existing)
+export async function saveRSVPSubmission(rsvpData: RSVPSubmission, isUpdate = false) {
+  try {
+    if (isUpdate) {
+      const { resource } = await rsvpsContainer.items.upsert(rsvpData)
+      return resource
+    }
     const { resource } = await rsvpsContainer.items.create(rsvpData)
     return resource
   } catch (error) {
