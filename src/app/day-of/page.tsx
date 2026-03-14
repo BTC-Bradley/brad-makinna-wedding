@@ -4,6 +4,12 @@ export const metadata: Metadata = {
   title: 'Day Of | Bradley & MaKinna',
   description:
     'Wedding day timeline and itinerary for Bradley & MaKinna — July 11, 2026 in Snoqualmie, WA',
+  openGraph: {
+    title: 'Day Of | Bradley & MaKinna',
+    description:
+      'Wedding day timeline and itinerary — July 11, 2026 in Snoqualmie, WA.',
+    type: 'website',
+  },
 }
 
 interface TimelineEvent {

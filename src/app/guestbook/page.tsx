@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: 'Guestbook | Bradley & MaKinna',
   description:
     'Leave a heartfelt message for Bradley & MaKinna on their wedding day.',
+  openGraph: {
+    title: 'Guestbook | Bradley & MaKinna',
+    description:
+      'Leave a heartfelt message for Bradley & MaKinna on their wedding day.',
+    type: 'website',
+  },
 }
 
 interface GuestbookEntry {

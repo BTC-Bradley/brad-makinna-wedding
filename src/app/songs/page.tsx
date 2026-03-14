@@ -4,6 +4,11 @@ import { guestsContainer, rsvpsContainer } from '@/lib/cosmos'
 export const metadata: Metadata = {
   title: 'Song Requests | Bradley & MaKinna Hanson',
   description: 'Song requests from our wedding guests',
+  openGraph: {
+    title: 'Song Requests | Bradley & MaKinna',
+    description: 'See what songs our guests are requesting for the celebration.',
+    type: 'website',
+  },
 }
 
 interface Song {

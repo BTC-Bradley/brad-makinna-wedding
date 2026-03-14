@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: 'Gallery | Bradley & MaKinna',
   description:
     'Photos from our wedding journey — ceremony, reception, and all the memories in between.',
+  openGraph: {
+    title: 'Gallery | Bradley & MaKinna',
+    description:
+      'Photos from our wedding journey — ceremony, reception, and all the memories in between.',
+    type: 'website',
+  },
 }
 
 // Masonry tiles with sage/amber/warm gradient combos

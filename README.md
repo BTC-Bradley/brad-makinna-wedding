@@ -4,16 +4,33 @@ A beautiful, responsive wedding website built with Next.js, TypeScript, and Tail
 
 ## Features
 
-- 🎨 Rustic, romantic design with earthy tones
+### Core Pages
+- 🎨 Rustic, romantic design with earthy tones (sage, amber, ivory)
 - 📱 Fully responsive for all devices
 - ⏰ Countdown timer to the wedding day
-- 📝 RSVP form with meal preferences
-- 📸 Photo gallery with lightbox
+- 📝 RSVP form with meal preferences and dietary notes
 - 📍 Venue details and Google Maps integration
 - 🏨 Accommodation recommendations
 - 🎁 Registry information
-- 📞 Contact form
 - 📖 Our story timeline
+- 🌗 Dark mode support
+
+### Pages Added During Overnight Build Session (March 2026)
+All on branch `feature/overnight-surprises`:
+
+| Page | Route | Description |
+|------|-------|-------------|
+| **RSVP Stats** | `/rsvp-stats` | Live admin dashboard showing RSVP counts by meal preference, state, and dietary restrictions. Server-rendered, force-dynamic. |
+| **Seating Chart** | `/seating` | Interactive visual venue floor plan with draggable/searchable table layout. Client-side with guest name search. |
+| **Guestbook** | `/guestbook` | Guests can leave messages and see others' notes. Backed by Cosmos DB. |
+| **Day-Of Timeline** | `/day-of` | Wedding day itinerary with time-based visual timeline for guests. |
+| **Photo Gallery** | `/gallery` | Masonry-style gallery with sage/amber gradient placeholders — ready to swap in real photos. |
+| **Wedding Party** | `/wedding-party` | Meet the bridesmaids and groomsmen with photo cards (randomized order). |
+| **Custom 404** | `*` | Branded "This page has eloped" 404 with links back home and to RSVP. |
+
+### Hero Quick Links
+The home page countdown section includes a row of pill-style icon buttons for fast navigation to:
+RSVP · Schedule · Travel · Songs · Guestbook
 
 ## Getting Started
 

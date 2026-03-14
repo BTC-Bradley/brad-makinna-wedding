@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import { useState } from 'react'
 
 // Table layout data — positions as percentages of the venue floor

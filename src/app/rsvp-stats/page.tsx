@@ -6,6 +6,11 @@ import StatsCountdown from '@/components/StatsCountdown'
 export const metadata: Metadata = {
   title: 'RSVP Stats | Bradley & MaKinna',
   description: 'Live RSVP stats for the wedding.',
+  openGraph: {
+    title: 'RSVP Stats | Bradley & MaKinna',
+    description: 'Live RSVP stats for the Bradley & MaKinna wedding.',
+    type: 'website',
+  },
 }
 
 // Don't cache — always live

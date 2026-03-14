@@ -3,6 +3,14 @@ import { Metadata } from 'next'
 import CountdownTimer from '@/components/CountdownTimer'
 import heroBgImage from '@/images/hero-bg.jpg'
 
+const quickLinks = [
+  { href: '/rsvp', label: 'RSVP', emoji: '💌' },
+  { href: '/schedule', label: 'Schedule', emoji: '📅' },
+  { href: '/travel', label: 'Travel', emoji: '✈️' },
+  { href: '/songs', label: 'Songs', emoji: '🎵' },
+  { href: '/guestbook', label: 'Guestbook', emoji: '📖' },
+]
+
 export const metadata: Metadata = {
   title: 'Bradley & MaKinna Hanson | Wedding',
   description:
@@ -36,6 +44,20 @@ export default function HomePage() {
             July 11, 2026 • Snoqualmie, WA
           </p>
           <CountdownTimer />
+
+          {/* Quick Links */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {quickLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/25 hover:border-white/60 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50"
+              >
+                <span className="text-base leading-none">{link.emoji}</span>
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
