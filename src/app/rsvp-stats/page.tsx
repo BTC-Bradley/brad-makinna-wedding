@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { guestsContainer, rsvpsContainer } from '@/lib/cosmos'
 import type { GuestListDocument, RSVPSubmission } from '@/interfaces/guest'
+import StatsCountdown from '@/components/StatsCountdown'
 
 export const metadata: Metadata = {
   title: 'RSVP Stats | Bradley & MaKinna',
@@ -9,6 +10,20 @@ export const metadata: Metadata = {
 
 // Don't cache — always live
 export const dynamic = 'force-dynamic'
+
+interface StateStat {
+  state: string
+  count: number
+  cities: string[]
+  attendingCount: number
+}
+
+interface GeoStats {
+  byState: StateStat[]
+  international: { country: string; names: string; city: string }[]
+  farthestTraveler: { names: string; location: string } | null
+  unknownLocation: number
+}
 
 interface RSVPStats {
   // Invitations
@@ -34,6 +49,9 @@ interface RSVPStats {
 
   // Guest group breakdown
   groups: GroupStat[]
+
+  // Geo
+  geo: GeoStats
 }
 
 interface DietaryEntry {
@@ -53,7 +71,7 @@ async function getStats(): Promise<RSVPStats> {
   const [guestResult, rsvpResult] = await Promise.all([
     guestsContainer.items
       .query(
-        'SELECT c.id, c.names, c.guestCount, c.outOfTown, c.group FROM c',
+        'SELECT c.id, c.names, c.guestCount, c.outOfTown, c.group, c.address FROM c',
       )
       .fetchAll(),
     rsvpsContainer.items.query('SELECT * FROM c').fetchAll(),
@@ -61,7 +79,7 @@ async function getStats(): Promise<RSVPStats> {
 
   const guests = guestResult.resources as Pick<
     GuestListDocument,
-    'id' | 'names' | 'guestCount' | 'outOfTown' | 'group'
+    'id' | 'names' | 'guestCount' | 'outOfTown' | 'group' | 'address'
   >[]
   const rsvps = rsvpResult.resources as RSVPSubmission[]
 
@@ -151,6 +169,73 @@ async function getStats(): Promise<RSVPStats> {
     (a, b) => b.invited - a.invited,
   )
 
+  // --- Geo aggregation ---
+  // We consider "home state" = WA (Brad & MaKinna are in Lake Stevens, WA)
+  const HOME_STATE = 'WA'
+  const stateMap = new Map<string, { count: number; cities: Set<string>; attendingCount: number }>()
+  const international: { country: string; names: string; city: string }[] = []
+  let unknownLocation = 0
+
+  for (const guest of guests) {
+    const addr = guest.address
+    if (!addr) { unknownLocation++; continue }
+
+    const country = (addr.country || '').trim()
+    const state = (addr.stateProvince || '').trim()
+    const city = (addr.city || '').trim()
+
+    // International: has country and it's not USA variants
+    const isUSA = !country || ['US', 'USA', 'United States', 'United States of America'].includes(country)
+    if (!isUSA) {
+      international.push({ country, names: guest.names, city })
+      continue
+    }
+
+    if (!state && !city) { unknownLocation++; continue }
+
+    const key = state || city
+    if (!stateMap.has(key)) {
+      stateMap.set(key, { count: 0, cities: new Set(), attendingCount: 0 })
+    }
+    const entry = stateMap.get(key)!
+    entry.count++
+    if (city) entry.cities.add(city)
+
+    const rsvp = rsvpByGuestId.get(guest.id)
+    if (rsvp?.attending) entry.attendingCount++
+  }
+
+  const byState: StateStat[] = Array.from(stateMap.entries())
+    .map(([state, { count, cities, attendingCount }]) => ({
+      state,
+      count,
+      cities: Array.from(cities).sort(),
+      attendingCount,
+    }))
+    .sort((a, b) => {
+      // Home state last (or first — let's put WA first since it'll be biggest)
+      if (a.state === HOME_STATE) return -1
+      if (b.state === HOME_STATE) return 1
+      return b.count - a.count
+    })
+
+  // Farthest traveler: pick first international guest, else most distant state heuristic
+  let farthestTraveler: { names: string; location: string } | null = null
+  if (international.length > 0) {
+    const g = international[0]
+    farthestTraveler = {
+      names: g.names,
+      location: g.city ? `${g.city}, ${g.country}` : g.country,
+    }
+  }
+
+  const geo: GeoStats = {
+    byState,
+    international,
+    farthestTraveler,
+    unknownLocation,
+  }
+
   return {
     totalInvited,
     totalGuestCount,
@@ -166,6 +251,7 @@ async function getStats(): Promise<RSVPStats> {
     songRequests,
     additionalNotesCount,
     groups,
+    geo,
   }
 }
 
@@ -452,6 +538,140 @@ export default async function RSVPStatsPage() {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* Countdown to the Wedding */}
+      <div className="mb-10">
+        <h2 className="text-sage mb-2 font-serif text-2xl font-light dark:text-amber-400">
+          Countdown
+        </h2>
+        <p className="mb-6 text-sm text-gray-400 dark:text-gray-500">
+          July 11, 2026 · The big day ✨
+        </p>
+        <div className="rounded-2xl border border-sage/20 bg-white p-8 shadow-sm dark:border-amber-400/20 dark:bg-zinc-800">
+          <StatsCountdown />
+        </div>
+      </div>
+
+      {/* Guest Map / Origin Breakdown */}
+      <div className="mb-10">
+        <h2 className="text-sage mb-2 font-serif text-2xl font-light dark:text-amber-400">
+          Where Our Guests Are Coming From
+        </h2>
+        <p className="mb-6 text-sm text-gray-400 dark:text-gray-500">
+          {stats.geo.byState.length} state{stats.geo.byState.length !== 1 ? 's' : ''} represented
+          {stats.geo.international.length > 0 && ` + ${stats.geo.international.length} international`}
+        </p>
+
+        {/* State breakdown */}
+        {stats.geo.byState.length > 0 && (
+          <div className="mb-6 rounded-2xl border border-gray-100 bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-100 text-left dark:border-zinc-700">
+                  <th className="px-6 py-3 font-medium text-gray-500 dark:text-gray-400">
+                    State / Region
+                  </th>
+                  <th className="px-4 py-3 text-right font-medium text-gray-500 dark:text-gray-400">
+                    Invited
+                  </th>
+                  <th className="px-4 py-3 text-right font-medium text-gray-500 dark:text-gray-400">
+                    Attending
+                  </th>
+                  <th className="hidden px-4 py-3 text-left font-medium text-gray-500 sm:table-cell dark:text-gray-400">
+                    Cities
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-50 dark:divide-zinc-700/50">
+                {stats.geo.byState.map((s) => (
+                  <tr key={s.state}>
+                    <td className="px-6 py-3 font-medium text-gray-700 dark:text-gray-200">
+                      {s.state}
+                      {s.state === 'WA' && (
+                        <span className="ml-2 text-xs text-gray-400 dark:text-gray-500">
+                          (home)
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-right text-gray-600 dark:text-gray-300">
+                      {s.count}
+                    </td>
+                    <td className="text-sage px-4 py-3 text-right font-medium dark:text-amber-400">
+                      {s.attendingCount}
+                    </td>
+                    <td className="hidden px-4 py-3 text-xs text-gray-400 sm:table-cell dark:text-gray-500">
+                      {s.cities.slice(0, 5).join(', ')}
+                      {s.cities.length > 5 && ` +${s.cities.length - 5} more`}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {/* Out-of-town stat */}
+        <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <StatCard
+            label="Out-of-Town Invited"
+            value={stats.outOfTown}
+            sub={`${stats.outOfTownAttending} confirmed attending`}
+            emoji="✈️"
+          />
+          <StatCard
+            label="States Represented"
+            value={stats.geo.byState.length}
+            emoji="🗺️"
+          />
+          {stats.geo.international.length > 0 && (
+            <StatCard
+              label="International Guests"
+              value={stats.geo.international.length}
+              accent
+              emoji="🌍"
+            />
+          )}
+        </div>
+
+        {/* Farthest traveler */}
+        {stats.geo.farthestTraveler && (
+          <div className="rounded-2xl border border-amber-200/60 bg-amber-50/50 p-6 dark:border-amber-400/20 dark:bg-amber-400/5">
+            <div className="mb-1 text-2xl">🏆</div>
+            <div className="text-sm font-medium tracking-wide text-gray-500 uppercase dark:text-gray-400">
+              Farthest Traveler
+            </div>
+            <div className="mt-1 font-serif text-xl font-light text-gray-800 dark:text-gray-100">
+              {stats.geo.farthestTraveler.names}
+            </div>
+            <div className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">
+              Traveling from {stats.geo.farthestTraveler.location}
+            </div>
+          </div>
+        )}
+
+        {/* International guests list */}
+        {stats.geo.international.length > 0 && (
+          <div className="mt-4 rounded-2xl border border-gray-100 bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
+            <div className="border-b border-gray-100 px-6 py-4 dark:border-zinc-700">
+              <span className="text-sm font-medium text-gray-500 uppercase dark:text-gray-400">
+                🌍 International Guests
+              </span>
+            </div>
+            <ul className="divide-y divide-gray-50 dark:divide-zinc-700/50">
+              {stats.geo.international.map((g, i) => (
+                <li key={i} className="flex items-center justify-between px-6 py-3">
+                  <span className="font-serif text-sm text-gray-700 dark:text-gray-200">
+                    {g.names}
+                  </span>
+                  <span className="text-xs text-gray-400 dark:text-gray-500">
+                    {g.city ? `${g.city}, ` : ''}{g.country}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Footer */}
