@@ -12,6 +12,7 @@ export default function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/schedule', label: 'Schedule' },
     { href: '/rsvp', label: 'RSVP' },
+    { href: '/songs', label: 'Songs' },
     { href: '/registry', label: 'Registry' },
   ]
 
