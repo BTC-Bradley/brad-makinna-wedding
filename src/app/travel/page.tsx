@@ -846,7 +846,7 @@ export default function TravelPage() {
 
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h3 className="text-sage mb-4 font-serif text-xl dark:text-amber-500">
-                Within 1 Hour
+                Exploring the Area
               </h3>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
