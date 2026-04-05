@@ -823,6 +823,22 @@ export default function TravelPage() {
                       </svg>
                       <span>Snoqualmie Casino</span>
                     </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Taste of Snoqualmie</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -908,6 +924,121 @@ export default function TravelPage() {
                         />
                       </svg>
                       <span>Chateau Ste. Michelle Winery</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
+              <h3 className="text-sage mb-4 font-serif text-xl dark:text-amber-500">
+                Summer Events & Festivals
+              </h3>
+              <p className="mb-4 text-sm text-gray-600 italic dark:text-gray-400">
+                Our wedding weekend falls in the heart of summer — there&apos;s a lot happening around the area!
+              </p>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div>
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
+                    Festivals
+                  </h4>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Ballard Seafood Fest</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Lavender Festival</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>West Seattle Summer Fest</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
+                    More to Do
+                  </h4>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Outdoor Movies in the Park</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>
+                        San Juan Island Day Trip —{' '}
+                        <a
+                          href="https://www.wsdot.wa.gov/ferries/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sage hover:text-sage/80 dark:text-amber-500 dark:hover:text-amber-400 transition-colors"
+                        >
+                          book ferry tickets early
+                        </a>
+                      </span>
                     </li>
                   </ul>
                 </div>
