@@ -884,6 +884,54 @@ export default function TravelPage() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
+                      <span>Space Needle & Seattle Center</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Chihuly Garden and Glass</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>MoPOP (Museum of Pop Culture)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
                       <span>Gas Works Park</span>
                     </li>
                     <li className="flex items-start">
@@ -902,11 +950,27 @@ export default function TravelPage() {
                       </svg>
                       <span>Seattle Aquarium</span>
                     </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Bite of Seattle (food festival, mid-July)</span>
+                    </li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="mb-2 font-medium text-gray-900 dark:text-gray-100">
-                    Wine Country
+                    Wine Country & Day Trips
                   </h4>
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                     <li className="flex items-start">
@@ -924,6 +988,54 @@ export default function TravelPage() {
                         />
                       </svg>
                       <span>Chateau Ste. Michelle Winery</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Bainbridge Island — ferry from downtown Seattle (35 min)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Mount Rainier National Park (~2 hrs)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg
+                        className="text-sage mr-2 h-5 w-5 flex-shrink-0 dark:text-amber-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Leavenworth — Bavarian village (~1.5 hrs east)</span>
                     </li>
                   </ul>
                 </div>
