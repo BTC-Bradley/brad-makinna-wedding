@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getGuestById, saveRSVPSubmission, getExistingRSVP } from '@/lib/cosmos'
 import { RSVPSubmission } from '@/interfaces/guest'
 
+// RSVPs are closed now that the deadline has passed. Flip this to `true` to
+// re-enable submissions (e.g. for an example/demo rebuild of this site).
+const RSVP_OPEN = false
+
 // In-memory rate limiter (per Vercel serverless instance)
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
 const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
@@ -22,6 +26,13 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!RSVP_OPEN) {
+      return NextResponse.json(
+        { error: 'RSVPs are now closed.' },
+        { status: 403 },
+      )
+    }
+
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
     if (isRateLimited(ip)) {
       return NextResponse.json(

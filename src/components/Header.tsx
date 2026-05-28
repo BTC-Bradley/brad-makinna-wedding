@@ -30,7 +30,6 @@ export const navigationItems: NavigationItem[] = [
   { href: '/travel', label: 'Travel' },
   { href: '/wedding-party', label: 'Wedding Party' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/rsvp', label: 'RSVP' },
   { href: '/gifts', label: 'Gifts' },
 ]
 

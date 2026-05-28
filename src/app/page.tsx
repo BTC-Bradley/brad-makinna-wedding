@@ -84,17 +84,11 @@ export default function HomePage() {
               RSVP
             </h3>
             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              Please use your code to RSVP.
+              RSVPs are now closed.
             </p>
             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              <strong>Deadline:</strong> April 11, 2026
+              Thank you to everyone who responded!
             </p>
-            <a
-              href="/rsvp"
-              className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
-            >
-              RSVP Now →
-            </a>
           </div>
           <div className="bg-ivory rounded-lg p-6 text-center shadow-lg ring-1 ring-gray-200/50 dark:bg-zinc-900 dark:ring-gray-700/50">
             <h3 className="text-amber mb-4 font-serif text-xl dark:text-amber-400">
