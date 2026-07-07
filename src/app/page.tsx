@@ -43,12 +43,41 @@ export default function HomePage() {
       <section className="bg-ivory py-16 dark:bg-zinc-900">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-amber mb-4 font-serif text-3xl dark:text-amber-400">
-            See You This Saturday
+            Wedding Weekend
           </h2>
           <p className="mb-8 text-gray-700 dark:text-gray-300">
-            We can&apos;t wait to celebrate with you at North Fork Farm. Arrive
-            by 2:30 PM — ceremony starts at 3:00 PM.
+            We can&apos;t wait to celebrate with you! Here&apos;s the full
+            weekend at a glance.
           </p>
+
+          <div className="mb-8 space-y-4 text-left">
+            <div className="rounded-lg bg-white/60 p-5 ring-1 ring-gray-200/60 dark:bg-zinc-800/60 dark:ring-gray-700/50">
+              <p className="text-amber mb-1 font-serif text-lg dark:text-amber-400">
+                Saturday, July 11
+              </p>
+              <p className="text-gray-700 dark:text-gray-300">
+                <strong>Wedding</strong> at North Fork Farm — arrive by 2:30
+                PM, ceremony at 3:00 PM
+              </p>
+              <p className="mt-2 text-gray-600 dark:text-gray-400">
+                <strong>After party</strong> at No Boat Brewing Company — 10:00
+                PM to 1:00 AM
+              </p>
+            </div>
+            <div className="rounded-lg bg-white/60 p-5 ring-1 ring-gray-200/60 dark:bg-zinc-800/60 dark:ring-gray-700/50">
+              <p className="text-amber mb-1 font-serif text-lg dark:text-amber-400">
+                Sunday, July 12
+              </p>
+              <p className="text-gray-700 dark:text-gray-300">
+                <strong>Farewell brunch</strong> at South Fork Event Center —
+                10:00 AM to 12:00 PM
+              </p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Casual drop-in — first come, first served seating
+              </p>
+            </div>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="/travel"
