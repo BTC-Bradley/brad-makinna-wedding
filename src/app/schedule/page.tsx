@@ -2,17 +2,21 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Schedule | Bradley & MaKinna Hanson',
-  description: 'Wedding day schedule and timeline',
+  description: 'Wedding weekend schedule — ceremony, after party, and Sunday brunch',
 }
 
 export default function SchedulePage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-16">
       <h1 className="text-sage mb-6 text-center font-serif text-5xl font-light tracking-wide dark:text-amber-400">
-        Wedding Day Schedule
+        Weekend Schedule
       </h1>
       <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
-      <div className="mt-12 rounded-lg bg-white p-8 shadow-md dark:bg-zinc-800 dark:shadow-lg">
+
+      <h2 className="text-sage mb-6 text-center font-serif text-2xl dark:text-amber-400">
+        Saturday, July 11
+      </h2>
+      <div className="rounded-lg bg-white p-8 shadow-md dark:bg-zinc-800 dark:shadow-lg">
         <div className="space-y-6">
           <div className="flex items-start gap-4">
             <div className="w-24 shrink-0 text-right">
@@ -200,6 +204,63 @@ export default function SchedulePage() {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-lg bg-white p-8 shadow-md dark:bg-zinc-800 dark:shadow-lg">
+        <h2 className="text-sage mb-2 font-serif text-2xl dark:text-amber-400">
+          Sunday Brunch
+        </h2>
+        <p className="mb-6 text-gray-600 dark:text-gray-300">
+          Sunday, July 12 • 10:00 AM – 12:00 PM
+        </p>
+
+        <div className="space-y-4 text-gray-700 dark:text-gray-200">
+          <div>
+            <p className="text-sage font-medium dark:text-amber-400">
+              South Fork Event Center
+            </p>
+            <p>
+              14303 436th Ave SE
+              <br />
+              North Bend, WA 98045
+            </p>
+            <div className="mt-2 flex flex-wrap gap-4 text-sm">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=14303+436th+Ave+SE,+North+Bend,+WA+98045"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sage hover:text-sage/80 underline dark:text-amber-400 dark:hover:text-amber-300"
+              >
+                Google Maps
+              </a>
+              <a
+                href="https://maps.apple.com/?q=14303+436th+Ave+SE,+North+Bend,+WA+98045"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sage hover:text-sage/80 underline dark:text-amber-400 dark:hover:text-amber-300"
+              >
+                Apple Maps
+              </a>
+            </div>
+          </div>
+
+          <p>
+            Join us for a casual farewell brunch before everyone heads home.
+            All wedding guests are welcome — stop by anytime between 10:00 AM
+            and noon to say goodbye.
+          </p>
+
+          <p>
+            We don&apos;t have a reserved space or special catering. South Fork
+            is open to the public, so seating is first come, first served and
+            you&apos;ll order from their regular menu.
+          </p>
+
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            About a 15-minute drive from Snoqualmie. Dine-in and takeout
+            available.
+          </p>
         </div>
       </div>
     </div>
