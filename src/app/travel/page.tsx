@@ -157,8 +157,9 @@ export default function TravelPage() {
               Snoqualmie Inn by Hotel America
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              We have reserved a block of rooms at the Snoqualmie Inn by Hotel
-              America for your convenience.
+              Many of our guests are staying at the Snoqualmie Inn by Hotel
+              America. The room block booking deadline has passed, but contact
+              details are below for guests who have already booked.
             </p>
           </div>
 
@@ -193,100 +194,6 @@ export default function TravelPage() {
                   </a>
                 </p>
               </div>
-            </div>
-
-            <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
-              <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
-                Booking Information
-              </h4>
-              <div className="space-y-3">
-                <p className="text-gray-700 dark:text-gray-200">
-                  <span className="font-medium">Booking Code:</span> VHWD12
-                </p>
-                <p className="text-gray-700 dark:text-gray-200">
-                  <span className="font-medium">Booking Deadline:</span> June
-                  10, 2026
-                </p>
-
-                <div className="bg-sage/5 border-sage/20 dark:bg-sage/10 dark:border-sage/30 mt-4 rounded-lg border p-4">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <svg
-                        className="text-sage/70 h-5 w-5 dark:text-amber-500/80"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="ml-3">
-                      <h5 className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                        Please Note
-                      </h5>
-                      <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                        <p className="mb-2">
-                          The discounted rate applies to Friday to Sunday nights
-                          only. For additional nights before or after these
-                          dates, please call the hotel directly as standard
-                          rates will apply.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-sage/5 border-sage/20 dark:bg-sage/10 dark:border-sage/30 mt-4 rounded-lg border p-4">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <svg
-                      className="text-sage/70 h-5 w-5 dark:text-amber-500/80"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="ml-3">
-                    <h5 className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                      Book Early
-                    </h5>
-                    <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                      <p>
-                        We strongly recommend booking your hotel room as soon as
-                        possible. Seattle is hosting World Cup events in the
-                        weeks leading up to our wedding, which may impact hotel
-                        availability and pricing in the area.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-2">
-              <a
-                href="https://book.rguest.com/onecart/wbe/room/1566/HotelAmerica/2026-07-10/2026-07-12/VHWD12/1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:border-amber-500 dark:bg-zinc-800 dark:text-amber-500 hover:dark:bg-amber-500/10"
-              >
-                Book Your Room
-              </a>
             </div>
           </div>
         </div>
