@@ -10,7 +10,8 @@ export default function TravelPage() {
         </h1>
         <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-500/40"></div>
         <p className="text-gray-600 dark:text-gray-300">
-          Everything you need to know about getting to and around Snoqualmie.
+          Directions, parking, shuttle times, and hotel details for wedding
+          weekend.
         </p>
       </div>
 

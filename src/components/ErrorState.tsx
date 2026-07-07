@@ -9,7 +9,7 @@ export default function ErrorState({ message }: ErrorStateProps) {
     <div className="text-center text-red-600 dark:text-red-400">
       <p className="mb-4">{message}</p>
       <button
-        onClick={() => window.location.href = '/rsvp'}
+        onClick={() => window.location.reload()}
         className="text-sage hover:text-sage/90 dark:text-amber-400 dark:hover:text-amber-300 underline"
       >
         Try Again

@@ -39,20 +39,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Engagement Story Section */}
+      {/* Weekend Info Section */}
       <section className="bg-ivory py-16 dark:bg-zinc-900">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-amber mb-8 text-center font-serif text-3xl dark:text-amber-400">
-            Our Story
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <h2 className="text-amber mb-4 font-serif text-3xl dark:text-amber-400">
+            See You This Saturday
           </h2>
-          <div className="prose-lg prose mx-auto dark:prose-invert">
-            <p className="text-center text-gray-700 dark:text-gray-300">
-              In a moment that took our breath away, Bradley proposed on a
-              beautiful beach in Cabo. The sunset painted the sky in hues of
-              gold and pink, creating the perfect backdrop for our new
-              beginning. Now, we&apos;re excited to celebrate our love with
-              family and friends in the rustic charm of Snoqualmie WA.
-            </p>
+          <p className="mb-8 text-gray-700 dark:text-gray-300">
+            We can&apos;t wait to celebrate with you at North Fork Farm. Arrive
+            by 2:30 PM — ceremony starts at 3:00 PM.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/travel"
+              className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
+            >
+              Travel & Shuttle →
+            </a>
+            <a
+              href="/schedule"
+              className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
+            >
+              Full Schedule →
+            </a>
+            <a
+              href="/faq"
+              className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
+            >
+              FAQ & Weather →
+            </a>
           </div>
         </div>
       </section>
@@ -81,30 +96,30 @@ export default function HomePage() {
           </div>
           <div className="bg-ivory rounded-lg p-6 text-center shadow-lg ring-1 ring-gray-200/50 dark:bg-zinc-900 dark:ring-gray-700/50">
             <h3 className="text-amber mb-4 font-serif text-xl dark:text-amber-400">
-              RSVP
+              Schedule
             </h3>
             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              RSVPs are now closed.
+              Ceremony begins at 3:00 PM. Please arrive by 2:30 PM.
             </p>
-            <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              Thank you to everyone who responded!
-            </p>
+            <a
+              href="/schedule"
+              className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
+            >
+              View Full Schedule →
+            </a>
           </div>
           <div className="bg-ivory rounded-lg p-6 text-center shadow-lg ring-1 ring-gray-200/50 dark:bg-zinc-900 dark:ring-gray-700/50">
             <h3 className="text-amber mb-4 font-serif text-xl dark:text-amber-400">
-              Registry
+              Travel
             </h3>
             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              Your presence is the greatest gift of all.
-            </p>
-            <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              <strong>Registry:</strong> House/Honeymoon Fund
+              Shuttle times, parking, and hotel info for the weekend.
             </p>
             <a
-              href="/gifts"
+              href="/travel#shuttle"
               className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
             >
-              View Gift Options →
+              View Shuttle Schedule →
             </a>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default function GiftsPage() {
         <p className="text-gray-600 dark:text-gray-300">
           Your presence at our wedding is the greatest gift of all. However, if
           you wish to give a gift, we would be grateful for contributions to our
-          honeymoon fund or future home.
+          honeymoon fund or home fund.
         </p>
       </div>
 
@@ -41,8 +41,9 @@ export default function GiftsPage() {
                 Home Fund
               </h4>
               <p className="mb-4 text-gray-700 dark:text-gray-200">
-                Help us build our future together. Your contribution will go
-                towards our dream home and the life we&apos;re building.
+                Help us continue making our house a home. Your contribution
+                will go towards home projects and the life we&apos;re building
+                together.
               </p>
               <a
                 href="https://donate.stripe.com/dRm14nfVC3bTdKT5qk0co03"
