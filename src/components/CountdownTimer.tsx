@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import CelebrationConfetti from '@/components/CelebrationConfetti'
 
 interface TimeLeft {
   days: number
@@ -11,6 +12,13 @@ interface TimeLeft {
 }
 
 type CelebrationMode = 'wedding-day' | 'married'
+
+interface CelebrationContent {
+  emoji: string
+  floatingEmojis: string[]
+  title: string
+  subtitle: string
+}
 
 // 3:00 PM Pacific on July 11, 2026 (PDT, UTC-7)
 const WEDDING_DATE = new Date('2026-07-11T15:00:00-07:00')
@@ -31,23 +39,27 @@ function calculateTimeLeft(): TimeLeft | null {
   }
 }
 
-function getCelebrationMessage(mode?: CelebrationMode) {
+function getCelebrationContent(mode?: CelebrationMode): CelebrationContent {
   const isWeddingDay =
     mode === 'wedding-day' ||
     (mode !== 'married' && Date.now() < WEDDING_DAY_END.getTime())
 
   if (isWeddingDay) {
     return {
+      emoji: '🎉',
+      floatingEmojis: ['🎉', '💒', '🥂', '✨', '💐', '🎊'],
       title: "It's Our Wedding Day!",
       subtitle:
-        'The countdown is over — let the celebration begin. Cheers to the Hansons!',
+        'The countdown is over — let the celebration begin! Cheers to the Hansons!',
     }
   }
 
   return {
+    emoji: '💍',
+    floatingEmojis: ['💍', '💖', '🎊', '✨', '🥂', '💕'],
     title: 'Just Married!',
     subtitle:
-      'Bradley & MaKinna said "I do." Thank you for being part of our story.',
+      'Bradley & MaKinna said "I do." Thank you for being part of our story!',
   }
 }
 
@@ -69,14 +81,110 @@ function getPreviewMode(): CelebrationMode | null {
   return null
 }
 
+function FloatingEmoji({ emoji, index }: { emoji: string; index: number }) {
+  const xOffset = (index % 3) * 40 - 40
+  const delay = index * 0.2
+
+  return (
+    <motion.span
+      className="pointer-events-none absolute text-2xl sm:text-3xl"
+      style={{ left: `${20 + index * 12}%`, top: '10%' }}
+      initial={{ opacity: 0, y: 10, scale: 0 }}
+      animate={{
+        opacity: [0, 1, 1, 0],
+        y: [10, -30, -55],
+        x: [0, xOffset],
+        scale: [0.4, 1.2, 1],
+        rotate: [0, index % 2 === 0 ? 15 : -15, 0],
+      }}
+      transition={{
+        delay,
+        duration: 2.5,
+        repeat: Infinity,
+        repeatDelay: 0.8,
+        ease: 'easeOut',
+      }}
+      aria-hidden="true"
+    >
+      {emoji}
+    </motion.span>
+  )
+}
+
+function CelebrationDisplay({
+  content,
+  previewMode,
+}: {
+  content: CelebrationContent
+  previewMode: CelebrationMode | null
+}) {
+  return (
+    <>
+      <CelebrationConfetti active />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="relative mx-auto max-w-xl px-4 pb-20"
+      >
+        {content.floatingEmojis.map((emoji, index) => (
+          <FloatingEmoji key={`${emoji}-${index}`} emoji={emoji} index={index} />
+        ))}
+
+        <motion.p
+          className="text-5xl sm:text-6xl"
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+          aria-hidden="true"
+        >
+          {content.emoji}
+        </motion.p>
+
+        <motion.p
+          className="font-script mt-2 text-4xl text-white sm:text-5xl"
+          animate={{ scale: [1, 1.03, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          {content.title} {content.emoji}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mt-4 font-serif text-lg text-white/90 sm:text-xl"
+        >
+          {content.subtitle}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0.4, 1, 0.4] }}
+          transition={{ delay: 0.8, duration: 2, repeat: Infinity }}
+          className="mt-4 text-2xl"
+          aria-hidden="true"
+        >
+          ✨ 🥂 ✨
+        </motion.p>
+
+        {previewMode && (
+          <p className="mt-4 text-xs tracking-wide text-white/50 uppercase">
+            Preview: countdown=
+            {previewMode === 'wedding-day' ? '0' : 'married'}
+          </p>
+        )}
+      </motion.div>
+    </>
+  )
+}
+
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null | undefined>(
     undefined,
   )
-  const [celebration, setCelebration] = useState<{
-    title: string
-    subtitle: string
-  } | null>(null)
+  const [celebration, setCelebration] = useState<CelebrationContent | null>(
+    null,
+  )
   const [previewMode, setPreviewMode] = useState<CelebrationMode | null>(null)
 
   useEffect(() => {
@@ -84,7 +192,7 @@ export default function CountdownTimer() {
 
     if (preview) {
       setPreviewMode(preview)
-      setCelebration(getCelebrationMessage(preview))
+      setCelebration(getCelebrationContent(preview))
       setTimeLeft(null)
       return
     }
@@ -93,7 +201,7 @@ export default function CountdownTimer() {
       const left = calculateTimeLeft()
 
       if (left === null) {
-        setCelebration(getCelebrationMessage())
+        setCelebration(getCelebrationContent())
         setTimeLeft(null)
         return
       }
@@ -113,24 +221,7 @@ export default function CountdownTimer() {
 
   if (celebration) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="mx-auto max-w-xl px-4 pb-20"
-      >
-        <p className="font-script text-4xl text-white sm:text-5xl">
-          {celebration.title}
-        </p>
-        <p className="mt-3 font-serif text-lg text-white/90 sm:text-xl">
-          {celebration.subtitle}
-        </p>
-        {previewMode && (
-          <p className="mt-4 text-xs tracking-wide text-white/50 uppercase">
-            Preview: countdown={previewMode === 'wedding-day' ? '0' : 'married'}
-          </p>
-        )}
-      </motion.div>
+      <CelebrationDisplay content={celebration} previewMode={previewMode} />
     )
   }
 
