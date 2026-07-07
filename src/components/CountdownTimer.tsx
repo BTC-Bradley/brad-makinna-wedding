@@ -145,7 +145,7 @@ function CelebrationDisplay({
           animate={{ scale: [1, 1.03, 1] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          {content.title} {content.emoji}
+          {content.title}
         </motion.p>
 
         <motion.p
