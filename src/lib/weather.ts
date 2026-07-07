@@ -1,8 +1,8 @@
 const SNOQUALMIE_LAT = 47.5287
 const SNOQUALMIE_LON = -121.8254
 export const WEDDING_DATE = '2026-07-11'
-const CEREMONY_START_HOUR = 14
-const RECEPTION_END_HOUR = 22
+const FORECAST_START_HOUR = 12
+const FORECAST_END_HOUR = 22
 
 interface OpenMeteoResponse {
   hourly: {
@@ -53,12 +53,19 @@ export function describeWeatherCode(code: number): string {
 }
 
 function formatHourLabel(isoTime: string): string {
-  const date = new Date(isoTime)
-  return date.toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: '2-digit',
-    timeZone: 'America/Los_Angeles',
-  })
+  // Open-Meteo returns times already in the requested timezone (no offset
+  // suffix), so parse the hour directly instead of using Date (which would
+  // misinterpret the value as UTC on the server and shift labels by 7 hours).
+  const hour = Number(isoTime.slice(11, 13))
+  const minute = Number(isoTime.slice(14, 16))
+  const period = hour >= 12 ? 'PM' : 'AM'
+  const displayHour = hour % 12 || 12
+
+  if (minute === 0) {
+    return `${displayHour}:00 ${period}`
+  }
+
+  return `${displayHour}:${String(minute).padStart(2, '0')} ${period}`
 }
 
 function formatWeddingDateLabel(date: string): string {
@@ -129,8 +136,8 @@ export async function getWeddingWeatherForecast(): Promise<WeddingWeatherForecas
     .filter(
       (entry) =>
         entry.time.startsWith(WEDDING_DATE) &&
-        entry.hour >= CEREMONY_START_HOUR &&
-        entry.hour <= RECEPTION_END_HOUR,
+        entry.hour >= FORECAST_START_HOUR &&
+        entry.hour <= FORECAST_END_HOUR,
     )
     .map((entry) => ({
       time: entry.time,

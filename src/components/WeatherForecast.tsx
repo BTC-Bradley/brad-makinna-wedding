@@ -119,7 +119,7 @@ export default function WeatherForecast() {
 
       <div>
         <h4 className="text-sage mb-3 font-serif text-lg dark:text-amber-400">
-          Hourly Forecast (2:00 PM – 10:00 PM)
+          Hourly Forecast (12:00 PM – 10:00 PM)
         </h4>
         <div className="overflow-x-auto">
           <table className="min-w-full text-left text-sm">
