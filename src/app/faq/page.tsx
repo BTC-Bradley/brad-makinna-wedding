@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import WeatherForecast from '@/components/WeatherForecast'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -12,13 +11,13 @@ export default function FAQ() {
 
   const faqItems = [
     {
-      question: 'What is the Dress Code?',
+      question: 'What was the dress code?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            We&apos;re asking guests to dress in formal summer attire. Think
-            elevated and elegant, but with comfort in mind—after all, it&apos;s
-            July! Please note that white is reserved for the bride.
+            Guests were asked to dress in formal summer attire — elevated and
+            elegant, with comfort in mind for July. White was reserved for the
+            bride.
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -36,11 +35,10 @@ export default function FAQ() {
                 />
               </svg>
               <span>
-                <strong>For Men:</strong> Suits or tuxedos are encouraged but
+                <strong>For men:</strong> Suits or tuxedos were encouraged but
                 not required. A dress shirt with formal slacks and dress shoes
-                is also perfectly appropriate. Ties are optional but
-                recommended. Choose lightweight fabrics to stay cool in the
-                summer heat.
+                was also appropriate. Ties were optional but recommended.
+                Lightweight fabrics helped with the summer heat.
               </span>
             </li>
             <li className="flex items-start">
@@ -58,45 +56,44 @@ export default function FAQ() {
                 />
               </svg>
               <span>
-                <strong>For Women:</strong> Long or cocktail dresses, elegant
-                jumpsuits, or formal summer wear are perfect choices. Please
-                avoid white, off-white, or cream colors. Opt for breathable
-                fabrics to stay comfortable throughout the celebration.
+                <strong>For women:</strong> Long or cocktail dresses, elegant
+                jumpsuits, or formal summer wear. Guests were asked to avoid
+                white, off-white, or cream, and to choose breathable fabrics.
               </span>
             </li>
           </ul>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            Please avoid casual clothing like jeans, shorts, or flip-flops.
+            Casual clothing like jeans, shorts, or flip-flops was discouraged.
           </p>
         </>
       ),
     },
     {
-      question: 'Are Plus Ones Allowed?',
+      question: 'Were plus ones allowed?',
       answer: (
         <p className="text-gray-700 dark:text-gray-200">
-          No. Only confirmed guests may attend. Plus ones and additional
-          guests cannot be accommodated.
+          No. Only confirmed guests on the invitation could attend. Plus ones
+          and additional guests could not be accommodated.
         </p>
       ),
     },
     {
-      question: 'Are Kids Allowed?',
+      question: 'Were kids allowed?',
       answer: (
         <p className="text-gray-700 dark:text-gray-200">
-          Yes! Children on the guest list are welcome. We&apos;ll have
-          activities for kids, and we ask that parents keep an eye on little
+          Yes — children on the guest list were welcome. Activities were
+          available for kids, and parents were asked to keep an eye on little
           ones throughout the celebration.
         </p>
       ),
     },
     {
-      question: 'What About Gifts?',
+      question: 'What about gifts?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Your presence at our celebration is the greatest gift we could ask
-            for! For those who wish to give a gift, we have a few preferences:
+            Presence at the celebration was the greatest gift. For guests who
+            wanted to give something extra, we shared a few preferences:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
             <li className="flex items-start">
@@ -114,8 +111,8 @@ export default function FAQ() {
                 />
               </svg>
               <span>
-                We have set up a honeymoon fund and house fund for those who
-                would like to contribute
+                Honeymoon and home funds were available before the wedding (now
+                closed on this archive)
               </span>
             </li>
             <li className="flex items-start">
@@ -133,141 +130,141 @@ export default function FAQ() {
                 />
               </svg>
               <span>
-                While not expected, thoughtful physical gifts brought to the
-                celebration are also welcome
+                Thoughtful physical gifts brought to the celebration were also
+                welcome, though never expected
               </span>
             </li>
           </ul>
+        </>
+      ),
+    },
+    {
+      question: 'Where could guests park?',
+      answer: (
+        <>
+          <p className="text-gray-700 dark:text-gray-200">
+            Parking at North Fork Farm was limited. Hotel guests could use the
+            complimentary shuttle from the Snoqualmie Inn for the most
+            convenient experience.
+          </p>
+          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>
+                When parking at the venue, guests checked in with the attendant
+                for directions.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>
+                On arrival, guests continued past the venue on SE 79th St, where
+                a parking attendant guided them to available spots.
+              </span>
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      question: 'Could guests take photos during the wedding?',
+      answer: (
+        <>
+          <p className="text-gray-700 dark:text-gray-200">
+            We asked that no guest photos be taken during the ceremony so
+            everyone could be present in the moment.
+          </p>
+          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Photos were welcome during the reception</span>
+            </li>
+            <li className="flex items-start">
+              <svg
+                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>A photo booth was available for fun memories</span>
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      question: 'What about the weather?',
+      answer: (
+        <p className="text-gray-700 dark:text-gray-200">
+          The wedding was outdoors-friendly at a Snoqualmie Valley farm in
+          mid-July — typically warm summer weather. Guests planned for heat
+          during the day and cooler air later in the evening. (Live forecast
+          tools on the original site are not shown on this archive.)
+        </p>
+      ),
+    },
+    {
+      question: 'Was there alcohol?',
+      answer: (
+        <>
+          <p className="text-gray-700 dark:text-gray-200">
+            Yes — bar service offered a variety of drink options.
+          </p>
           <p className="mt-4 text-gray-700 dark:text-gray-200">
-            Please know that your presence and well wishes are truly what matter
-            most to us.
+            Guests were asked to enjoy responsibly and pace themselves.
           </p>
         </>
       ),
     },
     {
-      question: 'Where Can I Park?',
+      question: 'What food was available?',
       answer: (
         <>
           <p className="text-gray-700 dark:text-gray-200">
-            Parking at North Fork Farm is limited. Hotel guests can use the
-            complimentary shuttle service from the Snoqualmie Inn Hotel for the
-            most convenient experience.
-          </p>
-          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>
-                When parking at the venue, please see the attendant for
-                directions.
-              </span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>
-                Upon arrival, continue past the venue on SE 79th St where a
-                parking attendant will guide you to available spots
-              </span>
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      question: 'Can I Take Photos During the Wedding?',
-      answer: (
-        <>
-          <p className="text-gray-700 dark:text-gray-200">
-            We kindly ask that no photos be taken during the ceremony to allow
-            everyone to fully experience the moment.
-          </p>
-          <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200">
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>Photos are welcome during the reception</span>
-            </li>
-            <li className="flex items-start">
-              <svg
-                className="text-sage mr-2 h-5 w-5 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>A photo booth will be available for fun memories</span>
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      question: 'What is the Weather Forecast?',
-      answer: <WeatherForecast />,
-    },
-    {
-      question: 'Will There Be Alcohol?',
-      answer: (
-        <>
-          <p className="text-gray-700 dark:text-gray-200">
-            Yes! We&apos;ll have bar service available offering a variety of
-            drink options.
-          </p>
-          <p className="mt-4 text-gray-700 dark:text-gray-200">
-            Please enjoy responsibly and pace yourself. We want everyone to have
-            fun while staying safe.
-          </p>
-        </>
-      ),
-    },
-    {
-      question: 'What Food Options Will Be Available?',
-      answer: (
-        <>
-          <p className="text-gray-700 dark:text-gray-200">
-            We&apos;re excited to offer a delicious buffet-style meal featuring
-            a variety of options to satisfy all tastes:
+            Dinner was buffet-style with a variety of options:
           </p>
           <div className="mt-4">
             <h4 className="text-sage mb-2 font-serif text-lg dark:text-amber-400">
@@ -343,7 +340,7 @@ export default function FAQ() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>Perfectly prepared steak</span>
+                <span>Steak</span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -359,21 +356,19 @@ export default function FAQ() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>An array of seasonal sides and accompaniments</span>
+                <span>Seasonal sides and accompaniments</span>
               </li>
             </ul>
           </div>
-
         </>
       ),
     },
     {
-      question: 'Need Help on Wedding Day?',
+      question: 'Where can I find travel and schedule details?',
       answer: (
         <p className="text-gray-700 dark:text-gray-200">
-          If you need help with directions, parking, or shuttle timing on
-          Saturday, reach out to us by phone or text. For travel and schedule
-          details, see our{' '}
+          The original guest guidance for directions, parking, and shuttle
+          timing is preserved on the{' '}
           <a
             href="/travel"
             className="text-sage hover:text-sage/80 underline dark:text-amber-400 dark:hover:text-amber-300"
@@ -387,7 +382,7 @@ export default function FAQ() {
           >
             Schedule
           </a>{' '}
-          pages.
+          pages of this archive.
         </p>
       ),
     },
@@ -401,7 +396,8 @@ export default function FAQ() {
         </h1>
         <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
-          Practical info for wedding weekend — Saturday, July 11, 2026.
+          What guests needed to know for wedding weekend — Saturday, July 11,
+          2026. Preserved as a historical record.
         </p>
       </div>
 

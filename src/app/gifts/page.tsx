@@ -7,52 +7,37 @@ export default function GiftsPage() {
         </h1>
         <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
-          Your presence at our wedding is the greatest gift of all. However, if
-          you wish to give a gift, we would be grateful for contributions to our
-          honeymoon fund or home fund.
+          Your presence at our wedding was the greatest gift of all. For guests
+          who wanted to give something extra, we shared honeymoon and home fund
+          options on this page before the wedding.
         </p>
       </div>
 
-      {/* Cash Gifts Section */}
       <section id="cash-gifts" className="mb-16">
         <div className="rounded-lg bg-white p-6 shadow-sm dark:bg-zinc-800">
+          <div className="mb-6 rounded-lg border border-amber-300/50 bg-amber-50 px-4 py-3 text-sm text-amber-950 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-100">
+            This archive no longer accepts contributions. The funds below were
+            open before the wedding; links are retired on this preserved site.
+          </div>
           <div className="space-y-6">
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-400">
                 Honeymoon Fund
               </h4>
-              <p className="mb-4 text-gray-700 dark:text-gray-200">
-                Help us create unforgettable memories on our honeymoon. Your
-                contribution will help us enjoy special experiences and create
-                lasting memories together.
+              <p className="text-gray-700 dark:text-gray-200">
+                Guests who wished to contribute could help fund honeymoon
+                experiences and memories from the trip that followed the wedding.
               </p>
-              <a
-                href="https://donate.stripe.com/5kQ8wP7p6fYFayHf0U0co02"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:border-amber-400 dark:bg-zinc-800 dark:text-amber-400 dark:hover:bg-amber-400/10"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contribute to Honeymoon Fund
-              </a>
             </div>
 
             <div className="rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
               <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-400">
                 Home Fund
               </h4>
-              <p className="mb-4 text-gray-700 dark:text-gray-200">
-                Help us continue making our house a home. Your contribution
-                will go towards home projects and the life we&apos;re building
-                together.
+              <p className="text-gray-700 dark:text-gray-200">
+                Guests could also contribute toward home projects as we settled
+                into married life.
               </p>
-              <a
-                href="https://donate.stripe.com/dRm14nfVC3bTdKT5qk0co03"
-                className="border-sage text-sage hover:bg-sage/10 inline-block w-full rounded-md border-2 bg-white px-6 py-3 text-center text-base font-medium transition-colors dark:border-amber-400 dark:bg-zinc-800 dark:text-amber-400 dark:hover:bg-amber-400/10"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contribute to Home Fund
-              </a>
             </div>
           </div>
         </div>

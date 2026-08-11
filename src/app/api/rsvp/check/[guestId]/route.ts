@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getExistingRSVP } from '@/lib/cosmos'
+import { getExistingRSVP } from '@/lib/data-store'
 
 export async function GET(
   request: Request,

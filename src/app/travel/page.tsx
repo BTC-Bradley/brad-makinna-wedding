@@ -10,8 +10,8 @@ export default function TravelPage() {
         </h1>
         <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-500/40"></div>
         <p className="text-gray-600 dark:text-gray-300">
-          Directions, parking, shuttle times, and hotel details for wedding
-          weekend.
+          Directions, parking, shuttle times, and hotel details as shared with
+          guests for July 11–12, 2026 — kept here as a historical record.
         </p>
       </div>
 
@@ -39,8 +39,7 @@ export default function TravelPage() {
               North Fork Farm
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Our beautiful wedding venue nestled in the heart of the Snoqualmie
-              Valley.
+              Our wedding venue, nestled in the heart of the Snoqualmie Valley.
             </p>
           </div>
 
@@ -95,14 +94,14 @@ export default function TravelPage() {
               </h4>
               <div className="space-y-3 text-gray-700 dark:text-gray-200">
                 <p>
-                  North Fork Farm offers a picturesque setting with stunning
+                  North Fork Farm offered a picturesque setting with stunning
                   views of the surrounding mountains and countryside. The venue
-                  features both indoor and outdoor spaces, perfect for our
+                  has both indoor and outdoor spaces, which we used for the
                   ceremony and reception.
                 </p>
                 <p>
-                  The farm provides a rustic yet elegant atmosphere that
-                  perfectly complements our vision for the day.
+                  The farm&apos;s rustic yet elegant atmosphere fit the day we
+                  wanted to share with our guests.
                 </p>
               </div>
             </div>
@@ -158,9 +157,9 @@ export default function TravelPage() {
               Snoqualmie Inn by Hotel America
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Many of our guests are staying at the Snoqualmie Inn by Hotel
-              America. The room block booking deadline has passed, but contact
-              details are below for guests who have already booked.
+              Many guests stayed at the Snoqualmie Inn by Hotel America. Contact
+              details below are preserved from the guest site (the wedding room
+              block is closed).
             </p>
           </div>
 
@@ -224,16 +223,15 @@ export default function TravelPage() {
               Complimentary Hotel Shuttle Service
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              We&apos;re pleased to offer a free shuttle service between the
-              Snoqualmie Inn Hotel and the venue. The 2:00 PM and 2:30 PM
-              departures are for hotel guests; the 12:45 PM departure is
-              reserved for immediate family.
+              Guests had a complimentary shuttle between the Snoqualmie Inn and
+              the venue. The 2:00 PM and 2:30 PM departures were for hotel
+              guests; the 12:45 PM departure was reserved for immediate family.
             </p>
           </div>
 
           <div className="mb-6 rounded-lg bg-gray-50 p-6 dark:bg-zinc-700">
             <h4 className="text-sage mb-4 font-serif text-lg dark:text-amber-500">
-              Why Take the Shuttle?
+              Why Guests Took the Shuttle
             </h4>
             <ul className="space-y-3 text-gray-700 dark:text-gray-200">
               <li className="flex items-start">
@@ -251,8 +249,7 @@ export default function TravelPage() {
                   />
                 </svg>
                 <span>
-                  Completely free for hotel guests staying at the Snoqualmie Inn
-                  only
+                  Free for hotel guests staying at the Snoqualmie Inn only
                 </span>
               </li>
               <li className="flex items-start">
@@ -270,7 +267,7 @@ export default function TravelPage() {
                   />
                 </svg>
                 <span>
-                  No need to worry about parking or designated drivers
+                  Avoided parking constraints and designated-driver logistics
                 </span>
               </li>
               <li className="flex items-start">
@@ -287,7 +284,7 @@ export default function TravelPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span>Convenient pickup and drop-off at the hotel</span>
+                <span>Pickup and drop-off at the hotel</span>
               </li>
             </ul>
           </div>
@@ -454,8 +451,8 @@ export default function TravelPage() {
                   />
                 </svg>
                 <span>
-                  Please arrive at the hotel lobby 10 minutes before scheduled
-                  departure times
+                  Guests were asked to be in the hotel lobby 10 minutes before
+                  scheduled departure times
                 </span>
               </li>
             </ul>
@@ -463,8 +460,8 @@ export default function TravelPage() {
 
           <div className="mt-6 text-center">
             <p className="text-gray-600 italic dark:text-gray-300">
-              We strongly encourage hotel guests to utilize our shuttle service
-              for a stress-free celebration experience.
+              Hotel guests were strongly encouraged to use the shuttle for a
+              stress-free celebration.
             </p>
           </div>
         </div>
@@ -494,7 +491,7 @@ export default function TravelPage() {
               Parking at North Fork Farm
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Limited parking is available at the venue.
+              Limited parking was available at the venue.
             </p>
           </div>
           <div className="mb-6">
@@ -523,7 +520,7 @@ export default function TravelPage() {
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>Parking is limited at the venue</span>
+                <span>Parking was limited at the venue</span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -540,7 +537,7 @@ export default function TravelPage() {
                   />
                 </svg>
                 <span>
-                  When parking at the venue, please see the attendant for
+                  Guests parking at the venue checked in with the attendant for
                   directions.
                 </span>
               </li>
@@ -567,9 +564,9 @@ export default function TravelPage() {
                   />
                 </svg>
                 <p className="text-gray-700 dark:text-gray-200">
-                  When arriving at the venue, continue straight past the venue
-                  on SE 79th St. A parking attendant will be there to help
-                  direct you to available parking spaces.
+                  On arrival, guests continued straight past the venue on SE
+                  79th St. A parking attendant directed drivers to available
+                  spaces.
                 </p>
               </div>
             </div>

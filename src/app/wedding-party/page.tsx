@@ -127,8 +127,7 @@ export default function WeddingParty() {
         </h1>
         <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
-          Meet the wonderful people who will be standing by our side on our
-          special day.
+          The wonderful people who stood by our side on July 11, 2026.
         </p>
       </div>
 

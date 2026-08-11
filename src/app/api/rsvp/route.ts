@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getGuestById, saveRSVPSubmission, getExistingRSVP } from '@/lib/cosmos'
+import {
+  getGuestById,
+  saveRSVPSubmission,
+  getExistingRSVP,
+} from '@/lib/data-store'
 import { RSVPSubmission } from '@/interfaces/guest'
+import { config } from '@/config'
 
-// RSVPs are closed now that the deadline has passed. Flip this to `true` to
-// re-enable submissions (e.g. for an example/demo rebuild of this site).
-const RSVP_OPEN = false
-
-// In-memory rate limiter (per Vercel serverless instance)
+// In-memory rate limiter (per serverless instance)
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
 const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
 const RATE_LIMIT_MAX = 5 // 5 requests per minute per IP
@@ -26,14 +27,15 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    if (!RSVP_OPEN) {
+    if (!config.rsvpOpen) {
       return NextResponse.json(
         { error: 'RSVPs are now closed.' },
         { status: 403 },
       )
     }
 
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
     if (isRateLimited(ip)) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again in a minute.' },
@@ -43,7 +45,6 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    // Validate required fields
     const { guestId, rsvpId, attending, attendingGuests } = body
 
     if (!guestId || !rsvpId || attending === undefined || !attendingGuests) {
@@ -65,7 +66,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Block resubmission if RSVP already exists
     const existingRSVP = await getExistingRSVP(guestId)
     if (existingRSVP) {
       return NextResponse.json(
@@ -74,7 +74,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create RSVP submission object
     const rsvpData: RSVPSubmission = {
       guestId,
       rsvpId,
@@ -84,9 +83,9 @@ export async function POST(request: NextRequest) {
       additionalNotes: body.additionalNotes,
       submittedAt: new Date().toISOString(),
       submittedBy: body.submittedBy,
+      group: 'Demo',
     }
 
-    // Save to Cosmos DB
     const savedRSVP = await saveRSVPSubmission(rsvpData)
 
     if (!savedRSVP) {
@@ -100,6 +99,7 @@ export async function POST(request: NextRequest) {
       {
         message: 'RSVP submitted successfully',
         rsvpId: savedRSVP.id,
+        demo: config.demoMode,
       },
       { status: 201 },
     )

@@ -57,9 +57,9 @@ function getCelebrationContent(mode?: CelebrationMode): CelebrationContent {
   return {
     emoji: '💍',
     floatingEmojis: ['💍', '💖', '🎊', '✨', '🥂', '💕'],
-    title: 'Just Married!',
+    title: 'Married July 11, 2026',
     subtitle:
-      'Bradley & MaKinna said "I do." Thank you for being part of our story!',
+      'Bradley & MaKinna said “I do” in Snoqualmie. This site remains as a keepsake of the day.',
   }
 }
 

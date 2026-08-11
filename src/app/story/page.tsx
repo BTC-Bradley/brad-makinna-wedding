@@ -45,7 +45,7 @@ const timeline = [
     date: '2026',
     title: 'Our Wedding Day',
     description:
-      "The culmination of our love story becomes a celebration with those who mean the world to us. This incredible journey has led us here, and we couldn't be more thrilled to begin the beautiful adventure of marriage surrounded by our cherished friends and family.",
+      'On July 11, 2026, we celebrated with the people who mean the world to us in Snoqualmie, Washington. The journey that began at the Gorge led us here — and we are endlessly grateful for every friend and family member who stood with us as we began married life as the Hansons.',
     image: '/images/kissy.png',
   },
 ]
@@ -59,7 +59,8 @@ export default function StoryPage() {
         </h1>
         <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
         <p className="text-gray-600 dark:text-gray-300">
-          From chance encounter to forever, here&apos;s our journey together.
+          From a chance encounter to our wedding day — the journey that brought
+          us here.
         </p>
       </div>
 

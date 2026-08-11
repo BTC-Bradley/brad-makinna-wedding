@@ -8,11 +8,11 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Bradley & MaKinna Wedding',
-    default: 'Bradley & MaKinna Wedding',
+    template: '%s - Bradley & MaKinna Wedding (Archive)',
+    default: 'Bradley & MaKinna Wedding — Archive',
   },
   description:
-    'Join us in celebrating our special day. We are excited to share our wedding journey with you.',
+    'Archived wedding website for Bradley & MaKinna Hanson, married July 11, 2026 in Snoqualmie, WA. Kept as a historical record and portfolio demo.',
   icons: {
     icon: [
       {

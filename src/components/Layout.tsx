@@ -1,3 +1,4 @@
+import { ArchiveBanner } from '@/components/ArchiveBanner'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
@@ -10,6 +11,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
       <div className="relative flex w-full flex-col">
+        <ArchiveBanner />
         <Header />
         <main className="flex-auto">{children}</main>
         <Footer />

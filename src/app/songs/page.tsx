@@ -1,23 +1,15 @@
 import { Metadata } from 'next'
-import { guestsContainer, rsvpsContainer } from '@/lib/cosmos'
+import { getSongRequestData } from '@/lib/data-store'
+import { config } from '@/config'
+
+// Song list includes live demo RSVP submissions — do not prerender once.
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Song Requests | Bradley & MaKinna Hanson',
-  description: 'Song requests from our wedding guests',
-}
-
-interface Song {
-  text: string
-  url?: string
-}
-
-interface GuestSongs {
-  name: string
-  songs: Song[]
-}
-
-function isYouTubeUrl(text: string): boolean {
-  return text.includes('youtube.com') || text.includes('youtu.be')
+  description: config.demoMode
+    ? 'Sample song requests from the wedding RSVP demo'
+    : 'Song requests from our wedding guests',
 }
 
 function getYouTubeVideoId(url: string): string | null {
@@ -33,67 +25,9 @@ function getYouTubeVideoId(url: string): string | null {
   return null
 }
 
-async function getSongData(): Promise<{
-  guests: GuestSongs[]
-  totalGuests: number
-  totalSongs: number
-}> {
-  const [rsvpResult, guestResult] = await Promise.all([
-    rsvpsContainer.items.query('SELECT * FROM c').fetchAll(),
-    guestsContainer.items
-      .query('SELECT c.id, c.names FROM c')
-      .fetchAll(),
-  ])
-
-  const rsvps = rsvpResult.resources
-  const guests = guestResult.resources
-
-  const guestMap: Record<string, { names: string }> = {}
-  for (const g of guests) {
-    guestMap[g.id] = { names: g.names }
-  }
-
-  const seenGuestIds = new Set<string>()
-  const guestSongs: GuestSongs[] = []
-
-  for (const rsvp of rsvps) {
-    if (!rsvp.additionalNotes?.trim()) continue
-    if (rsvp.additionalNotes.includes('Same song requests')) continue
-    if (seenGuestIds.has(rsvp.guestId)) continue
-    seenGuestIds.add(rsvp.guestId)
-
-    const name =
-      rsvp.submittedBy ||
-      guestMap[rsvp.guestId]?.names ||
-      'Unknown Guest'
-
-    const songs: Song[] = []
-
-    for (const line of rsvp.additionalNotes.split('\n')) {
-      const trimmed = line.trim()
-      if (!trimmed) continue
-      if (trimmed.includes('These are all links')) continue
-
-      if (isYouTubeUrl(trimmed)) {
-        songs.push({ text: trimmed, url: trimmed })
-      } else {
-        songs.push({ text: trimmed })
-      }
-    }
-
-    if (songs.length > 0) {
-      guestSongs.push({ name, songs })
-    }
-  }
-
-  const totalSongs = guestSongs.reduce((sum, g) => sum + g.songs.length, 0)
-  return { guests: guestSongs, totalGuests: guestSongs.length, totalSongs }
-}
-
 export default async function SongsPage() {
-  const { guests, totalGuests, totalSongs } = await getSongData()
+  const { guests, totalGuests, totalSongs } = await getSongRequestData()
 
-  // Find duplicate songs (same text requested by 2+ guests)
   const songCounts: Record<string, { count: number; originalText: string }> = {}
   for (const guest of guests) {
     for (const song of guest.songs) {
@@ -115,9 +49,19 @@ export default async function SongsPage() {
         Song Requests
       </h1>
       <p className="mb-6 text-center text-gray-500 dark:text-gray-400">
-        What your guests want to hear
+        {config.demoMode
+          ? 'Sample playlist ideas from the RSVP demo (not the live guest list)'
+          : 'Songs guests requested for the reception'}
       </p>
       <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
+
+      {config.demoMode && (
+        <div className="mb-8 rounded-lg border border-amber-300/60 bg-amber-50 px-4 py-3 text-center text-sm text-amber-900 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-100">
+          Archive demo data only — submit a demo RSVP with song notes to add
+          more here (in-memory).
+        </div>
+      )}
+
       <p className="mb-10 text-center text-gray-600 dark:text-gray-300">
         <span className="font-medium">{totalGuests}</span> guests submitted{' '}
         <span className="font-medium">{totalSongs}</span> song suggestions
@@ -152,38 +96,44 @@ export default async function SongsPage() {
         <h2 className="text-sage mb-4 font-serif text-2xl font-light dark:text-amber-400">
           By Guest
         </h2>
-        <div className="space-y-4">
-          {guests.map((guest) => (
-            <div
-              key={guest.name}
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-zinc-800 dark:shadow-lg"
-            >
-              <h3 className="text-sage mb-3 border-sage border-l-2 pl-4 font-serif text-lg dark:border-amber-400 dark:text-amber-400">
-                {guest.name}
-              </h3>
-              <ul className="space-y-1 pl-4">
-                {guest.songs.map((song, i) => (
-                  <li key={i} className="text-gray-600 dark:text-gray-300">
-                    {song.url ? (
-                      <a
-                        href={song.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sage hover:underline dark:text-amber-400"
-                      >
-                        {getYouTubeVideoId(song.url)
-                          ? `🎵 ${getYouTubeVideoId(song.url)}`
-                          : '🎵 YouTube link'}
-                      </a>
-                    ) : (
-                      song.text
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        {guests.length === 0 ? (
+          <p className="text-center text-gray-500 dark:text-gray-400">
+            No song requests yet.
+          </p>
+        ) : (
+          <div className="space-y-4">
+            {guests.map((guest) => (
+              <div
+                key={guest.name}
+                className="rounded-lg bg-white p-6 shadow-md dark:bg-zinc-800 dark:shadow-lg"
+              >
+                <h3 className="text-sage mb-3 border-sage border-l-2 pl-4 font-serif text-lg dark:border-amber-400 dark:text-amber-400">
+                  {guest.name}
+                </h3>
+                <ul className="space-y-1 pl-4">
+                  {guest.songs.map((song, i) => (
+                    <li key={i} className="text-gray-600 dark:text-gray-300">
+                      {song.url ? (
+                        <a
+                          href={song.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sage hover:underline dark:text-amber-400"
+                        >
+                          {getYouTubeVideoId(song.url)
+                            ? `🎵 ${getYouTubeVideoId(song.url)}`
+                            : '🎵 YouTube link'}
+                        </a>
+                      ) : (
+                        song.text
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

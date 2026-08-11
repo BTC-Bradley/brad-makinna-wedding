@@ -4,9 +4,9 @@ import CountdownTimer from '@/components/CountdownTimer'
 import heroBgImage from '@/images/hero-bg.jpg'
 
 export const metadata: Metadata = {
-  title: 'Bradley & MaKinna Hanson | Wedding',
+  title: 'Bradley & MaKinna Hanson | Wedding Archive',
   description:
-    'Join us for our wedding celebration on July 11, 2026 at Snoqualmie, WA',
+    'Archived wedding website for Bradley & MaKinna Hanson — married July 11, 2026 in Snoqualmie, WA.',
 }
 
 export default function HomePage() {
@@ -26,6 +26,9 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 px-4 text-center">
+          <p className="mb-4 font-serif text-sm tracking-[0.2em] text-white/90 uppercase sm:text-base">
+            We got married
+          </p>
           <h1 className="font-script mb-4 text-5xl text-white sm:text-7xl">
             Bradley & MaKinna
             <span className="mt-4 block text-3xl font-light tracking-widest sm:text-4xl">
@@ -46,18 +49,18 @@ export default function HomePage() {
             Wedding Weekend
           </h2>
           <p className="mb-8 text-gray-700 dark:text-gray-300">
-            We can&apos;t wait to celebrate with you! Here&apos;s the full
-            weekend at a glance.
+            Thank you to everyone who celebrated with us. Here&apos;s how the
+            weekend looked, preserved from the original guest site.
           </p>
 
           <div className="mb-8 space-y-4 text-left">
             <div className="rounded-lg bg-white/60 p-5 ring-1 ring-gray-200/60 dark:bg-zinc-800/60 dark:ring-gray-700/50">
               <p className="text-amber mb-1 font-serif text-lg dark:text-amber-400">
-                Saturday, July 11
+                Saturday, July 11, 2026
               </p>
               <p className="text-gray-700 dark:text-gray-300">
-                <strong>Wedding</strong> at North Fork Farm — arrive by 2:30
-                PM, ceremony at 3:00 PM
+                <strong>Wedding</strong> at North Fork Farm — guests arrived by
+                2:30 PM, ceremony at 3:00 PM
               </p>
               <p className="mt-2 text-gray-600 dark:text-gray-400">
                 <strong>After party</strong> at No Boat Brewing Company — 10:00
@@ -66,7 +69,7 @@ export default function HomePage() {
             </div>
             <div className="rounded-lg bg-white/60 p-5 ring-1 ring-gray-200/60 dark:bg-zinc-800/60 dark:ring-gray-700/50">
               <p className="text-amber mb-1 font-serif text-lg dark:text-amber-400">
-                Sunday, July 12
+                Sunday, July 12, 2026
               </p>
               <p className="text-gray-700 dark:text-gray-300">
                 <strong>Farewell brunch</strong> at South Fork Event Center —
@@ -95,7 +98,7 @@ export default function HomePage() {
               href="/faq"
               className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
             >
-              FAQ & Weather →
+              FAQ →
             </a>
           </div>
         </div>
@@ -106,20 +109,20 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-16 md:grid-cols-3">
           <div className="bg-ivory rounded-lg p-6 text-center shadow-lg ring-1 ring-gray-200/50 dark:bg-zinc-900 dark:ring-gray-700/50">
             <h3 className="text-amber mb-4 font-serif text-xl dark:text-amber-400">
-              Event Details
+              The Venue
             </h3>
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
               <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-                Please arrive at 2:30 PM
+                Ceremony & reception at North Fork Farm
               </p>
               <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-                <strong>Location:</strong> North Fork Farm
+                <strong>Location:</strong> Snoqualmie, WA
               </p>
               <a
                 href="/travel"
                 className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
               >
-                View Travel Information →
+                View Travel Archive →
               </a>
             </div>
           </div>
@@ -128,7 +131,7 @@ export default function HomePage() {
               Schedule
             </h3>
             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              Ceremony begins at 3:00 PM. Please arrive by 2:30 PM.
+              Ceremony began at 3:00 PM. Guests arrived by 2:30 PM.
             </p>
             <a
               href="/schedule"
@@ -139,16 +142,17 @@ export default function HomePage() {
           </div>
           <div className="bg-ivory rounded-lg p-6 text-center shadow-lg ring-1 ring-gray-200/50 dark:bg-zinc-900 dark:ring-gray-700/50">
             <h3 className="text-amber mb-4 font-serif text-xl dark:text-amber-400">
-              Travel
+              RSVP Demo
             </h3>
             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-              Shuttle times, parking, and hotel info for the weekend.
+              The real RSVP period has closed. Try the interactive demo with
+              sample invitation codes.
             </p>
             <a
-              href="/travel#shuttle"
+              href="/rsvp"
               className="text-amber text-sm font-medium transition-colors hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300"
             >
-              View Shuttle Schedule →
+              Open RSVP Demo →
             </a>
           </div>
         </div>

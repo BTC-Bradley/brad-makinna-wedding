@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getGuestById } from '@/lib/cosmos'
+import { getGuestById } from '@/lib/data-store'
 import { SafeGuestData } from '@/interfaces/guest'
 
 export async function GET(
@@ -17,7 +17,8 @@ export async function GET(
       )
     }
 
-    // Filter out sensitive address information before sending to client
+    // Never send street address to the client. In demo mode, also omit phone
+    // and use clearly fictional contact fields only.
     const safeGuestData: SafeGuestData = {
       id: guestList.id,
       rsvpId: guestList.rsvpId,

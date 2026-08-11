@@ -36,10 +36,15 @@ export function Footer() {
                   </NavLink>
                 ))}
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Bradley & MaKinna. All rights
-                reserved.
-              </p>
+              <div className="text-center text-sm text-zinc-400 dark:text-zinc-500 md:text-right">
+                <p>
+                  &copy; {new Date().getFullYear()} Bradley &amp; MaKinna
+                  Hanson.
+                </p>
+                <p className="mt-1">
+                  Married July 11, 2026 · Site preserved as an archive
+                </p>
+              </div>
             </div>
           </ContainerInner>
         </div>

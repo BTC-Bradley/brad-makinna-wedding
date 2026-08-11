@@ -1,19 +1,34 @@
-# Bradley & MaKinna Wedding Website
+# Bradley & MaKinna Wedding Website (Archive)
 
-A beautiful, responsive wedding website built with Next.js, TypeScript, and Tailwind CSS.
+A responsive wedding website built with Next.js, TypeScript, and Tailwind CSS.
+
+**Status:** Historical archive of Bradley & MaKinna Hanson’s wedding site (married **July 11, 2026**, Snoqualmie, WA). Copy is written in past tense. **RSVP** is a portfolio demo with fictional guest data (real RSVP/PII removed).
 
 ## Features
 
 - 🎨 Rustic, romantic design with earthy tones
 - 📱 Fully responsive for all devices
 - ⏰ Countdown timer to the wedding day
-- 📝 RSVP form with meal preferences
-- 📸 Photo gallery with lightbox
-- 📍 Venue details and Google Maps integration
-- 🏨 Accommodation recommendations
-- 🎁 Registry information
-- 📞 Contact form
+- 📝 **Interactive RSVP demo** (invitation code lookup, multi-guest attendance, dietary notes, song requests)
+- 🎵 Song requests page fed by RSVP submissions
+- 📍 Venue, travel, schedule, wedding party, FAQ, gifts
 - 📖 Our story timeline
+
+## Demo mode (default)
+
+`DEMO_MODE` defaults to **on**. Guests and RSVPs come from in-repo sample data (`src/data/demo-*.ts`) via `src/lib/data-store.ts` — **no Cosmos credentials required** and **no real guest PII**.
+
+On `/rsvp`, **any 6-character code** using the invitation alphabet (`2–9`, `A–F`) works — unknown codes get a generated fictional party. Optional curated scenarios:
+
+| Code   | Party |
+|--------|--------|
+| `A2B3C4` | Couple |
+| `B4C5D6` | Family of 4 (pre-submitted seed) |
+| `C5D6E7` | Single + plus-one slot |
+| `D6E7F8` | Couple (pre-submitted seed) |
+| `E7F8A9` | Single (pre-submitted seed) |
+
+Set `DEMO_MODE=false` and provide `COSMOS_*` env vars only if you intentionally reconnect a real database.
 
 ## Getting Started
 
@@ -24,32 +39,23 @@ A beautiful, responsive wedding website built with Next.js, TypeScript, and Tail
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/bradley-makinna-wedding.git
-   cd bradley-makinna-wedding
-   ```
-
-2. Install dependencies:
+1. Clone the repository and install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
-3. Create a `.env.local` file in the root directory and add your environment variables:
+2. Optional `.env.local` (demo mode works without Cosmos):
    ```
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
+   # DEMO_MODE=true   # default when unset
    ```
 
-4. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) — use **RSVP** in the nav or `/rsvp`.
 
 ## Customization
 

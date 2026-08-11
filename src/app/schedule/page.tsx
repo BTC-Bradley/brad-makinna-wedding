@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Schedule | Bradley & MaKinna Hanson',
-  description: 'Wedding weekend schedule — ceremony, after party, and Sunday brunch',
+  description:
+    'Archived wedding weekend schedule — ceremony, after party, and Sunday brunch (July 11–12, 2026)',
 }
 
 export default function SchedulePage() {
@@ -12,9 +13,12 @@ export default function SchedulePage() {
         Weekend Schedule
       </h1>
       <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
+      <p className="mb-10 text-center text-gray-600 dark:text-gray-300">
+        How the weekend ran — preserved from the original guest website.
+      </p>
 
       <h2 className="text-sage mb-6 text-center font-serif text-2xl dark:text-amber-400">
-        Saturday, July 11
+        Saturday, July 11, 2026
       </h2>
       <div className="rounded-lg bg-white p-8 shadow-md dark:bg-zinc-800 dark:shadow-lg">
         <div className="space-y-6">
@@ -29,7 +33,7 @@ export default function SchedulePage() {
                 Guest Arrival
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Please arrive on time to find your seat
+                Guests arrived in time to find their seats
               </p>
             </div>
           </div>
@@ -44,7 +48,7 @@ export default function SchedulePage() {
                 Ceremony
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                The main event begins
+                The ceremony began
               </p>
             </div>
           </div>
@@ -89,7 +93,7 @@ export default function SchedulePage() {
                 Send-off
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Join us for a magical farewell
+                A farewell send-off for the newlyweds
               </p>
             </div>
           </div>
@@ -104,7 +108,7 @@ export default function SchedulePage() {
                 Venue Closing
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Strictly enforced per venue contract
+                Venue close time (per contract)
               </p>
             </div>
           </div>
@@ -119,8 +123,7 @@ export default function SchedulePage() {
                 After Party
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                The party don&apos;t stop — keep celebrating with the new Mr.
-                and Mrs. Hanson!
+                The celebration continued with the new Mr. and Mrs. Hanson
               </p>
             </div>
           </div>
@@ -132,7 +135,7 @@ export default function SchedulePage() {
           After Party Details
         </h2>
         <p className="mb-6 text-gray-600 dark:text-gray-300">
-          Saturday, July 11 • 10:00 PM – 1:00 AM
+          Saturday, July 11, 2026 • 10:00 PM – 1:00 AM
         </p>
 
         <div className="space-y-4 text-gray-700 dark:text-gray-200">
@@ -166,9 +169,9 @@ export default function SchedulePage() {
           </div>
 
           <p>
-            Everyone invited to the wedding is welcome! No Boat will be open
-            before 10:00 PM if you&apos;d like to head over early, but our
-            reserved space begins at 10:00 PM.
+            Everyone invited to the wedding was welcome. No Boat was open before
+            10:00 PM for guests who wanted to arrive early; our reserved space
+            began at 10:00 PM.
           </p>
 
           <div>
@@ -193,14 +196,14 @@ export default function SchedulePage() {
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                Come as you are — wedding attire encouraged, dancing shoes
-                highly recommended
+                Wedding attire was encouraged; dancing shoes were highly
+                recommended
               </li>
-              <li>Drinks available for purchase</li>
-              <li>Under 21 are welcome but will not be served alcohol</li>
+              <li>Drinks were available for purchase</li>
+              <li>Under 21 were welcome but not served alcohol</li>
               <li>
-                Open decks — bring a USB with your Rekordbox library (Library
-                Plus format)
+                Open decks — guests could bring a USB with a Rekordbox library
+                (Library Plus format)
               </li>
             </ul>
           </div>
@@ -212,7 +215,7 @@ export default function SchedulePage() {
           Sunday Brunch
         </h2>
         <p className="mb-6 text-gray-600 dark:text-gray-300">
-          Sunday, July 12 • 10:00 AM – 12:00 PM
+          Sunday, July 12, 2026 • 10:00 AM – 12:00 PM
         </p>
 
         <div className="space-y-4 text-gray-700 dark:text-gray-200">
@@ -246,15 +249,14 @@ export default function SchedulePage() {
           </div>
 
           <p>
-            Join us for a casual farewell brunch before everyone heads home.
-            All wedding guests are welcome — stop by anytime between 10:00 AM
-            and noon to say goodbye.
+            Guests were invited to a casual farewell brunch before heading home
+            — anytime between 10:00 AM and noon.
           </p>
 
           <p>
-            We don&apos;t have a reserved space or special catering. South Fork
-            is open to the public, so seating is first come, first served and
-            you&apos;ll order from their regular menu.
+            There was no reserved space or special catering. South Fork is open
+            to the public, so seating was first come, first served from their
+            regular menu.
           </p>
 
           <p className="text-sm text-gray-500 dark:text-gray-400">
