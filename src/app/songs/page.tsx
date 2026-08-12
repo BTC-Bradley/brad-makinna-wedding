@@ -1,15 +1,12 @@
 import { Metadata } from 'next'
 import { getSongRequestData } from '@/lib/data-store'
-import { config } from '@/config'
 
 // Song list includes live demo RSVP submissions — do not prerender once.
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Song Requests | Bradley & MaKinna Hanson',
-  description: config.demoMode
-    ? 'Sample song requests from the wedding RSVP demo'
-    : 'Song requests from our wedding guests',
+  description: 'Sample song requests from the wedding RSVP demo',
 }
 
 function getYouTubeVideoId(url: string): string | null {
@@ -49,18 +46,14 @@ export default async function SongsPage() {
         Song Requests
       </h1>
       <p className="mb-6 text-center text-gray-500 dark:text-gray-400">
-        {config.demoMode
-          ? 'Sample playlist ideas from the RSVP demo (not the live guest list)'
-          : 'Songs guests requested for the reception'}
+        Sample playlist ideas from the RSVP demo (not the live guest list)
       </p>
       <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
 
-      {config.demoMode && (
-        <div className="mb-8 rounded-lg border border-amber-300/60 bg-amber-50 px-4 py-3 text-center text-sm text-amber-900 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-100">
-          Archive demo data only — submit a demo RSVP with song notes to add
-          more here (in-memory).
-        </div>
-      )}
+      <div className="mb-8 rounded-lg border border-amber-300/60 bg-amber-50 px-4 py-3 text-center text-sm text-amber-900 dark:border-amber-400/30 dark:bg-amber-400/10 dark:text-amber-100">
+        Archive demo data only — submit a demo RSVP with song notes to add more
+        here (in-memory).
+      </div>
 
       <p className="mb-10 text-center text-gray-600 dark:text-gray-300">
         <span className="font-medium">{totalGuests}</span> guests submitted{' '}

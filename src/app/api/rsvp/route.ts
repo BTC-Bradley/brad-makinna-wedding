@@ -5,7 +5,6 @@ import {
   getExistingRSVP,
 } from '@/lib/data-store'
 import { RSVPSubmission } from '@/interfaces/guest'
-import { config } from '@/config'
 
 // In-memory rate limiter (per serverless instance)
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
@@ -27,13 +26,6 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    if (!config.rsvpOpen) {
-      return NextResponse.json(
-        { error: 'RSVPs are now closed.' },
-        { status: 403 },
-      )
-    }
-
     const ip =
       request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
     if (isRateLimited(ip)) {
@@ -99,7 +91,7 @@ export async function POST(request: NextRequest) {
       {
         message: 'RSVP submitted successfully',
         rsvpId: savedRSVP.id,
-        demo: config.demoMode,
+        demo: true,
       },
       { status: 201 },
     )

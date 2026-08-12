@@ -70,6 +70,5 @@ export interface RSVPSubmission {
   additionalNotes?: string
   submittedAt: string
   submittedBy?: string
-  /** Partition key used by Cosmos (and demo store). */
   group?: string | null
 }

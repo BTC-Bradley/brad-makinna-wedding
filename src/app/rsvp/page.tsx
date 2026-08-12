@@ -4,14 +4,12 @@ import ErrorState from '@/components/ErrorState'
 import RSVPCodeInput from '@/components/RSVPCodeInput'
 import type { GuestListDocument } from '@/interfaces/guest'
 import { headers } from 'next/headers'
-import { config } from '@/config'
 import { DEMO_SAMPLE_CODES } from '@/data/demo-guests'
 
 export const metadata: Metadata = {
   title: 'RSVP | Bradley & MaKinna',
-  description: config.demoMode
-    ? 'Interactive portfolio demo of the archived wedding RSVP system (sample data only).'
-    : 'RSVPs for our wedding are closed.',
+  description:
+    'Interactive portfolio demo of the archived wedding RSVP system (sample data only).',
 }
 
 async function getGuestList(id: string): Promise<GuestListDocument> {
@@ -84,52 +82,62 @@ export default async function RSVPPage({
           </h1>
           <div className="bg-sage/30 mx-auto mb-8 h-1 w-24 dark:bg-amber-400/30"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            {config.demoMode
-              ? 'The real RSVP period closed before the wedding. This page is an interactive demo of how the system worked.'
-              : 'RSVPs for our wedding are closed.'}
+            The real RSVP period closed before the wedding. This page is an
+            interactive demo of how the system worked.
           </p>
         </div>
 
-        {config.demoMode && (
-          <div className="mb-8 rounded-xl border border-amber-300/60 bg-amber-50 p-5 text-left shadow-sm dark:border-amber-400/30 dark:bg-amber-400/10">
-            <p className="text-sm font-semibold text-amber-900 dark:text-amber-200">
-              Archive · RSVP demo
+        <div className="mb-8 rounded-xl border border-amber-300/60 bg-amber-50 p-5 text-left shadow-sm dark:border-amber-400/30 dark:bg-amber-400/10">
+          <p className="text-sm font-semibold text-amber-900 dark:text-amber-200">
+            Archive · RSVP demo
+          </p>
+          <p className="mt-1 text-sm text-amber-900/90 dark:text-amber-100/90">
+            Real guest data has been removed. In this demo,{' '}
+            <strong>any 6-character code</strong> using the invitation alphabet
+            (2–9, A–F) opens a fictional party so you can try the full RSVP
+            flow. Enter one below, or use a curated scenario:
+          </p>
+          {!searchParams.id && (
+            <ul className="mt-3 space-y-1.5 text-sm text-amber-950 dark:text-amber-50">
+              {DEMO_SAMPLE_CODES.map(({ code, label }) => (
+                <li key={code} className="flex flex-wrap items-baseline gap-2">
+                  <a
+                    href={`/rsvp?id=${code}`}
+                    className="font-mono font-semibold underline decoration-amber-500/50 underline-offset-2 hover:decoration-amber-600"
+                  >
+                    {code}
+                  </a>
+                  <span className="text-amber-900/80 dark:text-amber-100/80">
+                    — {label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {searchParams.id && (
+            <p className="mt-3 text-sm text-amber-900/80 dark:text-amber-100/80">
+              <a
+                href="/rsvp"
+                className="font-medium underline underline-offset-2"
+              >
+                ← Back to sample codes
+              </a>
             </p>
-            <p className="mt-1 text-sm text-amber-900/90 dark:text-amber-100/90">
-              Real guest data has been removed. In this demo,{' '}
-              <strong>any 6-character code</strong> using the invitation
-              alphabet (2–9, A–F) opens a fictional party so you can try the
-              full RSVP flow. Enter one below, or use a curated scenario:
-            </p>
-            {!searchParams.id && (
-              <ul className="mt-3 space-y-1.5 text-sm text-amber-950 dark:text-amber-50">
-                {DEMO_SAMPLE_CODES.map(({ code, label }) => (
-                  <li key={code} className="flex flex-wrap items-baseline gap-2">
-                    <a
-                      href={`/rsvp?id=${code}`}
-                      className="font-mono font-semibold underline decoration-amber-500/50 underline-offset-2 hover:decoration-amber-600"
-                    >
-                      {code}
-                    </a>
-                    <span className="text-amber-900/80 dark:text-amber-100/80">
-                      — {label}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {searchParams.id && (
-              <p className="mt-3 text-sm text-amber-900/80 dark:text-amber-100/80">
-                <a
-                  href="/rsvp"
-                  className="font-medium underline underline-offset-2"
-                >
-                  ← Back to sample codes
-                </a>
-              </p>
-            )}
-          </div>
-        )}
+          )}
+          <p className="mt-4 border-t border-amber-300/40 pt-4 text-sm text-amber-900/90 dark:border-amber-400/20 dark:text-amber-100/90">
+            We also built a matching <strong>RSVP admin dashboard</strong> for
+            tracking parties by list, attendance, and dietary needs — also demo
+            data only:{' '}
+            <a
+              href="https://brad-makinna-wedding-rsvp.vercel.app/rsvps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline decoration-amber-500/50 underline-offset-2 hover:decoration-amber-600"
+            >
+              Open RSVP admin demo →
+            </a>
+          </p>
+        </div>
 
         <div className="ring-sage/10 rounded-xl bg-white p-8 shadow-lg ring-1 dark:bg-zinc-800 dark:ring-zinc-700/40">
           {errorMessage ? (
@@ -158,9 +166,9 @@ export default async function RSVPPage({
                 We&apos;ve received your RSVP. Thank you for letting us know!
               </p>
               <p className="text-gray-600 dark:text-gray-400">
-                {config.demoMode
-                  ? 'In demo mode, some sample parties are pre-submitted so you can see this state. Try another code, or restart the dev server to reset in-memory demo RSVPs.'
-                  : 'If you need to make changes, please reach out to us directly.'}
+                In demo mode, some sample parties are pre-submitted so you can
+                see this state. Try another code, or restart the dev server to
+                reset in-memory demo RSVPs.
               </p>
               <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
                 <a
@@ -186,9 +194,8 @@ export default async function RSVPPage({
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 dark:text-gray-300">
-            {config.demoMode
-              ? 'Originally powered by Next.js, TypeScript, and Azure Cosmos DB — this archive uses in-memory sample data only.'
-              : 'RSVPs are closed. Thank you for celebrating with us.'}
+            Originally powered by Next.js, TypeScript, and Azure Cosmos DB —
+            this archive uses in-memory sample data only.
           </p>
         </div>
       </div>
